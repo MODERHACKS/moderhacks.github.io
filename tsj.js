@@ -1,4 +1,4 @@
-/* TSJ™JS1 v1.5 July 2019 by tsjschools.com */
+/* TSJ™JS1 v1.5 July 2019 by Debarchito */
 "use strict";
 var tsj = {};
 tsj.hide = function (sel) {
