@@ -1,4 +1,4 @@
-/* TSJ™ Code Highlight v2.2 , July 2019 by Debarchito Nath */
+/* TSJ™ Code Highlight v1 , July 2019 by Debarchito Nath */
 // Inspired by w3schools.com 
 function tsjCodeHighlight() {
   var x, i, j, k, l, modes = ["html", "js", "java", "css", "sql", "python", "kotlin"];
