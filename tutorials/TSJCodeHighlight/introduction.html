@@ -23,8 +23,8 @@
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="header">
     <h2 class="w3-wide tsj-TW animate-O"><span class="tsj-tag radius-l" style="margin-right:15px;padding:5px 10px 5px 13.6px;">1</span>Introduction And Usage</h2>
     <p class="opacity animate-O"><i>TSJ™ Code Highlight</i></p><br>
-    <form action="#">
-    <button class="tsj-button outline-none bg-dark-grey w3-right radius-l">Next</button></form>
+    
+    <button onclick="document.getElementById('next').style.display='block'"  class="tsj-button outline-none bg-dark-grey w3-right radius-l">Next</button>
     <p class="opacity animate-O w3-left"><i>Know About</i></p><br><br>
     <p class="animate-O tsj-TW tsj-screentext"> Styling or highlighting code with CSS looks so awesome. But how much will you style using CSS ? <b>TSJ™ Code Highlight</b> is very useful when it comes to style elements of HTML, CSS, Javascript etc. With the use of this you can style your elements with Javascript by just following some steps only !! No need to add a CSS to a single always while you want to make a thing different beacuse <b>TSJ™ Code Highlight</b> supports <b>Custom Styling Classes</b>. With the help of these classes you can style each and every element either solo or all at a time if you don't like the defauft colors and styles. You gonna learn all the custom classes later in this tutorial. Here is an example in which we used <b>TSJ™ Code Highlight</b> to style, especially to highlight the elements. </p><br>
     <div class="radius-xl box-shadow"><br>
@@ -284,8 +284,8 @@ END; <br>
     &lt;/html&gt;
     </div><br>   
     </div><br>
-    <form action="#">
-    <button class="tsj-button outline-none bg-dark-grey w3-right radius-l">Next</button></form>  <br> <br>
+    
+    <button onclick="document.getElementById('next').style.display='block'" class="tsj-button outline-none bg-dark-grey w3-right radius-l">Next</button> <br> <br>
     </div>
     </div>
     
@@ -306,6 +306,19 @@ END; <br>
      </div>           
  </div></div>
  <br>
+ 
+  <div id="next" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-white w3-center w3-padding-32"> 
+       <span onclick="document.getElementById('next').style.display='none'" 
+       class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span><br>
+        <h3 class="w3-wide tsj-TW">TSJ™ Code Highlight Tutorials</h3>
+      </header>
+      <div class="tsj-container">
+             <center><b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b>  <b class="text-red tsj-TW margin-R margin-L">ERROR</b>  <b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b><br><br><b class="text-red tsj-TW">  No more Tutorials are uploaded till now. Return in a few weeks to get it all ready.</b></center><br><br>
+        </div>
+      </div>
+    </div>
     
 <center><a href="https://github.com/MODERHACKS/moderhacks.github.io"><img src="https://img.icons8.com/windows/50/000000/github.png" class="bg-white border-black padding radius-B@xl radius-T@l box-shadow"></img></a></center>
 <footer class="w3-container w3-center radius-xl w3-black w3-small margin padding box-shadow">
