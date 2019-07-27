@@ -1,6 +1,6 @@
 /* 
   *TSJ™JS1 
-  *v2.0 
+  *v1.5
   *July 2019 
   *by Debarchito Nath 
   *Includes tsjStyler.js
