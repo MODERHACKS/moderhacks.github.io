@@ -1,7 +1,7 @@
 /* 
 
-  *TSJ™JS1 
-  *v1.5
+  *TSJ™JS 
+  *v1.5 
   *July 2019 
   *by Debarchito Nath 
   *Includes tsjStyler.js
@@ -9,6 +9,7 @@
 */
 
 "use strict";
+
 var tsj = {};
 tsj.hide = function (sel) {
   tsj.hideElements(tsj.getElements(sel));
@@ -407,8 +408,11 @@ tsj.displayObject = function (id, data) {
     a.innerHTML = a.innerHTML.replace(r, result);
   }
 };
-/* CSSX inspired TSJ StyleJS */
+	
+/* tsjStyler.js */
+
 "use strict";
+
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -949,7 +953,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return rule;
 	  };
 	
-	  _api.descendant = _api.d = function (rawRules) {
+	  _api.ng = _api.d = function (rawRules) {
 	    var selector;
 	
 	    if (typeof rawRules === 'function') rawRules = rawRules();
@@ -960,6 +964,55 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return _api.stylesheet.add(rawRules, this.parent, this.index);
 	  };
+	  
+	  _api.css = _api.d = function (rawRules) {
+	    var selector;
+	
+	    if (typeof rawRules === 'function') rawRules = rawRules();
+	
+	    for (selector in rawRules) {
+	      rawRules[_api.selector + ' ' + selector] = rawRules[selector];
+	      delete rawRules[selector];
+	    }
+	    return _api.stylesheet.add(rawRules, this.parent, this.index);
+	  };
+	  
+	  _api.ofs = _api.d = function (rawRules) {
+	    var selector;
+	
+	    if (typeof rawRules === 'function') rawRules = rawRules();
+	
+	    for (selector in rawRules) {
+	      rawRules[_api.selector + ' ' + selector] = rawRules[selector];
+	      delete rawRules[selector];
+	    }
+	    return _api.stylesheet.add(rawRules, this.parent, this.index);
+	  };
+	  
+	  _api.cnt = _api.d = function (rawRules) {
+	    var selector;
+	
+	    if (typeof rawRules === 'function') rawRules = rawRules();
+	
+	    for (selector in rawRules) {
+	      rawRules[_api.selector + ' ' + selector] = rawRules[selector];
+	      delete rawRules[selector];
+	    }
+	    return _api.stylesheet.add(rawRules, this.parent, this.index);
+	  };
+	  
+	  _api.content = _api.d = function (rawRules) {
+	    var selector;
+	
+	    if (typeof rawRules === 'function') rawRules = rawRules();
+	
+	    for (selector in rawRules) {
+	      rawRules[_api.selector + ' ' + selector] = rawRules[selector];
+	      delete rawRules[selector];
+	    }
+	    return _api.stylesheet.add(rawRules, this.parent, this.index);
+	  };
+	  
 	  _api.nested = _api.n = function (rawRules) {
 	    return _api.stylesheet.add(rawRules, this);
 	  };
@@ -1572,3 +1625,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
+
+// Extra
+
+var tsjStyler = tsjStyler(), style = tsjStyler.add("body") , body = tsjStyler.add("body");
+
+// CSS Properties
+
+var color = "color" , padding = "padding" , margin ="margin" , overflow = "overflow" , background = "background" , display = "display" , visibility = "visibility" , resize = "resize" , border = "border" , outline = "outline" , none = "none" , height = "height" , width = "width" , font = "font" , position = "position" , float = "float" , left = "left" , right = "right" , top = "top" , bottom ="bottom" , text = "text" , opacity = "opacity" , content = "content" , quotes = "quotes" , flex = "flex" , order = "order" , columns = "columns" , direction = "direction" , animation = "animation" , transform = "transform" , perspective = "perspective" , transition = "transition" , clear = "clear" , clip = "clip" , cursor = "cursor";
+
+// End
