@@ -1,7 +1,7 @@
 /* 
 
   *TSJ™JS 
-  *1.0 
+  *v1
   *July 2019 
   *by Debarchito Nath 
 
