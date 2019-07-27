@@ -1,5 +1,12 @@
-/* TSJ™ Code Highlight v1, July 2019 by Debarchito Nath */
-// Inspired by w3schools.com 
+/*! DETAILS 
+
+  * TSJ™ Code Highlight, ("https://moderhacks.github.io/") 
+  * v1
+  * July 2019 
+  * by Debarchito Nath, inspired by w3schools.com
+ 
+ */
+
 function tsjCodeHighlight() {
   var x, i, j, k, l, modes = ["html", "js", "java", "css", "sql", "python", "kotlin"];
   if (!document.getElementsByClassName) {return;}
@@ -8,11 +15,12 @@ function tsjCodeHighlight() {
     x = document.getElementsByClassName( "tsj-" + modes[j] + "-highlight");
     l = x.length;
     for (i = 0; i < l; i++) {
-      x[i].innerHTML = tsjCodeColorize(x[i].innerHTML, modes[j]);
+      x[i].innerHTML = tsjCodeColorise(x[i].innerHTML, modes[j]);
     }
   }
 }
-function tsjCodeColorize(x, lang) {
+
+function tsjCodeColorise(x, lang) {
   // HTML
   var tagcolor = "purple";
   var tagnamecolor = "purple";
@@ -61,7 +69,7 @@ function tsjCodeColorize(x, lang) {
   // My SQL
   var sqlcolor = "#ff5c5c";
   var sqlkeywordcolor = "green";
-  var sqlstringcolor = "teal";
+  var sqlstringcolor = "#0025ff";
   var sqlnumbercolor = "#00ad79";  
   // Language Identification
   if (!lang) {lang = "html"; }
@@ -147,11 +155,11 @@ function tsjCodeColorize(x, lang) {
       rest = rest.substr(endpos);
     }
     result = done + rest;
-    result = "<span class='webtag htmltag htmlfulltag htmltagstart html-and-lt and-lt' style=color:" + tagcolor + ";font-weight:bold;>&lt;</span>" + result.substring(4);
+    result = "<span class='webfulltag webtag webtag-start htmlfulltag htmltag htmltag-start' style=color:" + tagcolor + ";font-weight:bold;>&lt;</span>" + result.substring(4);
     if (result.substr(result.length - 4, 4) == "&gt;") {
-      result = result.substring(0, result.length - 4) + "<span class='webtag htmltag htmltagstop htmltagend and-gt html-and-gt htmlfulltag' style=color:" + tagcolor + ";font-weight:900;>&gt;</span>";
+      result = result.substring(0, result.length - 4) + "<span class='webfulltag webtag webtag-stop htmlfulltag htmltag htmltag-stop' style=color:" + tagcolor + ";font-weight:900;>&gt;</span>";
     }
-    return "<span class='htmlnametag htmltagname htmlname htmlfulltag' style=color:" + tagnamecolor + ";font-weight:bold;>" + result + "</span>";
+    return "<span class='webfulltag webtagname htmlfulltag htmltagname ' style=color:" + tagnamecolor + ";font-weight:bold;>" + result + "</span>";
   }  
   function attributeMode(txt) {
     var rest = txt, done = "", startpos, endpos, singlefnuttpos, doublefnuttpos, spacepos;
@@ -184,9 +192,6 @@ function tsjCodeColorize(x, lang) {
   function commentMode(txt) {
     return "<span class='comment' style=color:" + commentcolor + ";font-weight:normal;font-style:italic;>" + txt + "</span>";
   }
-  function headtagMode(txt) {
-    return "<span class='headtag' style=color:" + headcolor + ">" + txt + "</span>";
-  }
   
   // CSS Mode
   function cssMode(txt) {
@@ -214,8 +219,8 @@ function tsjCodeColorize(x, lang) {
       rest = rest.substr(e);
     }
     rest = done + rest;
-    rest = rest.replace(/{/g, "<span class='cssdelimiter cssdelimiterstart css-curlystart css-curly css-curlies' style=color:" + cssdelimitercolor + ";color:#ff5c5c;font-style:italic;margin-right:3px;>{</span>");
-    rest = rest.replace(/}/g, "<span class='cssdelimiter cssdelimiterstop cssdelimiterend css-curlystop css-curlyend css-curly css-curlies' style=color:" + cssdelimitercolor + ";color:#ff5c5c;font-style:italic;>}</span>");
+    rest = rest.replace(/{/g, "<span class='csssymbols cssparenthesis csscurlies cssparenthesis-start csstag-start csscurly-start' style=color:" + cssdelimitercolor + ";color:#ff5c5c;font-style:italic;margin-right:3px;>{</span>");
+    rest = rest.replace(/}/g, "<span class='csssymbols cssparenthesis csscurlies cssparenthesis-stop csstag-stop csscurly-stop' style=color:" + cssdelimitercolor + ";color:#ff5c5c;font-style:italic;>}</span>");
     for (i = 0; i < comment.arr.length; i++) {
         rest = rest.replace("TSJCSSCOMMENTPOS", comment.arr[i]);
     }
@@ -245,7 +250,7 @@ function tsjCodeColorize(x, lang) {
   }
   function cssPropertyValueMode(txt) {
     var rest = txt, done = "", s;
-    rest = "<span class='cssdelimiter cssdelimitervalue css-doubledot css-dotdot css-valuetag css-value css-dots css-dot' style=color:" + cssdelimitercolor + ">:</span>" + rest.substring(1);
+    rest = "<span class='csssymbols csscolon cssvaluetag cssdoubledot cssdotdot csstwodot' style=color:" + cssdelimitercolor + ">:</span>" + rest.substring(1);
     while (rest.search(/!important/i) > -1) {
       s = rest.search(/!important/i);
       done += rest.substring(0, s);
@@ -254,7 +259,7 @@ function tsjCodeColorize(x, lang) {
     }
     result = done + rest;    
     if (result.substr(result.length - 1, 1) == ";" && result.substr(result.length - 6, 6) != "&nbsp;" && result.substr(result.length - 4, 4) != "&lt;" && result.substr(result.length - 4, 4) != "&gt;" && result.substr(result.length - 5, 5) != "&amp;") {
-      result = result.substring(0, result.length - 1) + "<span class='cssdelimiter cssdelimiterlineend css-dotcomma css-lineendtag css-lineend css-dots css-dot' style=color:" + cssdelimitercolor + ";margin-left:2px;>;</span>";
+      result = result.substring(0, result.length - 1) + "<span class='csssymbols csssemicolon cssdotcomma cssendtag' style=color:" + cssdelimitercolor + ";margin-left:2px;>;</span>";
     }
     return "<span class='csspropertyvalue' style=color:" + csspropertyvaluecolor + ">" + result + "</span>";
   }
@@ -297,7 +302,7 @@ function tsjCodeColorize(x, lang) {
     for (i = 0; i < esc.length; i++) {
       rest = rest.replace("TSJJSESCAPE", esc[i]);
     }
-    return "<span class='js js-text' style=color:" + jscolor + ">" + rest + "</span>";
+    return "<span class='js jstext' style=color:" + jscolor + ">" + rest + "</span>";
   }
   function jsStringMode(txt) {
     return "<span class='jsstring' style=color:" + jsstringcolor + ";font-style:oblique;margin-right:4px;>" + txt + "</span>";
@@ -306,7 +311,7 @@ function tsjCodeColorize(x, lang) {
     return "<span class='jskeyword' style=color:" + jskeywordcolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function jsNumberMode(txt) {
-    return "<span class='jsnumber js-num' style=color:" + jsnumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span class='jsnumber jsnum' style=color:" + jsnumbercolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function jsPropertyMode(txt) {
     return "<span class='jsproperty' style=color:" + jspropertycolor + ";font-weight:bold;margin-right:1px;>" + txt + "</span>";
@@ -374,19 +379,19 @@ function tsjCodeColorize(x, lang) {
     for (i = 0; i < esc.length; i++) {
       rest = rest.replace("TSJJSESCAPE", esc[i]);
     }
-    return "<span class='java java-text' style=color:" + javacolor + ">" + rest + "</span>";
+    return "<span class='java javatext' style=color:" + javacolor + ">" + rest + "</span>";
   }
   function javaStringMode(txt) {
-    return "<span class='javastring' style=color:" + javastringcolor + ";font-style:oblique;margin-right:4px;>" + txt + "</span>";
+    return "<span class='javastring' style=color:" + javastringcolor + ";font-style:italic;>" + txt + "</span>";
   }
   function javaKeywordMode(txt) {
     return "<span class='javakeyword' style=color:" + javakeywordcolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function javaNumberMode(txt) {
-    return "<span class='javanumber java-num' style=color:" + javanumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span class='javanumber javanum' style=color:" + javanumbercolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function javaPropertyMode(txt) {
-    return "<span class='javaproperty' style=color:" + javapropertycolor + ";font-weight:bold;margin-right:1px;>" + txt + "</span>";
+    return "<span class='javaproperty' style=color:" + javapropertycolor + ";font-weight:bold;>" + txt + "</span>";
   }
   
   // Kotlin Mode
@@ -424,10 +429,10 @@ function tsjCodeColorize(x, lang) {
     for (i = 0; i < esc.length; i++) {
       rest = rest.replace("TSJJSESCAPE", esc[i]);
     }
-    return "<span class='kotlin kotlin-text' style=color:" + kotlincolor + ">" + rest + "</span>";
+    return "<span class='kotlin kotlintext' style=color:" + kotlincolor + ">" + rest + "</span>";
   }
   function kotlinStringMode(txt) {
-    return "<span class='kotlinstring' style=color:" + kotlinstringcolor + ";font-style:oblique;margin-right:4px;>" + txt + "</span>";
+    return "<span class='kotlinstring' style=color:" + kotlinstringcolor + ";font-style:italic;>" + txt + "</span>";
   }
   function kotlinKeywordMode(txt) {
     return "<span class='kotlinkeyword' style=color:" + kotlinkeywordcolor + ";font-weight:bold;>" + txt + "</span>";
@@ -436,7 +441,7 @@ function tsjCodeColorize(x, lang) {
     return "<span class='kotlinnumber kotlin-num' style=color:" + kotlinnumbercolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function kotlinPropertyMode(txt) {
-    return "<span class='kotlinproperty' style=color:" + kotlinpropertycolor + ";font-weight:bold;margin-right:1px;>" + txt + "</span>";
+    return "<span class='kotlinproperty' style=color:" + kotlinpropertycolor + ";font-weight:bold;>" + txt + "</span>";
   }
   
   // My SQL Mode
@@ -460,16 +465,16 @@ function tsjCodeColorize(x, lang) {
       }
     }
     rest = done + rest;
-    return "<span class='sql SQL sql-text sql-text' style=color:" + sqlcolor + ";>" + rest + "</span>";
+    return "<span class='sql SQL sqltext SQLtext' style=color:" + sqlcolor + ">" + rest + "</span>";
   }
   function sqlStringMode(txt) {
-    return "<span class='sqlstring SQLstring' style=color:" + sqlstringcolor + ";font-style:oblique;margin-right:4px;>" + txt + "</span>";
+    return "<span class='sqlstring SQLstring' style=color:" + sqlstringcolor + ";font-style:italic;>" + txt + "</span>";
   }
   function sqlKeywordMode(txt) {
-    return "<span class='sqlkeyword SQLkeyword' style=color:" + sqlkeywordcolor + ";font-weight:bold;font-style:italic;margin-right:2px;>" + txt + "</span>";
+    return "<span class='sqlkeyword SQLkeyword' style=color:" + sqlkeywordcolor + ";font-weight:bold;font-style:italic;>" + txt + "</span>";
   }
   function sqlNumberMode(txt) {
-    return "<span class='sqlnumber sql-num SQLnumber SQL-num' style=color:" + sqlnumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span class='sqlnumber sqlnum SQLnumber SQLnum' style=color:" + sqlnumbercolor + ";font-weight:bold;>" + txt + "</span>";
   }
   
   // PHP Mode
@@ -494,17 +499,17 @@ function tsjCodeColorize(x, lang) {
       }
     }
     rest = done + rest;
-    rest = "<span class='webtag phptag phptagstart php-and-lt and-lt' style=color:" + phptagcolor + ";font-weight:bold;font-style:italic;>&lt;" + rest.substr(4, 4) + "</span>" + rest.substring(8);
+    rest = "<span class='webfulltag webtag webtag-start webtagname phptag phptag-start' style=color:" + phptagcolor + ";font-weight:bold;font-style:italic;>&lt;" + rest.substr(4, 4) + "</span>" + rest.substring(8);
     if (rest.substr(rest.length - 5, 5) == "?&gt;") {
-      rest = rest.substring(0, rest.length - 5) + "<span class='webtag phptag phptagstop phptagend php-and-gt and-gt' style=color:" + phptagcolor + ";font-weight:bold;font-style:italic;>?&gt;</span>";
+      rest = rest.substring(0, rest.length - 5) + "<span class='webfulltag webtagname webtag webtag-stop phptag phptag-stop' style=color:" + phptagcolor + ";font-weight:bold;font-style:italic;>?&gt;</span>";
     }
-    return "<span class='php php-text' style=color:" + phpcolor + ">" + rest + "</span>";
+    return "<span class='php phptext' style=color:" + phpcolor + ">" + rest + "</span>";
   }
   function phpStringMode(txt) {
     return "<span class='phpstring' style=color:" + phpstringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
   }
   function phpNumberMode(txt) {
-    return "<span class='phpnumber php-num' style=color:" + phpnumbercolor + ";font-weight:bold;font-style:italic;>" + txt + "</span>";
+    return "<span class='phpnumber phpnum' style=color:" + phpnumbercolor + ";font-weight:bold;font-style:italic;>" + txt + "</span>";
   }
   function phpKeywordMode(txt) {
     var glb = ["$GLOBALS","$_SERVER","$_REQUEST","$_POST","$_GET","$_FILES","$_ENV","$_COOKIE","$_SESSION"];
@@ -541,13 +546,13 @@ function tsjCodeColorize(x, lang) {
       }
     }
     rest = done + rest;
-    return "<span class='python python-text' style=color:" + pythoncolor + ">" + rest + "</span>";
+    return "<span class='python pythontext' style=color:" + pythoncolor + ">" + rest + "</span>";
   }
   function pythonStringMode(txt) {
     return "<span class='pythonstring' style=color:" + pythonstringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
   }
   function pythonNumberMode(txt) {
-    return "<span class='pythonnumber python-num' style=color:" + pythonnumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span class='pythonnumber pythonnum' style=color:" + pythonnumbercolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function pythonKeywordMode(txt) {
     return "<span class='pythonkeyword' style=color:" + pythonkeywordcolor + ";font-weight:bold;margin-right:2px;>" + txt + "</span>";
@@ -653,3 +658,5 @@ function tsjCodeColorize(x, lang) {
     return [-1, -1, func];
   }  
 }
+
+// End 
