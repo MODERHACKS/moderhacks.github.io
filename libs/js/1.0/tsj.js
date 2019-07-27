@@ -1,4 +1,11 @@
-/* TSJ™JS 1.0 July 2019 by Debarchito */
+/* 
+
+  *TSJ™JS 
+  *1.0 
+  *July 2019 
+  *by Debarchito Nath 
+
+*/
 
 "use strict";
 var tsj = {};
