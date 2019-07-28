@@ -58,7 +58,7 @@ tsj.toggleShow = function (sel) {
     }
   }
 };
-tsj.addClass = function (sel, name) {
+tsj.addClass = tsj.addclass = function (sel, name) {
   tsj.addClassElements(tsj.getElements(sel), name);
 };
 tsj.addClassElements = function (elements, name) {
