@@ -9,7 +9,6 @@
 */
 
 "use strict";
-
 var tsj = {};
 tsj.hide = function (sel) {
   tsj.hideElements(tsj.getElements(sel));
@@ -37,7 +36,7 @@ tsj.showElements = function (elements) {
 tsj.showElement = function (element) {
   tsj.styleElement(element, "display", "block");
 };
-tsj.style = function (sel, prop, val) {
+tsj.addStyle = tsj.addstyle = function (sel, prop, val) {
   tsj.styleElements(tsj.getElements(sel), prop, val);
 };
 tsj.styleElements = function (elements, prop, val) {
@@ -408,7 +407,7 @@ tsj.displayObject = function (id, data) {
     a.innerHTML = a.innerHTML.replace(r, result);
   }
 };
-	
+
 /* tsjStyler.js */
 
 "use strict";
@@ -795,7 +794,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _api.id = function () {
 	    return _id;
 	  };
-	  _api.add = _api.update = function (rawRules, parent, addAt, considerAsNew) {
+	  _api.add = _api.update = _api.toStyle = _api.tostyle = _api.style = function (rawRules, parent, addAt, considerAsNew) {
 	    var rule, prop, tmpRawRules, cssProps, props, nestedRules, selector, tmp;
 	    var created = [];
 	
@@ -953,7 +952,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return rule;
 	  };
 	
-	  _api.ng = _api.d = function (rawRules) {
+  _api.css = _api.descendant = _api.d = _api.offspring = _api.offs = _api.ofs = _api.content = _api.cntnt = _api.ctnt = _api.ng = _api.nextgen = _api.nextgeneration = _api.letsStyle = _api.letsstyle = _api.CSS = _api.addCSS = _api.addcss = _api.addCss = _api.makeup = function (rawRules) {
 	    var selector;
 	
 	    if (typeof rawRules === 'function') rawRules = rawRules();
@@ -964,55 +963,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return _api.stylesheet.add(rawRules, this.parent, this.index);
 	  };
-	  
-	  _api.css = _api.d = function (rawRules) {
-	    var selector;
-	
-	    if (typeof rawRules === 'function') rawRules = rawRules();
-	
-	    for (selector in rawRules) {
-	      rawRules[_api.selector + ' ' + selector] = rawRules[selector];
-	      delete rawRules[selector];
-	    }
-	    return _api.stylesheet.add(rawRules, this.parent, this.index);
-	  };
-	  
-	  _api.ofs = _api.d = function (rawRules) {
-	    var selector;
-	
-	    if (typeof rawRules === 'function') rawRules = rawRules();
-	
-	    for (selector in rawRules) {
-	      rawRules[_api.selector + ' ' + selector] = rawRules[selector];
-	      delete rawRules[selector];
-	    }
-	    return _api.stylesheet.add(rawRules, this.parent, this.index);
-	  };
-	  
-	  _api.cnt = _api.d = function (rawRules) {
-	    var selector;
-	
-	    if (typeof rawRules === 'function') rawRules = rawRules();
-	
-	    for (selector in rawRules) {
-	      rawRules[_api.selector + ' ' + selector] = rawRules[selector];
-	      delete rawRules[selector];
-	    }
-	    return _api.stylesheet.add(rawRules, this.parent, this.index);
-	  };
-	  
-	  _api.content = _api.d = function (rawRules) {
-	    var selector;
-	
-	    if (typeof rawRules === 'function') rawRules = rawRules();
-	
-	    for (selector in rawRules) {
-	      rawRules[_api.selector + ' ' + selector] = rawRules[selector];
-	      delete rawRules[selector];
-	    }
-	    return _api.stylesheet.add(rawRules, this.parent, this.index);
-	  };
-	  
+	 
 	  _api.nested = _api.n = function (rawRules) {
 	    return _api.stylesheet.add(rawRules, this);
 	  };
@@ -1626,12 +1577,12 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 ;
 
-// Extra
-
-var tsjStyler = tsjStyler(), style = tsjStyler.add("body") , body = tsjStyler.add("body");
-
-// CSS Properties
+// CSS Hiphenless Properties
 
 var color = "color" , padding = "padding" , margin ="margin" , overflow = "overflow" , background = "background" , display = "display" , visibility = "visibility" , resize = "resize" , border = "border" , outline = "outline" , none = "none" , height = "height" , width = "width" , font = "font" , position = "position" , float = "float" , left = "left" , right = "right" , top = "top" , bottom ="bottom" , text = "text" , opacity = "opacity" , content = "content" , quotes = "quotes" , flex = "flex" , order = "order" , columns = "columns" , direction = "direction" , animation = "animation" , transform = "transform" , perspective = "perspective" , transition = "transition" , clear = "clear" , clip = "clip" , cursor = "cursor";
+
+// HTML Tagnames
+
+var  h1 = "h1", h2 = "h2", h3 = "h3", h4 = "h4", h5 = "h5", h6 = "h6", span = "span", pre = "pre", p = "p", small = "small", sup = "sup", sub = "sub", attr = "attr", b = "b", i = "i", s = "s", a  = "a", address = "address", audio = "audio" , video = "video", area = "area", article =  "article", aside = "aside", div = "div", base = "base", bdi = "bdi", bdo = "bdo", center = "center", blockquote = "blockquote", br = "br", canvas = "canvas", svg = "svg", caption = "caption", cite = "cite", code = "code", col = "col", colgroup = "colgroup", data = "data", datalist = "datalist", dd = "dd", del = "del", details = "details", dfn = "dfn" , dialog = "dialog", ul = "ul", header = "header", footer = "footer", section = "section", img = "img", dl = "dl", dt = "dt", em = "em", embed = "embed", fieldset = "fieldset", figcaption = "figcaption", figure = "figure", form = "form", hr = "hr", iframe = "iframe", input = "input", ins = "ins", kbd = "kbd", label = "label", legend = "legend", li = "li", link = "link", script = "script", main = "main", map = "map", mark = "mark", meta = "meta", meter = "meter", nav = "nav", noscript = "noscript", object = "object", ol = "ol", option = "option", optgroup = "optgroup", output = "output", param = "param", picture = "picture", progress = "progress", q = "q", rp = "rp", rt = "rt", ruby = "ruby", samp = "samp", select = "select", source = "source", strong = "strong", summary = "summary", table = "table", tbody = "tbody", td = "td", template = "template" , tfoot = "tfoot", th = "th", thead = "thead", time = "time", title = "title", tr = "tr", track = "track", tt = "tt", u = "u", wbr = "wbr", strike = "strike", noframes = "noframes", frame = "frame", frameset = "frameset" , font = "font", dir = "dir", big = "big", basefont = "basefont", applet = "applet", acronym = "acronym", button = "button", textarea = "textarea";
 
 // End
