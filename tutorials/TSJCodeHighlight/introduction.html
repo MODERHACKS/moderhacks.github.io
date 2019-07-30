@@ -8,15 +8,22 @@
 <meta property="og:url" content="https://moderhacks.github.io/" />
 <link rel="stylesheet" href="../../libs/css/2-x/v2/tsj.css" />
 <link rel="stylesheet" href="../../libs/usage/css/w3/w3.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <style>
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web|Fjalla+One|Lobster|Rubik+Mono+One|Lato&display=swap');
 .tsj-TW {font-family : 'Titillium Web', sans-serif;} .tsj-RMO {font-family : 'Rubik Mono One', sans-serif;} .tsj-Lo {font-family : 'Lobster', cursive;} .tsj-FO {font-family : 'Fjalla One', sans-serif;} .tsj-La {font-family : 'Lato' , sans-serif;} .tsj-screentext {text-align:justify;text-justify:inter-word;}
 </style>
 <body style="font-size:16px;">
 
-<div class="w3-top bg-black" style="border-bottom:2px solid white;">
-    <a href="../../index.html" class="w3-left w3-bar-item w3-button tsj-padding-large tsj-TW animate-O">Project TSJ™ - Tutorials</a>
-    <button class="tsj-button w3-right outline-none" style="margin-top:5px; margin-bottom: 5px;" onclick="document.getElementById('mainmenu').style.display='block'">&equiv;</button>
+<!-- Scroll to top animated -->
+<div class="display-bottom margin-B">
+<button style='width:20%; border : 2px solid #333;padding :6px 0px 2px 0px!important;' onclick="tsj.show('#mainmenu')" class="animate-Z w3-right margin-R bg-black outline-off radius-xl box-shadow	"><i class="material-icons large">menu</i></button>
+<button id='goTop' title='Go to top' style='width:20%; border : 2px solid #333;display:none; padding :6px 0px 2px 0px!important;' class='animate-R w3-right margin-R bg-black outline-off radius-xl box-shadow'><i class="material-icons large">arrow_upward</i></button>
+</div>
+
+<div class="w3-top bg-black box-shadow"style="border-bottom-right-radius:30px;border-bottom-left-radius:30px;">
+    <a href="../../index.html" class="w3-left w3-bar-item tsj-btn tsj-padding-large tsj-TW animate-O box-shadow bg-light-grey radius-R@j" style="margin-top:4px;margin-bottom:12px;border-bottom-left-radius:10px;">Project TSJ™ - Tutorials</a>
+    <b><a class="w3-right w3-bar-item tsj-btn tsj-padding-large tsj-TW animate-O box-shadow bg-grey radius-L@j text-black" style="margin-top:4px;margin-bottom:12px;border-bottom-right-radius:10px;">Page 1</a></b>
        </div>
        
        <div class="w3-content" style="max-width:2000px;margin-top:46px">
@@ -313,13 +320,26 @@ END; <br />
 <footer class="w3-container w3-center radius-xl w3-black w3-small margin padding box-shadow">
 <a style="text-decoration:none;font-weight:bold;" href="https://moderhacks.weebly.com">MOD ER HACKS ( Debarchito Nath )</a> © Copyright 2019 | ALL RIGHTS RESERVED
 </footer>   
+<br />  <br /> <br />
 <style>   
 .active { background : lightgrey!important; border-radius : 12px; }
 </style>    
+<!-- TSJ™JS Source -->
 <script src="../../libs/js/1-x/v1.5/tsj.js"></script>
+<!-- TSJ™ Code Highlight Source -->
 <script src="../../libs/ext/js/tsj-code-highlight/1-x/v1/tch.js"></script>
+<!-- jQuery v3.4.1 Minified Source -->
+<script src="../../libs/usage/js/jQuery/min/jquery-3.4.1.min.js"></script>
 <script>
+// TSJ™ Code Highlight JS Function
 tsjCodeHighlight();
+// Scroll To Top Visibility
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() { if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { document.getElementById("goTop").style.display = "block"; } else { document.getElementById("goTop").style.display = "none"; } }
+// Scroll To Top
+$('#goTop').click(function(){ 
+$('html,body').animate({ scrollTop: 0 }, 210);
+return false;  });
 </script>
 </body>
 </html>
