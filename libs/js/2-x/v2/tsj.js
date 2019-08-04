@@ -6,7 +6,7 @@
 
    *TSJ™JS ( https://moderhacks.github.io )
    *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
-   *August 2019 ( 3nd Update )
+   *August 2019 ( 3rd Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
    *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.2
    
