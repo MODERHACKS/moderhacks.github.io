@@ -6,7 +6,7 @@
 
    *TSJ™JS ( https://moderhacks.github.io )
    *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
-   *August 2019 ( 3rd Update )
+   *August 2019 ( 3nd Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
    *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.2
    
@@ -21,8 +21,11 @@ tsj.write =  function(sel, txt) { var randomVar_52j9Gy = document.querySelector(
 tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  function(sel, crt, cnt) { var randomVar_Huu56j = document.querySelector(sel);
 var randomVar_Bg56jU = document.createElement(crt); randomVar_Bg56jU.textContent = cnt; randomVar_Huu56j.appendChild(randomVar_Bg56jU) };
 tsj.nWrite = tsj.newWrite = tsj.nwrite = tsj.newwrite = tsj.html = function(cnt) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563); };
-tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite =  tsj.nCreateElmWrite = tsj.newCreateElmWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.nHtml = tsj.nhtml = tsj.createElement = tsj.createelement = tsj.cElement = tsj.celement = tsj.cElm = tsj.celm = function(crt, cnt) { 
-var randomVar_Bj56jU = document.createElement(crt); randomVar_Bj56jU.textContent = cnt; document.body.appendChild(randomVar_Bj56jU) };
+tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite =  tsj.nCreateElmWrite = tsj.newCreateElmWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.nHtml = tsj.nhtml = tsj.createElement = tsj.createelement = tsj.cElement = tsj.celement = tsj.cElm = tsj.celm =  function(crt, cnt, attributes){
+var randomVar_563jhU = document.createElement(crt);
+randomVar_563jhU.textContent = cnt; document.body.appendChild(randomVar_563jhU);
+for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]); }
+return randomVar_563jhU; return document.body.appendChild(this.parentElement); };
 tsj.click = tsj.on = function(sel, clk) {
 document.querySelector(sel).onclick =  clk; };
 tsj.hide = function(sel) { document.querySelector(sel).style.display = 'none'; };
