@@ -17,25 +17,152 @@
 "use strict";
 
 var tsj = {};
-tsj.write =  function(sel, txt) { var randomVar_52j9Gy = document.querySelector(sel); var randomVar_52j9Gu = document.createTextNode(txt); randomVar_52j9Gy.appendChild(randomVar_52j9Gu); };
-tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  function(sel, crt, cnt) { var randomVar_Huu56j = document.querySelector(sel);
-var randomVar_Bg56jU = document.createElement(crt); randomVar_Bg56jU.textContent = cnt; randomVar_Huu56j.appendChild(randomVar_Bg56jU) };
+
+tsj.write = tsj.calc = function(sel, txt) { var randomVar_52j9Gy = document.querySelector(sel); var randomVar_52j9Gu = document.createTextNode(txt); randomVar_52j9Gy.appendChild(randomVar_52j9Gu); };
+
+tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  function(sel, crt, cnt, attributes) { var randomVar_Huu56j = document.querySelector(sel);
+var randomVar_Bg56jU = document.createElement(crt); randomVar_Bg56jU.textContent = cnt; randomVar_Huu56j.appendChild(randomVar_Bg56jU); for(let key in attributes){ randomVar_Bg56jU.setAttribute(key, attributes[key]); }
+return randomVar_Bg56jU; return randomVar_Huu56j.appendChild(this.parentElement); };
+
 tsj.nWrite = tsj.newWrite = tsj.nwrite = tsj.newwrite = tsj.html = function(cnt) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563); };
+
 tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite =  tsj.nCreateElmWrite = tsj.newCreateElmWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.nHtml = tsj.nhtml = tsj.createElement = tsj.createelement = tsj.cElement = tsj.celement = tsj.cElm = tsj.celm =  function(crt, cnt, attributes){
 var randomVar_563jhU = document.createElement(crt);
 randomVar_563jhU.textContent = cnt; document.body.appendChild(randomVar_563jhU);
 for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]); }
 return randomVar_563jhU; return document.body.appendChild(this.parentElement); };
+
 tsj.click = tsj.on = function(sel, clk) {
 document.querySelector(sel).onclick =  clk; };
-tsj.hide = function(sel) { document.querySelector(sel).style.display = 'none'; };
-tsj.show = function(sel) { document.querySelector(sel).style.display = 'block'; };
-tsj.toggleShow = function(sel) { var randomVar_85HjZ6 = document.querySelector(sel); if ( randomVar_85HjZ6.style.display === 'none') { randomVar_85HjZ6.style.display = 'block'; } else { randomVar_85HjZ6.style.display = 'none'; }; };
-tsj.addClass = tsj.aClass = tsj.addclass = tsj.aclass = function(sel, cls) { document.querySelector(sel).classList.add(cls); };
-tsj.removeClass = tsj.rClass = tsj.removeclass = tsj.rclass = function(sel, cls) { document.querySelector(sel).classList.remove(cls); }; 
-tsj.toggleClass = tsj.tClass = tsj.toggleclass = tsj.tclass = tsj.tgClass = tsj.tgclass = function(sel, cls){ document.querySelector(sel).classList.toggle(cls); }; 
+
 tsj.css = tsj.style =  function(cnt) { 
 var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textContent = cnt; document.body.appendChild(randomVar_Bj56kU)};
+
+tsj.hide = function (sel) {
+  tsj.hideElements(tsj.getElements(sel));
+};
+tsj.hideElements = function (elements) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {
+    tsj.hideElement(elements[i]);
+  }
+};
+tsj.hideElement = function (element) {
+  tsj.styleElement(element, "display", "none");
+};
+tsj.show = function (sel, a) {
+  var elements = tsj.getElements(sel);
+  if (a) {tsj.hideElements(elements);}
+  tsj.showElements(elements);
+};
+tsj.showElements = function (elements) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {
+    tsj.showElement(elements[i]);
+  }
+};
+tsj.showElement = function (element) {
+  tsj.styleElement(element, "display", "block");
+};
+tsj.addStyle = tsj.addstyle = function (sel, prop, val) {
+  tsj.styleElements(tsj.getElements(sel), prop, val);
+};
+tsj.styleElements = function (elements, prop, val) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {    
+    tsj.styleElement(elements[i], prop, val);
+  }
+};
+tsj.styleElement = function (element, prop, val) {
+  element.style.setProperty(prop, val);
+};
+tsj.toggleShow = function (sel) {
+  var i, x = tsj.getElements(sel), l = x.length;
+  for (i = 0; i < l; i++) {    
+    if (x[i].style.display == "none") {
+      tsj.styleElement(x[i], "display", "block");
+    } else {
+      tsj.styleElement(x[i], "display", "none");
+    }
+  }
+};
+tsj.addClass = tsj.addclass = tsj.aClass = tsj.aclass = function (sel, name) {
+  tsj.addClassElements(tsj.getElements(sel), name);
+};
+tsj.addClassElements = function (elements, name) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {
+    tsj.addClassElement(elements[i], name);
+  }
+};
+tsj.addClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+};
+tsj.removeClass = tsj.removeclass = tsj.rClass = tsj.rclass = function (sel, name) {
+  tsj.removeClassElements(tsj.getElements(sel), name);
+};
+tsj.removeClassElements = function (elements, name) {
+  var i, l = elements.length, arr1, arr2, j;
+  for (i = 0; i < l; i++) {
+    tsj.removeClassElement(elements[i], name);
+  }
+};
+tsj.removeClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+};
+tsj.toggleClass = tsj.toggleclass = tsj.tClass = tsj.tclass = tsj.tgClass = tsj.tgclass = function (sel, c1, c2) {
+  tsj.toggleClassElements(tsj.getElements(sel), c1, c2);
+};
+tsj.toggleClassElements = function (elements, c1, c2) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {    
+    tsj.toggleClassElement(elements[i], c1, c2);
+  }
+};
+tsj.toggleClassElement = function (element, c1, c2) {
+  var t1, t2, t1Arr, t2Arr, j, arr, allPresent;
+  t1 = (c1 || "");
+  t2 = (c2 || "");
+  t1Arr = t1.split(" ");
+  t2Arr = t2.split(" ");
+  arr = element.className.split(" ");
+  if (t2Arr.length == 0) {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      tsj.removeClassElement(element, t1);
+    } else {
+      tsj.addClassElement(element, t1);
+    }
+  } else {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      tsj.removeClassElement(element, t1);
+      tsj.addClassElement(element, t2);          
+    } else {
+      tsj.removeClassElement(element, t2);        
+      tsj.addClassElement(element, t1);
+    }
+  }
+};
 tsj.getElements = function (id) {
   if (typeof id == "object") {
     return [id];
