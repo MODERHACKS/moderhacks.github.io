@@ -1,5 +1,5 @@
 /*!
-  
+ 
    ** ****** ** *********
 
    *TSJ™JS ( https://moderhacks.github.io )
@@ -30,13 +30,36 @@ randomVar_563jhU.textContent = cnt; document.body.appendChild(randomVar_563jhU);
 for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]); }
 return randomVar_563jhU; return document.body.appendChild(this.parentElement); };
 
-tsj.click = tsj.on = function(sel, clk) {
+tsj.get = function(sel) { return document.querySelector(sel); };
+
+tsj.click = function(sel, clk) {
 document.querySelector(sel).onclick =  clk; };
+
+tsj.change = function(sel, cng) {
+document.querySelector(sel).onchange =  cng; };
+
+tsj.load = function(sel, ld) {
+document.querySelector(sel).onload =  ld; };
+
+tsj.mouseover = function(sel, omo) {
+document.querySelector(sel).onmouseover =  omo; };
+
+tsj.mouseout = function(sel, omu) {
+document.querySelector(sel).onmouseout =  omu; };
+
+tsj.keydown = function(sel, kyd) {
+document.querySelector(sel).onkeydown =  kyd; };
+
+tsj.clone = function(sel, attributes) {
+var randomVar_77777j = document.getElementsByTagName(sel)[0]; var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j);
+for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement); }
 
 tsj.css = tsj.style =  function(cnt) { 
 var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textContent = cnt; document.body.appendChild(randomVar_Bj56kU)};
 
-tsj.html = tsj.htm = tsj.HTML = tsj.HTM = function(cnt) { var randomVar_hjxx63 = document.createElement("body"); randomVar_hjxx63.innerHTML = cnt; document.body.appendChild(randomVar_hjxx63); };
+tsj.head = tsj.head = function(cnt) { var randomVar_hjxx73 = document.createElement("head"); randomVar_hjxx73.innerHTML = cnt; document.body.appendChild(randomVar_hjxx73); };
+
+tsj.body = tsj.BODY = function(cnt) { var randomVar_hjxx63 = document.createElement("body"); randomVar_hjxx63.innerHTML = cnt; document.body.appendChild(randomVar_hjxx63); };
 
 tsj.hide = function (sel) {
   tsj.hideElements(tsj.getElements(sel));
