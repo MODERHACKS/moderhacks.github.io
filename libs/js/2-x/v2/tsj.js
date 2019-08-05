@@ -1,7 +1,5 @@
 /*!
- 
- Size : 14.04 KB
- 
+  
    ** ****** ** *********
 
    *TSJ™JS ( https://moderhacks.github.io )
