@@ -24,9 +24,9 @@ tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  fu
 var randomVar_Bg56jU = document.createElement(crt); randomVar_Bg56jU.textContent = cnt; randomVar_Huu56j.appendChild(randomVar_Bg56jU); for(let key in attributes){ randomVar_Bg56jU.setAttribute(key, attributes[key]); }
 return randomVar_Bg56jU; return randomVar_Huu56j.appendChild(this.parentElement); };
 
-tsj.nWrite = tsj.newWrite = tsj.nwrite = tsj.newwrite = tsj.html = function(cnt) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563); };
+tsj.nWrite = tsj.newWrite = tsj.nwrite = tsj.newwrite = function(cnt) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563); };
 
-tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite =  tsj.nCreateElmWrite = tsj.newCreateElmWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.nHtml = tsj.nhtml = tsj.createElement = tsj.createelement = tsj.cElement = tsj.celement = tsj.cElm = tsj.celm =  function(crt, cnt, attributes){
+tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite =  tsj.nCreateElmWrite = tsj.newCreateElmWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.createElement = tsj.createelement = tsj.cElement = tsj.celement = tsj.cElm = tsj.celm =  function(crt, cnt, attributes){
 var randomVar_563jhU = document.createElement(crt);
 randomVar_563jhU.textContent = cnt; document.body.appendChild(randomVar_563jhU);
 for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]); }
@@ -37,6 +37,8 @@ document.querySelector(sel).onclick =  clk; };
 
 tsj.css = tsj.style =  function(cnt) { 
 var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textContent = cnt; document.body.appendChild(randomVar_Bj56kU)};
+
+tsj.html = tsj.htm = tsj.HTML = tsj.HTM = function(cnt) { var randomVar_hjxx63 = document.createElement("body"); randomVar_hjxx63.innerHTML = cnt; document.body.appendChild(randomVar_hjxx63); };
 
 tsj.hide = function (sel) {
   tsj.hideElements(tsj.getElements(sel));
