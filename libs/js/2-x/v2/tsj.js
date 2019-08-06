@@ -8,7 +8,8 @@
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
    *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.2
    *Syntax optimised to support more browsers
-   
+   *Under MIT License ( https://moderhacks.github.io/LICENSE.html )
+
    ** ****** ** *********
    
 */
