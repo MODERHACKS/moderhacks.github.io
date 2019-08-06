@@ -3,10 +3,10 @@
    ** ****** ** *********
 
    *TSJ™JS ( https://moderhacks.github.io )
-   *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
-   *August 2019 ( 3rd Update )
+   *v2.5 ( https://moderhacks.github.io/libs/js/2-x/v2.5/tsj.js )
+   *August 2019 ( 4th Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
-   *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.2
+   *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.5
    
    ** ****** ** *********
    
@@ -30,7 +30,7 @@ randomVar_563jhU.textContent = cnt; document.body.appendChild(randomVar_563jhU);
 for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]); }
 return randomVar_563jhU; return document.body.appendChild(this.parentElement); };
 
-var $ = tsj.get = tsj.GET = function(sel) { return document.querySelector(sel); }; 
+var GET = tsj.get = tsj.GET = function(sel) { return document.querySelector(sel); };  var get = function(sel) { return document.querySelector(sel); }; 
 
 tsj.click = tsj.tap = tsj.ontap = function(sel, clk) {
 document.querySelector(sel).onclick =  clk; };
