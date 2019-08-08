@@ -477,4 +477,11 @@ tsj.displayObject = function (id, data) {
   }
 };
 
+Element.prototype.event = function(evnt, clk) { return this.addEventListener(evnt, clk); };
+Element.prototype.hide = function() { return this.style.display = 'none' };
+Element.prototype.show = function() { return this.style.display = 'block' };
+Element.prototype.toggleShow = function() { if ( this.style.display === "none" ) { this.style.display = "block"; } else { this.style.display = "none"; } };
+Element.prototype.addClass = function(sel) { return this.className = sel; };
+Element.prototype.removeClass = function(sel) { return this.classList.remove(sel); };
+
 // End
