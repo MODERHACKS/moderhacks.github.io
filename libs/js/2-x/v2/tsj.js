@@ -6,6 +6,7 @@
    *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
    *August 2019 ( 4th Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
+   *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
    *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.4
    *Syntax optimised to support more browsers ( Supported by IE8 +, Chrome, Firefox, Safari, Edge, Opera etc. )
    
