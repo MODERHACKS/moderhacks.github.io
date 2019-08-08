@@ -6,10 +6,9 @@
    *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
    *August 2019 ( 4th Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
-   *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.2
-   *Syntax optimised to support more browsers
-   *Under MIT License ( https://moderhacks.github.io/LICENSE.html )
-
+   *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.4
+   *Syntax optimised to support more browsers ( Supported by IE8 +, Chrome, Firefox, Safari, Edge, Opera etc. )
+   
    ** ****** ** *********
    
 */
@@ -18,13 +17,16 @@
 
 var tsj = {};
 
-tsj.write = tsj.calc = function(sel, txt) { var randomVar_52j9Gy = document.querySelector(sel); var randomVar_52j9Gu = document.createTextNode(txt); randomVar_52j9Gy.appendChild(randomVar_52j9Gu); };
+tsj.write = tsj.append = function(sel, txt) { var randomVar_008eff = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_008eff.length; espr++){  randomVar_008eff[espr].innerHTML += txt;
+} };
 
-tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  function(sel, crt, cnt, attributes) { var randomVar_Huu56j = document.querySelector(sel);
+tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  function(sel, num, crt, cnt, attributes) { var randomVar_Huu56j = document.querySelectorAll(sel)[num];
 var randomVar_Bg56jU = document.createElement(crt); randomVar_Bg56jU.textContent = cnt; randomVar_Huu56j.appendChild(randomVar_Bg56jU); for(let key in attributes){ randomVar_Bg56jU.setAttribute(key, attributes[key]); }
 return randomVar_Bg56jU; return randomVar_Huu56j.appendChild(this.parentElement); };
 
-tsj.nWrite = tsj.newWrite = tsj.nwrite = tsj.newwrite = function(cnt) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563) || document.documentElement.appendChild(randomVar_hjg563); };
+tsj.nWrite = tsj.newWrite = tsj.nwrite = tsj.newwrite = function(cnt, attributes) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563) || document.documentElement.appendChild(randomVar_hjg563); for(let key in attributes){ randomVar_hjg563.setAttribute(key, attributes[key]); }
+return randomVar_hjg563; return document.body.appendChild(this.parentElement) ||
+document.documentElement.appendChild(this.parentElement); };
 
 tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite =  tsj.nCreateElmWrite = tsj.newCreateElmWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.createElement = tsj.createelement = tsj.cElement = tsj.celement = tsj.cElm = tsj.celm =  function(crt, cnt, attributes){
 var randomVar_563jhU = document.createElement(crt);
@@ -33,32 +35,42 @@ for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]);
 return randomVar_563jhU; return document.body.appendChild(this.parentElement) ||
 document.documentElement.appendChild(this.parentElement); };
 
-var GET = tsj.get = tsj.GET = function(sel) { return document.querySelector(sel); };  var get = function(sel) { return document.querySelector(sel); }; 
+var get = tsj.get = tsj.GET = function (sel, num, scope) { scope = scope ? scope : window.document; return scope.querySelectorAll(sel)[num]; }; var GET = function (sel, scope) { scope = scope ? scope : window.document; return scope.querySelectorAll(sel)[num]; };
 
-tsj.click = tsj.tap = tsj.ontap = function(sel, clk) {
-document.querySelector(sel).onclick =  clk; };
+tsj.click = tsj.tap = tsj.ontap  = function(sel, clk) {
+var randomVar_216963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_216963.length; espr++) {  randomVar_216963[espr].onclick = clk; } };
 
-tsj.change = function(sel, cng) {
-document.querySelector(sel).onchange =  cng; };
+tsj.change = function(sel, clk) {
+var randomVar_217963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_217963.length; espr++) {  randomVar_217963[espr].onchange = clk; } };
 
-tsj.load = function(sel, ld) {
-document.querySelector(sel).onload =  ld; };
+tsj.load = function(sel, clk) {
+var randomVar_226963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_226963.length; espr++) {  randomVar_226963[espr].onload = clk; } };
 
-tsj.mouseover = function(sel, omo) {
-document.querySelector(sel).onmouseover =  omo; };
+tsj.mouseover = function(sel, clk) {
+var randomVar_326963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_326963.length; espr++) {  randomVar_326963[espr].onmouseover = clk; } };
 
-tsj.mouseout = function(sel, omu) {
-document.querySelector(sel).onmouseout =  omu; };
+tsj.mouseout = function(sel, clk) {
+var randomVar_426963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_426963.length; espr++) {  randomVar_426963[espr].onmouseout = clk; } };
 
-tsj.keydown = function(sel, kyd) {
-document.querySelector(sel).onkeydown =  kyd; };
+tsj.keyup = function(sel, clk) {
+var randomVar_526963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_526963.length; espr++) {  randomVar_526963[espr].onkeyup = clk; } };
 
-tsj.addEvent = tsj.addevent = tsj.event = tsj.eventListener = tsj.eventlistener = tsj.addEventListener = tsj.addeventlistener = function(sel, evnt, clk) {
-document.querySelector(sel).addEventListener(evnt, clk)};
+tsj.keydown = function(sel, clk) {
+var randomVar_626963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_626963.length; espr++) {  randomVar_626963[espr].onkeydown = clk; } };
 
-tsj.clone = tsj.cloneElement = tsj.cloneElm = function(sel, attributes) {
-var randomVar_77777j = document.getElementsByTagName(sel)[0]; var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j) || document.documentElement.appendChild(randomVar_66666j);
-for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement) || document.documentElement.appendChild(this.parentElement); }
+tsj.keypress = function(sel, clk) {
+var randomVar_726963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_726963.length; espr++) {  randomVar_726963[espr].onkeypress = clk; } };
+
+tsj.addEvent = tsj.addevent = tsj.aevent = tsj.aEvent = tsj.aEventListener = tsj.aeventlistener = tsj.addEventListener = tsj.addeventlistener = function(sel, evnt, clk) { var randomVar_826963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_826963.length; espr++) { randomVar_826963[espr].addEventListener(evnt, clk); } };
+
+tsj.empty = function(sel, num) {
+var randomVar_fghyui = document.querySelectorAll(sel)[num];
+while (randomVar_fghyui.hasChildNodes()) { randomVar_fghyui.removeChild(randomVar_fghyui.firstChild);
+} };
+
+tsj.clone = tsj.cloneElement = tsj.cloneElm = function(sel, num, attributes) { 
+var randomVar_77777j = document.getElementsByTagName(sel)[num]; var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j) || document.documentElement.appendChild(randomVar_66666j);
+for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement) || document.documentElement.appendChild(this.parentElement); } 
 
 tsj.css = tsj.style =  tsj.styleElement = tsj.styleElm = function(cnt) { 
 var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textContent = cnt; document.head.appendChild(randomVar_Bj56kU) || document.documentElement.appendChild(randomVar_Bj56kU); };
@@ -464,12 +476,5 @@ tsj.displayObject = function (id, data) {
     a.innerHTML = a.innerHTML.replace(r, result);
   }
 };
-
-Element.prototype.event = function(evnt, clk) { return this.addEventListener(evnt, clk); };
-Element.prototype.hide = function() { return this.style.display = 'none' };
-Element.prototype.show = function() { return this.style.display = 'block' };
-Element.prototype.toggleShow = function() { if ( this.style.display === "none" ) { this.style.display = "block"; } else { this.style.display = "none"; } };
-Element.prototype.addClass = function(sel) { return this.className = sel; };
-Element.prototype.removeClass = function(sel) { return this.classList.remove(sel); };
 
 // End
