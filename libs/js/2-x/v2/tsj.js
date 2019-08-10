@@ -6,7 +6,6 @@
    *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
    *August 2019 ( 4th Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
-   *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
    *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.4
    *Syntax optimised to support more browsers ( Supported by IE8 +, Chrome, Firefox, Safari, Edge, Opera etc. )
    
@@ -36,7 +35,7 @@ for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]);
 return randomVar_563jhU; return document.body.appendChild(this.parentElement) ||
 document.documentElement.appendChild(this.parentElement); };
 
-var get = tsj.get = tsj.GET = function (sel, num, scope) { scope = scope ? scope : window.document; return scope.querySelectorAll(sel)[num]; }; var GET = function (sel, scope) { scope = scope ? scope : window.document; return scope.querySelectorAll(sel)[num]; };
+var get = tsj.get = tsj.GET = function (sel, scope) { scope = scope ? scope : window.document; return scope.querySelector(sel); }; var GET = function (sel, scope) { scope = scope ? scope : window.document; return scope.querySelector(sel); };
 
 tsj.click = tsj.tap = tsj.ontap  = function(sel, clk) {
 var randomVar_216963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_216963.length; espr++) {  randomVar_216963[espr].onclick = clk; } };
@@ -65,13 +64,12 @@ var randomVar_726963 = document.querySelectorAll(sel); for(var espr = 0; espr < 
 tsj.addEvent = tsj.addevent = tsj.aevent = tsj.aEvent = tsj.aEventListener = tsj.aeventlistener = tsj.addEventListener = tsj.addeventlistener = function(sel, evnt, clk) { var randomVar_826963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_826963.length; espr++) { randomVar_826963[espr].addEventListener(evnt, clk); } };
 
 tsj.empty = function(sel, num) {
-var randomVar_fghyui = document.querySelectorAll(sel)[num];
-while (randomVar_fghyui.hasChildNodes()) { randomVar_fghyui.removeChild(randomVar_fghyui.firstChild);
-} };
+num = num ? num : 0; 
+var rVempty = document.querySelectorAll(sel)[num];
+while (rVempty.firstChild) { rVempty.removeChild(rVempty.firstChild); }; }; 
 
 tsj.clone = tsj.cloneElement = tsj.cloneElm = function(sel, num, attributes) { 
-var randomVar_77777j = document.getElementsByTagName(sel)[num]; var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j) || document.documentElement.appendChild(randomVar_66666j);
-for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement) || document.documentElement.appendChild(this.parentElement); } 
+var randomVar_77777j = document.querySelector(sel); var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j) || document.documentElement.appendChild(randomVar_66666j); for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement) || document.documentElement.appendChild(this.parentElement);} 
 
 tsj.css = tsj.style =  tsj.styleElement = tsj.styleElm = function(cnt) { 
 var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textContent = cnt; document.head.appendChild(randomVar_Bj56kU) || document.documentElement.appendChild(randomVar_Bj56kU); };
