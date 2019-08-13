@@ -4,9 +4,8 @@
 
    *TSJ™JS ( https://moderhacks.github.io )
    *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
-   *August 2019 ( 4th Update )
+   *August 2019 ( 3rd Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
-   *Released under MIT License ( https://moderhack.github.io/LICENSE.html )
    *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.4
    *Syntax optimised to support more browsers ( Supported by IE8 +, Chrome, Firefox, Safari, Edge, Opera etc. )
    
@@ -18,12 +17,19 @@
 
 var tsj = {};
 
-tsj.write = tsj.append = function(sel, txt) { var randomVar_008eff = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_008eff.length; espr++){  randomVar_008eff[espr].innerHTML += txt;
-} };
+var GET = tsj.get = tsj.GET = function(sel) { return document.querySelector(sel); }; var get = function(sel) { return document.querySelector(sel); }; 
 
-tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  function(sel, num, crt, cnt, attributes) { var randomVar_Huu56j = document.querySelectorAll(sel)[num];
+var GETAll = tsj.getAll = tsj.GETAll = function(selector) { var rV_23_nodeList = document.querySelectorAll(selector); return new Proxy(rV_23_nodeList, { set: function(target, property, value) { for (let i = 0; i < target.length; i++) { target[i][property] = value; } }, get: function(target, property) { return target[0] && target[0][property]; } }); }; var getAll = function(selector) { var rV_23_nodeList = document.querySelectorAll(selector); return new Proxy(rV_23_nodeList, { set: function(target, property, value) { for (let i = 0; i < target.length; i++) { target[i][property] = value; } }, get: function(target, property) { return target[0] && target[0][property]; } }); };
+
+tsj.write = tsj.append = function(sel, txt) { var randomVar_108eff = GET(sel); randomVar_108eff.innerHTML += txt; }; 
+tsj.writeAll = tsj.appendAll = function(sel, txt) { var randomVar_008eff = GETAll(sel); randomVar_008eff.innerHTML += txt; };
+
+tsj.prepend = function(sel, txt) { var randomVar_008fff = GET(sel); randomVar_008fff.innerHTML = txt + randomVar_008fff.innerHTML; }; 
+tsj.prependAll = function(sel, txt) { var randomVar_018fff = GETAll(sel); randomVar_018fff.innerHTML = txt + randomVar_018fff.innerHTML; };
+
+tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  function(sel, crt, cnt, attributes) { var randomVar_Huu56j = GET(sel);
 var randomVar_Bg56jU = document.createElement(crt); randomVar_Bg56jU.textContent = cnt; randomVar_Huu56j.appendChild(randomVar_Bg56jU); for(let key in attributes){ randomVar_Bg56jU.setAttribute(key, attributes[key]); }
-return randomVar_Bg56jU; return randomVar_Huu56j.appendChild(this.parentElement); };
+return randomVar_Bg56jU; return randomVar_Huu56j.appendChild(this.parentElement); }; 
 
 tsj.nWrite = tsj.newWrite = tsj.nwrite = tsj.newwrite = function(cnt, attributes) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563) || document.documentElement.appendChild(randomVar_hjg563); for(let key in attributes){ randomVar_hjg563.setAttribute(key, attributes[key]); }
 return randomVar_hjg563; return document.body.appendChild(this.parentElement) ||
@@ -36,41 +42,41 @@ for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]);
 return randomVar_563jhU; return document.body.appendChild(this.parentElement) ||
 document.documentElement.appendChild(this.parentElement); };
 
-var get = tsj.get = tsj.GET = function (sel, scope) { scope = scope ? scope : window.document; return scope.querySelector(sel); }; var GET = function (sel, scope) { scope = scope ? scope : window.document; return scope.querySelector(sel); };
-
 tsj.click = tsj.tap = tsj.ontap  = function(sel, clk) {
-var randomVar_216963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_216963.length; espr++) {  randomVar_216963[espr].onclick = clk; } };
+var randomVar_216963 = GETAll(sel); randomVar_216963.onclick = clk; };
 
 tsj.change = function(sel, clk) {
-var randomVar_217963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_217963.length; espr++) {  randomVar_217963[espr].onchange = clk; } };
+var randomVar_217963 = GETAll(sel); randomVar_217963.onchange = clk; };
 
 tsj.load = function(sel, clk) {
-var randomVar_226963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_226963.length; espr++) {  randomVar_226963[espr].onload = clk; } };
+var randomVar_226963 = GETAll(sel); randomVar_226963.onload = clk; };
 
 tsj.mouseover = function(sel, clk) {
-var randomVar_326963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_326963.length; espr++) {  randomVar_326963[espr].onmouseover = clk; } };
+var randomVar_326963 = GETAll(sel); randomVar_326963.onmouseover = clk; };
 
 tsj.mouseout = function(sel, clk) {
-var randomVar_426963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_426963.length; espr++) {  randomVar_426963[espr].onmouseout = clk; } };
+var randomVar_426963 = GETAll(sel); randomVar_426963.onmouseout = clk; };
 
 tsj.keyup = function(sel, clk) {
-var randomVar_526963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_526963.length; espr++) {  randomVar_526963[espr].onkeyup = clk; } };
+var randomVar_526963 = GETAll(sel); randomVar_526963.onkeyup = clk; };
 
 tsj.keydown = function(sel, clk) {
-var randomVar_626963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_626963.length; espr++) {  randomVar_626963[espr].onkeydown = clk; } };
+var randomVar_626963 = GETAll(sel); randomVar_626963.onkeydown = clk; };
 
 tsj.keypress = function(sel, clk) {
-var randomVar_726963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_726963.length; espr++) {  randomVar_726963[espr].onkeypress = clk; } };
+var randomVar_726963 = GETAll(sel); randomVar_726963.onkeypress = clk; };
 
-tsj.addEvent = tsj.addevent = tsj.aevent = tsj.aEvent = tsj.aEventListener = tsj.aeventlistener = tsj.addEventListener = tsj.addeventlistener = function(sel, evnt, clk) { var randomVar_826963 = document.querySelectorAll(sel); for(var espr = 0; espr < randomVar_826963.length; espr++) { randomVar_826963[espr].addEventListener(evnt, clk); } };
+tsj.addEvent = tsj.addevent = tsj.aevent = tsj.aEvent = tsj.aEventListener = tsj.aeventlistener = tsj.addEventListener = tsj.addeventlistener = function(sel, evnt, clk) { var randomVar_826963 = GETAll(sel); randomVar_826963.addEventListener(evnt, clk); };
 
-tsj.empty = function(sel, num) {
-num = num ? num : 0; 
-var rVempty = document.querySelectorAll(sel)[num];
+tsj.empty = function(sel) {
+var rVempty = GET(sel);
 while (rVempty.firstChild) { rVempty.removeChild(rVempty.firstChild); }; }; 
 
-tsj.clone = tsj.cloneElement = tsj.cloneElm = function(sel, num, attributes) { 
-var randomVar_77777j = document.querySelector(sel); var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j) || document.documentElement.appendChild(randomVar_66666j); for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement) || document.documentElement.appendChild(this.parentElement);} 
+tsj.clone = tsj.cloneElement = tsj.cloneElm = function(sel, attributes) { 
+var randomVar_77777j = GET(sel); var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j) || document.documentElement.appendChild(randomVar_66666j); for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement) || document.documentElement.appendChild(this.parentElement);} 
+tsj.cloneAll = tsj.cloneElementAll = tsj.cloneElmAll = function(sel) 
+{ var rVxyz = document.querySelectorAll(sel); rVxyz.forEach(function(element) { let rVabc = element.cloneNode(true); document.body.appendChild(rVabc) || document.documentElement.appendChild(rVabc); }); };
+
 
 tsj.css = tsj.style =  tsj.styleElement = tsj.styleElm = function(cnt) { 
 var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textContent = cnt; document.head.appendChild(randomVar_Bj56kU) || document.documentElement.appendChild(randomVar_Bj56kU); };
@@ -78,6 +84,19 @@ var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textCon
 tsj.head = tsj.HEAD = function(cnt) { var randomVar_hjxx73 = document.createElement("head"); randomVar_hjxx73.innerHTML = cnt; document.documentElement.appendChild(randomVar_hjxx73); };
 
 tsj.body = tsj.BODY = function(cnt) { var randomVar_hjxx63 = document.createElement("body"); randomVar_hjxx63.innerHTML = cnt;  document.documentElement.appendChild(randomVar_hjxx63); };
+
+tsj.listner = tsj.dictate = tsj.speechToText = tsj.speechtotext = function(lang, inpt, num, evnt) {
+if(window.hasOwnProperty('webkitSpeechRecognition')) { var randomVar_000156 = new webkitSpeechRecognition();
+randomVar_000156.continuous = false;
+randomVar_000156.interimResults = false;
+randomVar_000156.lang = lang;
+randomVar_000156.start();
+randomVar_000156.onresult = function(e) {
+GET(inpt).value = e.results[num][num].transcript;
+randomVar_000156.stop();
+GET(evnt).submit(); };
+randomVar_000156.onerror = function(e) {
+randomVar_000156.stop(); }; }; };
 
 tsj.hide = function (sel) {
   tsj.hideElements(tsj.getElements(sel));
