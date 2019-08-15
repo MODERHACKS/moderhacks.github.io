@@ -7,6 +7,7 @@
    *August 2019 ( 1st Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
    *Includes basic calculators for each an every Maths function
+   *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
    
    ** ****** ** *********
    
