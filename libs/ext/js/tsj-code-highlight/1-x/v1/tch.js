@@ -1,11 +1,17 @@
-/*! DETAILS 
-
-  * TSJ™ Code Highlight, ("https://moderhacks.github.io/") 
-  * v1
-  * July 2019 
-  * by Debarchito Nath, inspired by w3schools.com
+/*!
  
- */
+   ** ****** ** *********
+
+   *TSJ™ Code Highlight ( https://moderhacks.github.io )
+   *v1 ( https://moderhacks.github.io/libs/ext/js/tsj-code-highlight/1-x/v1/tch.js )
+   *July 2019 ( 1st Update )
+   *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
+   *Includes new custom classes
+   *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
+   
+   ** ****** ** *********
+   
+*/
 
 function tsjCodeHighlight() {
   var x, i, j, k, l, modes = ["html", "js", "java", "css", "sql", "python", "kotlin"];
