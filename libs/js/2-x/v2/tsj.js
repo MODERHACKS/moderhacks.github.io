@@ -8,12 +8,15 @@
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
    *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.4
    *Syntax optimised to support more browsers ( Supported by IE8 +, Chrome, Firefox, Safari, Edge, Opera etc. )
+   *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
    
    ** ****** ** *********
    
 */
 
 "use strict";
+
+(function(funcName, baseObj) { funcName = funcName || "Ready"; baseObj = baseObj || window; var readyList = []; var readyFired = false; var readyEventHandlersInstalled = false; function ready() { if (!readyFired) { readyFired = true; for (var i = 0; i < readyList.length; i++) { readyList[i].fn.call(window, readyList[i].ctx); } readyList = []; }  } function readyStateChange() { if ( document.readyState === "complete" ) { ready(); } } baseObj[funcName] = function(callback, context) { if (typeof callback !== "function") { throw new TypeError("callback for Ready(function) must be a function"); } if (readyFired) { setTimeout(function() {callback(context);}, 1); return; } else { readyList.push({fn: callback, ctx: context}); } if (document.readyState === "complete" || (!document.attachEvent && document.readyState === "interactive")) { setTimeout(ready, 1); } else if (!readyEventHandlersInstalled) { if (document.addEventListener) { document.addEventListener("DOMContentLoaded", ready, false); window.addEventListener("load", ready, false); } else { document.attachEvent("onreadystatechange", readyStateChange); window.attachEvent("onload", ready); } readyEventHandlersInstalled = true; } } })("Ready", window);
 
 var tsj = {};
 
@@ -24,18 +27,21 @@ var GETAll = tsj.getAll = tsj.GETAll = function(selector) { var rV_23_nodeList =
 tsj.write = tsj.append = function(sel, txt) { var randomVar_108eff = GET(sel); randomVar_108eff.innerHTML += txt; }; 
 tsj.writeAll = tsj.appendAll = function(sel, txt) { var randomVar_008eff = GETAll(sel); randomVar_008eff.innerHTML += txt; };
 
+tsj.fWrite = function(sel, txt) { var randomVar_108eff = GET(sel); randomVar_108eff.innerHTML = txt; }; 
+tsj.fWriteAll = function(sel, txt) { var randomVar_008eff = GETAll(sel); randomVar_008eff.innerHTML = txt; };
+
 tsj.prepend = function(sel, txt) { var randomVar_008fff = GET(sel); randomVar_008fff.innerHTML = txt + randomVar_008fff.innerHTML; }; 
 tsj.prependAll = function(sel, txt) { var randomVar_018fff = GETAll(sel); randomVar_018fff.innerHTML = txt + randomVar_018fff.innerHTML; };
 
-tsj.cWrite = tsj.createWrite = tsj.createElementWrite = tsj.createElmWrite =  function(sel, crt, cnt, attributes) { var randomVar_Huu56j = GET(sel);
+tsj.cWrite = tsj.createWrite = tsj.createElementWrite = function(sel, crt, cnt, attributes) { var randomVar_Huu56j = GET(sel);
 var randomVar_Bg56jU = document.createElement(crt); randomVar_Bg56jU.textContent = cnt; randomVar_Huu56j.appendChild(randomVar_Bg56jU); for(let key in attributes){ randomVar_Bg56jU.setAttribute(key, attributes[key]); }
 return randomVar_Bg56jU; return randomVar_Huu56j.appendChild(this.parentElement); }; 
 
-tsj.nWrite = tsj.newWrite = tsj.nwrite = tsj.newwrite = function(cnt, attributes) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563) || document.documentElement.appendChild(randomVar_hjg563); for(let key in attributes){ randomVar_hjg563.setAttribute(key, attributes[key]); }
+tsj.nWrite = tsj.newWrite = function(cnt, attributes) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563) || document.documentElement.appendChild(randomVar_hjg563); for(let key in attributes){ randomVar_hjg563.setAttribute(key, attributes[key]); }
 return randomVar_hjg563; return document.body.appendChild(this.parentElement) ||
 document.documentElement.appendChild(this.parentElement); };
 
-tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite =  tsj.nCreateElmWrite = tsj.newCreateElmWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.createElement = tsj.createelement = tsj.cElement = tsj.celement = tsj.cElm = tsj.celm =  function(crt, cnt, attributes){
+tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.createElement = tsj.cElement =  function(crt, cnt, attributes){
 var randomVar_563jhU = document.createElement(crt);
 randomVar_563jhU.textContent = cnt; document.body.appendChild(randomVar_563jhU) || document.documentElement.appendChild(randomVar_563jhU);
 for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]); }
@@ -66,26 +72,27 @@ var randomVar_626963 = GETAll(sel); randomVar_626963.onkeydown = clk; };
 tsj.keypress = function(sel, clk) {
 var randomVar_726963 = GETAll(sel); randomVar_726963.onkeypress = clk; };
 
-tsj.addEvent = tsj.addevent = tsj.aevent = tsj.aEvent = tsj.aEventListener = tsj.aeventlistener = tsj.addEventListener = tsj.addeventlistener = function(sel, evnt, clk) { var randomVar_826963 = GETAll(sel); randomVar_826963.addEventListener(evnt, clk); };
+tsj.addEvent = tsj.aEvent = tsj.aEventListener = tsj.addEventListener = function(sel, evnt, clk) { var randomVar_826963 = GETAll(sel); randomVar_826963.addEventListener(evnt, clk); };
 
 tsj.empty = function(sel) {
 var rVempty = GET(sel);
 while (rVempty.firstChild) { rVempty.removeChild(rVempty.firstChild); }; }; 
 
-tsj.clone = tsj.cloneElement = tsj.cloneElm = function(sel, attributes) { 
+tsj.clone = tsj.cloneElement = function(sel, attributes) { 
 var randomVar_77777j = GET(sel); var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j) || document.documentElement.appendChild(randomVar_66666j); for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement) || document.documentElement.appendChild(this.parentElement);} 
-tsj.cloneAll = tsj.cloneElementAll = tsj.cloneElmAll = function(sel) 
+tsj.cloneAll = tsj.cloneElementAll = function(sel) 
 { var rVxyz = document.querySelectorAll(sel); rVxyz.forEach(function(element) { let rVabc = element.cloneNode(true); document.body.appendChild(rVabc) || document.documentElement.appendChild(rVabc); }); };
 
-
-tsj.css = tsj.style =  tsj.styleElement = tsj.styleElm = function(cnt) { 
+tsj.css = function(cnt) { 
 var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textContent = cnt; document.head.appendChild(randomVar_Bj56kU) || document.documentElement.appendChild(randomVar_Bj56kU); };
 
-tsj.head = tsj.HEAD = function(cnt) { var randomVar_hjxx73 = document.createElement("head"); randomVar_hjxx73.innerHTML = cnt; document.documentElement.appendChild(randomVar_hjxx73); };
+tsj.style = function(sel, styl) { return tsj.css(sel + "{" + styl + "}"); };
 
-tsj.body = tsj.BODY = function(cnt) { var randomVar_hjxx63 = document.createElement("body"); randomVar_hjxx63.innerHTML = cnt;  document.documentElement.appendChild(randomVar_hjxx63); };
+tsj.head = function(cnt) { var randomVar_hjxx73 = document.createElement("head"); randomVar_hjxx73.innerHTML = cnt; document.documentElement.appendChild(randomVar_hjxx73); };
 
-tsj.listner = tsj.dictate = tsj.speechToText = tsj.speechtotext = function(lang, inpt, num, evnt) {
+tsj.body = function(cnt) { var randomVar_hjxx63 = document.createElement("body"); randomVar_hjxx63.innerHTML = cnt;  document.documentElement.appendChild(randomVar_hjxx63); };
+
+tsj.listner = tsj.dictate = tsj.speechToText = function(lang, inpt, num, evnt) {
 if(window.hasOwnProperty('webkitSpeechRecognition')) { var randomVar_000156 = new webkitSpeechRecognition();
 randomVar_000156.continuous = false;
 randomVar_000156.interimResults = false;
@@ -97,6 +104,18 @@ randomVar_000156.stop();
 GET(evnt).submit(); };
 randomVar_000156.onerror = function(e) {
 randomVar_000156.stop(); }; }; };
+
+tsj.showHTML = tsj.sHTML = tsj.showHtml = tsj.sHtml = function(sel) { return GET(sel).innerHTML; }; tsj.showHTMLAll = tsj.sHTMLAll = tsj.showHtmlAll = tsj.sHtmlAll = function(sel) { return GETAll(sel).innerHTML; };
+
+tsj.showText = tsj.sText = function(sel) { return GET(sel).textContent; }; tsj.showTextAll = tsj.sTextAll = function(sel) { return GETAll(sel).textContent; };
+
+tsj.value = tsj.val = function(sel) { return GET(sel).value; }; tsj.valueAll = tsj.valAll = function(sel) { return GETAll(sel).value; };
+
+tsj.showId = tsj.sId = function(sel) { return GET(sel).id; }; tsj.showIdAll = tsj.sIdAll = function(sel) { return GETAll(sel).id; };
+
+tsj.showClass = tsj.sClass = function(sel) { return GET(sel).className; }; tsj.showClassAll = tsj.sClassAll = function(sel) { return GETAll(sel).className; };
+
+tsj.showTag = tsj.sTag = function(sel) { return GET(sel).tagName; }; tsj.showTagAll = tsj.sTagAll = function(sel) { return GETAll(sel).tagName; };
 
 tsj.hide = function (sel) {
   tsj.hideElements(tsj.getElements(sel));
@@ -223,6 +242,7 @@ tsj.toggleClassElement = function (element, c1, c2) {
     }
   }
 };
+tsj.switchClass = tsj.newClass = function(sel, old, nw) { tsj.removeClass(sel, old); tsj.addClass(sel, nw); };
 tsj.getElements = function (id) {
   if (typeof id == "object") {
     return [id];
