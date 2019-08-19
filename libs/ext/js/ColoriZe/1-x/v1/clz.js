@@ -22,12 +22,12 @@ function ColoriZe() {
     x = document.getElementsByClassName( "ColoriZe-" + modes[j]);
     l = x.length;
     for (i = 0; i < l; i++) {
-      x[i].innerHTML = tsjCodeColorise(x[i].innerHTML, modes[j]);
+      x[i].innerHTML = ScriptColoriZe(x[i].innerHTML, modes[j]);
     }
   }
 }
 
-function tsjCodeColorise(x, lang) {
+function ScriptColoriZe(x, lang) {
   // HTML
   var tagcolor = "purple";
   var tagnamecolor = "purple";
