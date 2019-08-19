@@ -4,7 +4,7 @@
 
    *ColoriZe JS  ( https://moderhacks.github.io )
    *Prevously Named : TSJ™ Code Highlight 
-   *v1 ( https://moderhacks.github.io/libs/ext/js/tsj-code-highlight/1-x/v1/tch.js )
+   *v1 ( https://moderhacks.github.io/libs/ext/js/ColoriZe/1-x/v1/clz.js )
    *August 2019 ( 2nd Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
    *Includes new custom classes
