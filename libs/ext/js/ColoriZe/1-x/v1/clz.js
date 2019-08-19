@@ -2,9 +2,10 @@
  
    ** ****** ** *********
 
-   *TSJ™ Code Highlight ( https://moderhacks.github.io )
+   *ColoriZe JS  ( https://moderhacks.github.io )
+   *Prevously Named : TSJ™ Code Highlight 
    *v1 ( https://moderhacks.github.io/libs/ext/js/tsj-code-highlight/1-x/v1/tch.js )
-   *July 2019 ( 1st Update )
+   *August 2019 ( 2nd Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
    *Includes new custom classes
    *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
@@ -13,12 +14,12 @@
    
 */
 
-function tsjCodeHighlight() {
+function ColoriZe() {
   var x, i, j, k, l, modes = ["html", "js", "java", "css", "sql", "python", "kotlin"];
   if (!document.getElementsByClassName) {return;}
   k = modes.length;
   for (j = 0; j < k; j++) {
-    x = document.getElementsByClassName( "tsj-" + modes[j] + "-highlight");
+    x = document.getElementsByClassName( "ColoriZe-" + modes[j]);
     l = x.length;
     for (i = 0; i < l; i++) {
       x[i].innerHTML = tsjCodeColorise(x[i].innerHTML, modes[j]);
