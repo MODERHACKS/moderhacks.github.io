@@ -76,7 +76,7 @@ function ScriptColoriZe(x, lang) {
   // My SQL
   var sqlcolor = "#ff5c5c";
   var sqlkeywordcolor = "green";
-  var sqlstringcolor = "#0025ff";
+  var sqlstringcolor = "teal";
   var sqlnumbercolor = "#00ad79";  
   // Language Identification
   if (!lang) {lang = "html"; }
@@ -389,7 +389,7 @@ function ScriptColoriZe(x, lang) {
     return "<span class='java javatext' style=color:" + javacolor + ">" + rest + "</span>";
   }
   function javaStringMode(txt) {
-    return "<span class='javastring' style=color:" + javastringcolor + ";font-style:italic;>" + txt + "</span>";
+    return "<span class='javastring' style=color:" + javastringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
   }
   function javaKeywordMode(txt) {
     return "<span class='javakeyword' style=color:" + javakeywordcolor + ";font-weight:bold;>" + txt + "</span>";
@@ -398,7 +398,7 @@ function ScriptColoriZe(x, lang) {
     return "<span class='javanumber javanum' style=color:" + javanumbercolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function javaPropertyMode(txt) {
-    return "<span class='javaproperty' style=color:" + javapropertycolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span class='javaproperty' style=color:" + javapropertycolor + ";font-weight:bold;margin-right:1px;>" + txt + "</span>";
   }
   
   // Kotlin Mode
@@ -439,7 +439,7 @@ function ScriptColoriZe(x, lang) {
     return "<span class='kotlin kotlintext' style=color:" + kotlincolor + ">" + rest + "</span>";
   }
   function kotlinStringMode(txt) {
-    return "<span class='kotlinstring' style=color:" + kotlinstringcolor + ";font-style:italic;>" + txt + "</span>";
+    return "<span class='kotlinstring' style=color:" + kotlinstringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
   }
   function kotlinKeywordMode(txt) {
     return "<span class='kotlinkeyword' style=color:" + kotlinkeywordcolor + ";font-weight:bold;>" + txt + "</span>";
@@ -448,7 +448,7 @@ function ScriptColoriZe(x, lang) {
     return "<span class='kotlinnumber kotlin-num' style=color:" + kotlinnumbercolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function kotlinPropertyMode(txt) {
-    return "<span class='kotlinproperty' style=color:" + kotlinpropertycolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span class='kotlinproperty' style=color:" + kotlinpropertycolor + ";font-weight:bold;margin-right:1px;>" + txt + "</span>";
   }
   
   // My SQL Mode
@@ -475,10 +475,10 @@ function ScriptColoriZe(x, lang) {
     return "<span class='sql SQL sqltext SQLtext' style=color:" + sqlcolor + ">" + rest + "</span>";
   }
   function sqlStringMode(txt) {
-    return "<span class='sqlstring SQLstring' style=color:" + sqlstringcolor + ";font-style:italic;>" + txt + "</span>";
+    return "<span class='sqlstring SQLstring' style=color:" + sqlstringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
   }
   function sqlKeywordMode(txt) {
-    return "<span class='sqlkeyword SQLkeyword' style=color:" + sqlkeywordcolor + ";font-weight:bold;font-style:italic;>" + txt + "</span>";
+    return "<span class='sqlkeyword SQLkeyword' style=color:" + sqlkeywordcolor + ";font-weight:bold;font-style:italic;margin-right:2px;>" + txt + "</span>";
   }
   function sqlNumberMode(txt) {
     return "<span class='sqlnumber sqlnum SQLnumber SQLnum' style=color:" + sqlnumbercolor + ";font-weight:bold;>" + txt + "</span>";
