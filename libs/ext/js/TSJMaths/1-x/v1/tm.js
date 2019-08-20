@@ -2,7 +2,7 @@
  
    ** ****** ** *********
 
-   *TSJ™ Maths JS ( https://moderhacks.github.io )
+   *TSJMaths ( https://moderhacks.github.io )
    *v1 ( https://moderhacks.github.io/libs/ext/tsj-maths/1-x/v1/tm.js )
    *August 2019 ( 1st Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
