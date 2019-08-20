@@ -7,10 +7,10 @@ NOTE : All Projects Are Licensed Under The MIT License
 Total Projects : 04
 
 Project Names : 
-(1) TSJ™CSS
-(2) TSJ™JS
-(3) ColoriZe JS
-(4) TSJ™Maths JS
+(1) TSJCSS
+(2) TSJJS
+(3) ColoriZe 
+(4) TSJMaths
 
 
  
