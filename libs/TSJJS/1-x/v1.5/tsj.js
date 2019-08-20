@@ -1,6 +1,6 @@
 /* 
 
-  *TSJ™JS 
+  *TSJJS 
   *v1.5
   *July 2019 ( 2nd Update )
   *by Debarchito Nath 
