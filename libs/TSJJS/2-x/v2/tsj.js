@@ -2,12 +2,12 @@
  
    ** ****** ** *********
 
-   *TSJJS ( https://moderhacks.github.io )
+   *TSJ™JS ( https://moderhacks.github.io )
    *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
-   *August 2019 ( 3rd Update )
+   *August 2019 ( 4th Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
    *Includes more simpler, super lighter and powerfull "TSJ's tsjStyler JS" v1.4
-   *Syntax optimised to support more browsers ( Supported by IE8 +, Chrome, Firefox, Safari, Edge, Opera etc. )
+   *Syntax optimised to support more browsers ( Supported by IE9+, Chrome, Firefox, Safari, Edge, Opera etc. )
    *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
    
    ** ****** ** *********
@@ -27,29 +27,35 @@ var GETAll = tsj.getAll = tsj.GETAll = function(selector) { var rV_23_nodeList =
 tsj.write = tsj.append = function(sel, txt) { var randomVar_108eff = GET(sel); randomVar_108eff.innerHTML += txt; }; 
 tsj.writeAll = tsj.appendAll = function(sel, txt) { var randomVar_008eff = GETAll(sel); randomVar_008eff.innerHTML += txt; };
 
-tsj.fWrite = function(sel, txt) { var randomVar_108eff = GET(sel); randomVar_108eff.innerHTML = txt; }; 
+tsj.fWrite = tsj.formatWrite = function(sel, txt) { var randomVar_108eff = GET(sel); randomVar_108eff.innerHTML = txt; }; 
 tsj.fWriteAll = function(sel, txt) { var randomVar_008eff = GETAll(sel); randomVar_008eff.innerHTML = txt; };
 
 tsj.prepend = function(sel, txt) { var randomVar_008fff = GET(sel); randomVar_008fff.innerHTML = txt + randomVar_008fff.innerHTML; }; 
 tsj.prependAll = function(sel, txt) { var randomVar_018fff = GETAll(sel); randomVar_018fff.innerHTML = txt + randomVar_018fff.innerHTML; };
 
-tsj.cWrite = tsj.createWrite = tsj.createElementWrite = function(sel, crt, cnt, attributes) { var randomVar_Huu56j = GET(sel);
+tsj.cWrite = tsj.createWrite = tsj.createElementWrite = function(sel, crt, attributes, cnt) { var randomVar_Huu56j = GET(sel);
 var randomVar_Bg56jU = document.createElement(crt); randomVar_Bg56jU.textContent = cnt; randomVar_Huu56j.appendChild(randomVar_Bg56jU); for(let key in attributes){ randomVar_Bg56jU.setAttribute(key, attributes[key]); }
 return randomVar_Bg56jU; return randomVar_Huu56j.appendChild(this.parentElement); }; 
 
-tsj.nWrite = tsj.newWrite = function(cnt, attributes) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563) || document.documentElement.appendChild(randomVar_hjg563); for(let key in attributes){ randomVar_hjg563.setAttribute(key, attributes[key]); }
+tsj.nWrite = tsj.newWrite = function(attributes, cnt) { var randomVar_hjg563 = document.createElement("p"); randomVar_hjg563.textContent = cnt; document.body.appendChild(randomVar_hjg563) || document.documentElement.appendChild(randomVar_hjg563); for(let key in attributes){ randomVar_hjg563.setAttribute(key, attributes[key]); }
 return randomVar_hjg563; return document.body.appendChild(this.parentElement) ||
 document.documentElement.appendChild(this.parentElement); };
 
-tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.createElement = tsj.cElement =  function(crt, cnt, attributes){
+tsj.nCWrite = tsj.newCWrite = tsj.nCreateWrite = tsj.newCreateWrite = tsj.nCreateElementWrite = tsj.newCreateElementWrite = tsj.createElement = tsj.cElement =  function(crt, attributes, cnt){
 var randomVar_563jhU = document.createElement(crt);
 randomVar_563jhU.textContent = cnt; document.body.appendChild(randomVar_563jhU) || document.documentElement.appendChild(randomVar_563jhU);
 for(let key in attributes){ randomVar_563jhU.setAttribute(key, attributes[key]); }
 return randomVar_563jhU; return document.body.appendChild(this.parentElement) ||
 document.documentElement.appendChild(this.parentElement); };
 
-tsj.click = tsj.tap = tsj.ontap  = function(sel, clk) {
+tsj.click = tsj.tap = function(sel, clk) {
 var randomVar_216963 = GETAll(sel); randomVar_216963.onclick = clk; };
+
+tsj.dblclick = tsj.dbltap = function(sel, clk) {
+var randomVar_216963 = GETAll(sel); randomVar_216963.ondblclick = clk; };
+
+tsj.clicks = tsj.mClick = tsj.multipleClick = function(singleClk, doubleClk, tm) {
+tm = tm ? tm : 190; return (function() { var alreadyclicked = false; var alreadyclickedTimeout; return function(e) { if (alreadyclicked) { alreadyclicked = false; alreadyclickedTimeout && clearTimeout(alreadyclickedTimeout); doubleClk && doubleClk(e); } else {  alreadyclicked = true;  alreadyclickedTimeout = setTimeout(function() { alreadyclicked = false; singleClk && singleClk(e);  }, tm); } } })(); };
 
 tsj.change = function(sel, clk) {
 var randomVar_217963 = GETAll(sel); randomVar_217963.onchange = clk; };
@@ -72,13 +78,19 @@ var randomVar_626963 = GETAll(sel); randomVar_626963.onkeydown = clk; };
 tsj.keypress = function(sel, clk) {
 var randomVar_726963 = GETAll(sel); randomVar_726963.onkeypress = clk; };
 
-tsj.addEvent = tsj.aEvent = tsj.aEventListener = tsj.addEventListener = function(sel, evnt, clk) { var randomVar_826963 = GETAll(sel); randomVar_826963.addEventListener(evnt, clk); };
+tsj.historyBack = function(sel) {
+sel = sel ? sel : 1; return window.history.back(-sel); };
+
+tsj.historyForward = function(sel) {
+sel = sel ? sel : 1; return window.history.forward(+sel); };
+
+tsj.addEvent = tsj.aEvent = tsj.aEventListener = tsj.addEventListener = tsj.on = function(sel, evnt, clk) { var randomVar_826963 = GETAll(sel); randomVar_826963.addEventListener(evnt, clk) || randomVar_826963.attachEvent("on"+evnt, clk); };
 
 tsj.empty = function(sel) {
 var rVempty = GET(sel);
 while (rVempty.firstChild) { rVempty.removeChild(rVempty.firstChild); }; }; 
 
-tsj.clone = tsj.cloneElement = function(sel, attributes) { 
+tsj.clone = tsj.cloneElement = function(attributes, sel) { 
 var randomVar_77777j = GET(sel); var randomVar_66666j = randomVar_77777j.cloneNode(true); document.body.appendChild(randomVar_66666j) || document.documentElement.appendChild(randomVar_66666j); for(let key in attributes) { randomVar_66666j.setAttribute(key, attributes[key]); } return randomVar_66666j; document.body.appendChild(this.parentElement) || document.documentElement.appendChild(this.parentElement);} 
 tsj.cloneAll = tsj.cloneElementAll = function(sel) 
 { var rVxyz = document.querySelectorAll(sel); rVxyz.forEach(function(element) { let rVabc = element.cloneNode(true); document.body.appendChild(rVabc) || document.documentElement.appendChild(rVabc); }); };
@@ -87,6 +99,9 @@ tsj.css = function(cnt) {
 var randomVar_Bj56kU = document.createElement("style"); randomVar_Bj56kU.textContent = cnt; document.head.appendChild(randomVar_Bj56kU) || document.documentElement.appendChild(randomVar_Bj56kU); };
 
 tsj.style = function(sel, styl) { return tsj.css(sel + "{" + styl + "}"); };
+
+tsj.fadeIn = function(sel, tim) { tim = tim ? tim : 2000;
+tsj.css( sel + " { display : block!important; -webkit-animation: fadein " + tim + "ms; -moz-animation: fadein " + tim + "ms;  -ms-animation: fadein " + tim + "ms;  -o-animation: fadein " + tim + "ms; animation: fadein " + tim + "ms; } @keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }"); };
 
 tsj.head = function(cnt) { var randomVar_hjxx73 = document.createElement("head"); randomVar_hjxx73.innerHTML = cnt; document.documentElement.appendChild(randomVar_hjxx73); };
 
@@ -105,17 +120,15 @@ GET(evnt).submit(); };
 randomVar_000156.onerror = function(e) {
 randomVar_000156.stop(); }; }; };
 
-tsj.showHTML = tsj.sHTML = tsj.showHtml = tsj.sHtml = function(sel) { return GET(sel).innerHTML; }; tsj.showHTMLAll = tsj.sHTMLAll = tsj.showHtmlAll = tsj.sHtmlAll = function(sel) { return GETAll(sel).innerHTML; };
+tsj.getHTML = tsj.gHTML = tsj.getHtml = tsj.gHtml = function(sel) { return GET(sel).innerHTML; }; 
 
-tsj.showText = tsj.sText = function(sel) { return GET(sel).textContent; }; tsj.showTextAll = tsj.sTextAll = function(sel) { return GETAll(sel).textContent; };
+tsj.getText = tsj.gText = function(sel) { return GET(sel).textContent; }; 
 
-tsj.value = tsj.val = function(sel) { return GET(sel).value; }; tsj.valueAll = tsj.valAll = function(sel) { return GETAll(sel).value; };
+tsj.value = tsj.val = tsj.getValue = tsj.gValue = tsj.getVal = tsj.gVal = function(sel) { return GET(sel).value; };
 
-tsj.showId = tsj.sId = function(sel) { return GET(sel).id; }; tsj.showIdAll = tsj.sIdAll = function(sel) { return GETAll(sel).id; };
+tsj.getTag = tsj.gTag = function(sel) { return GET(sel).tagName; }; 
 
-tsj.showClass = tsj.sClass = function(sel) { return GET(sel).className; }; tsj.showClassAll = tsj.sClassAll = function(sel) { return GETAll(sel).className; };
-
-tsj.showTag = tsj.sTag = function(sel) { return GET(sel).tagName; }; tsj.showTagAll = tsj.sTagAll = function(sel) { return GETAll(sel).tagName; };
+tsj.getAttribute = tsj.getAttr =  tsj.gAttr = tsj.gAttribute = function(sel, attr) { return GET(sel).getAttribute(attr); }; 
 
 tsj.hide = function (sel) {
   tsj.hideElements(tsj.getElements(sel));
@@ -143,7 +156,7 @@ tsj.showElements = function (elements) {
 tsj.showElement = function (element) {
   tsj.styleElement(element, "display", "block");
 };
-tsj.addStyle = tsj.addstyle = function (sel, prop, val) {
+tsj.addStyle = tsj.aStyle = function (sel, prop, val) {
   tsj.styleElements(tsj.getElements(sel), prop, val);
 };
 tsj.styleElements = function (elements, prop, val) {
@@ -155,7 +168,7 @@ tsj.styleElements = function (elements, prop, val) {
 tsj.styleElement = function (element, prop, val) {
   element.style.setProperty(prop, val);
 };
-tsj.toggleShow = function (sel) {
+tsj.toggleShow = tsj.tShow = function (sel) {
   var i, x = tsj.getElements(sel), l = x.length;
   for (i = 0; i < l; i++) {    
     if (x[i].style.display == "none") {
@@ -165,7 +178,7 @@ tsj.toggleShow = function (sel) {
     }
   }
 };
-tsj.addClass = tsj.addclass = tsj.aClass = tsj.aclass = function (sel, name) {
+tsj.addClass = tsj.aClass = function (sel, name) {
   tsj.addClassElements(tsj.getElements(sel), name);
 };
 tsj.addClassElements = function (elements, name) {
@@ -182,7 +195,7 @@ tsj.addClassElement = function (element, name) {
     if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
   }
 };
-tsj.removeClass = tsj.removeclass = tsj.rClass = tsj.rclass = function (sel, name) {
+tsj.removeClass = tsj.rClass = function (sel, name) {
   tsj.removeClassElements(tsj.getElements(sel), name);
 };
 tsj.removeClassElements = function (elements, name) {
@@ -202,7 +215,10 @@ tsj.removeClassElement = function (element, name) {
   }
   element.className = arr1.join(" ");
 };
-tsj.toggleClass = tsj.toggleclass = tsj.tClass = tsj.tclass = tsj.tgClass = tsj.tgclass = function (sel, c1, c2) {
+
+tsj.switchClass = tsj.sClass = function(sel, old, nw) { tsj.removeClass(sel, old); tsj.addClass(sel, nw); };
+
+tsj.toggleClass = tsj.tClass = function (sel, c1, c2) {
   tsj.toggleClassElements(tsj.getElements(sel), c1, c2);
 };
 tsj.toggleClassElements = function (elements, c1, c2) {
@@ -242,7 +258,6 @@ tsj.toggleClassElement = function (element, c1, c2) {
     }
   }
 };
-tsj.switchClass = tsj.newClass = function(sel, old, nw) { tsj.removeClass(sel, old); tsj.addClass(sel, nw); };
 tsj.getElements = function (id) {
   if (typeof id == "object") {
     return [id];
@@ -414,9 +429,9 @@ tsj.getElementsByAttribute = function (x, att) {
   return arr;
 };  
 tsj.dataObject = {},
-tsj.displayObject = function (id, data) {
+tsj.displayObject = tsj.data = function (id, data) {
   var htmlObj, htmlTemplate, html, arr = [], a, l, rowClone, x, j, i, ii, cc, repeat, repeatObj, repeatX = "";
-  htmlObj = document.getElementById(id);
+  htmlObj = GET(id);
   htmlTemplate = init_template(id, htmlObj);
   html = htmlTemplate.cloneNode(true);
   arr = tsj.getElementsByAttribute(html, "tsj-repeat");
@@ -515,12 +530,5 @@ tsj.displayObject = function (id, data) {
     a.innerHTML = a.innerHTML.replace(r, result);
   }
 };
-
-Element.prototype.event = function(evnt, clk) { return this.addEventListener(evnt, clk); };
-Element.prototype.hide = function() { return this.style.display = 'none' };
-Element.prototype.show = function() { return this.style.display = 'block' };
-Element.prototype.toggleShow = function() { if ( this.style.display === "none" ) { this.style.display = "block"; } else { this.style.display = "none"; } };
-Element.prototype.addClass = function(sel) { return this.className = sel; };
-Element.prototype.removeClass = function(sel) { return this.classList.remove(sel); };
 
 // End
