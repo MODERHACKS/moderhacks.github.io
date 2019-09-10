@@ -1,10 +1,11 @@
 /* 
 
   *TSJStyler JS
-  *v1
+  *v1 
   *Inspired by CSSX 
   *Contains Extracts from CSSX (c) Krasimir 
   *Plugin for TSJJS
+  *Released under MIT License
 
 */
 
