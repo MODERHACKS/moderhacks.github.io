@@ -5,7 +5,7 @@
    *TSJJS ( https://moderhacks.github.io )
    *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
    *10th September 2019 ( 7th Update )
-   *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED  
+   *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED   
    *Includes plugins that require TSJJS for being used
    *Syntax optimised. Uses the extensible "Fibre DOM" which is the most flexible DOM ever
    *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
@@ -22,7 +22,7 @@ var tsj = {}, set = {}, plugin = {}, load = {};
 
 load.tsjcss = load.TSJCSS = function() { return tsj.loadStyle("https://moderhacks.github.io/libs/TSJCSS/2-x/v2/tsj.css"); }; load.colorize = load.ColoriZe = function() { return tsj.loadScript("https://moderhacks.github.io/libs/ext/js/ColoriZe/1-x/v1/clz.js", function() { ColoriZe(); }); }; load.tsjmaths = load.TSJMaths = function(func) { return tsj.loadScript("https://moderhacks.github.io/libs/ext/js/TSJMaths/1-x/v1/tm.js", func); }; plugin.tsjanimation = plugin.TSJAnimation = function(func) { return tsj.loadScript("https://moderhacks.github.io/libs/plugins/TSJJS/TSJAnimation/1-x/v1/ta.js", func); }; plugin.tsjstyler = plugin.TSJStyler = function(func) { return tsj.loadScript("https://moderhacks.github.io/libs/plugins/TSJJS/TSJStyler/1-x/v1/ts.js", func); };
 
-set.charset = function(chars) { chars = chars ? chars : "UTF-8"; return tsj.head(" <meta charset='" + chars + "' />"); }; set.smartView = function(more) { more = more ? more : " "; return tsj.head(' <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height"' + more  + ' /> '); }; set.themeColor = function(clr) { clr = clr ? clr : ""; return tsj.head(" <meta name='theme-color' content='" + clr + "'>"); }; 
+set.charset = function(chars) { chars = chars ? chars : "UTF-8"; return tsj.head(" <meta charset='" + chars + "' />"); }; set.smartView = function(more) { more = more ? more : " "; return tsj.head(' <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, ' + more  + '" /> '); }; set.themeColor = function(clr) { clr = clr ? clr : ""; return tsj.head(" <meta name='theme-color' content='" + clr + "'>"); }; 
 
 tsj.details = tsj.about = function() { var details = "Project Name : TSJJS <br /> Version : v2 <br /> DOM Types : Real DOM & Fibre DOM <br /> By : Debarchito Nath ( MOD ER HACKS ) <br /> Released On : August 2019 <br /> Released Under : MIT License <br /> Website : https://moderhacks.github.io <br /> Copyright (c) 2019 | ALL RIGHTS RESERVED"; return tsj.docWrite( details ); };
 
