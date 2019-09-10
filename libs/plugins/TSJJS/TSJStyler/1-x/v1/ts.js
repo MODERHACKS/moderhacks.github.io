@@ -1,6 +1,7 @@
 /* 
 
-  *TSJStyler JS *v1.5 
+  *TSJStyler JS
+  *v1
   *Inspired by CSSX 
   *Contains Extracts from CSSX (c) Krasimir 
   *Plugin for TSJJS
@@ -386,10 +387,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return false;
 	  };
 	
-	  _api.id = _api.style = function () {
+	  _api.id = function () {
 	    return _id;
 	  };
-	  _api.add = _api.style =  _api.update = function (rawRules, parent, addAt, considerAsNew) {
+	  _api.add = _api.update = _api.style = function (rawRules, parent, addAt, considerAsNew) {
 	    var rule, prop, tmpRawRules, cssProps, props, nestedRules, selector, tmp;
 	    var created = [];
 	
@@ -547,7 +548,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return rule;
 	  };
 	
-	  _api.descendant = _api.d = _api.css =_api.ng = _api.nextGeneration = function (rawRules) {
+	  _api.descendant = _api.d = _api.css = function (rawRules) {
 	    var selector;
 	
 	    if (typeof rawRules === 'function') rawRules = rawRules();
