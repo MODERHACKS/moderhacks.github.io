@@ -3,12 +3,12 @@
    ** ****** ** *********
 
    *TSJJS ( https://moderhacks.github.io )
-   *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js ).
+   *v2 ( https://moderhacks.github.io/libs/js/2-x/v2/tsj.js )
    *10th September 2019 ( 7th Update )
-   *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED.   
-   *Includes plugins that require TSJJS for being used.
-   *Syntax optimised. Uses the extensible "Fibre DOM" which is the most flexible DOM ever.
-   *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html ).
+   *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED  
+   *Includes plugins that require TSJJS for being used
+   *Syntax optimised. Uses the extensible "Fibre DOM" which is the most flexible DOM ever
+   *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
    
    ** ****** ** *********
    
