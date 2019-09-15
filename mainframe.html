@@ -1,91 +1,122 @@
+<!-- MOD ER HACKS UI Builder -->
 <!DOCTYPE html>
-<html lang="en">
-<title>MOD ER HACKS Github Page | Mainframe </title>
+<html lang="en-IN" dir="ltr">
+<title>MOD ER HACKS - Mainframe </title>
+<!-- For Browsers and more-->
 <meta name="theme-color" content="black" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta property="og:description" content="Being official partner of TSJ, MOD ​ER HACKS has earned all the right to host Project TSJ™ on the internet." />
 <meta property="og:url" content="https://moderhacks.github.io/" />
-<link rel="stylesheet" href="libs/css/2-x/v2/tsj.css" />
+<!-- TSJCSS v2 Source-->
+<link rel="stylesheet" href="libs/TSJCSS/2-x/v2/tsj.css" />
+<!-- W3.CSS v4.3 Source -->
 <link rel="stylesheet" href="libs/usage/css/w3/w3.css" />
+<!-- Font Families Used -->
+<link rel="stylesheet" href="libs/usage/css/webstyles/mod1-family.css" />
+<!-- Material Icons Source-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <style>
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Fjalla+One|Lobster|Rubik+Mono+One|Lato&display=swap');
-.tsj-TW {font-family : 'Titillium Web', sans-serif;} .tsj-RMO {font-family : 'Rubik Mono One', sans-serif;} .tsj-Lo {font-family : 'Lobster', cursive;} .tsj-FO {font-family : 'Fjalla One', sans-serif;} .tsj-La {font-family : 'Lato' , sans-serif;}
+.w3-row-padding img {margin-bottom: 12px}
+.w3-sidebar {width: 120px;background: #222;}
+#main {margin-left: 120px}
+@media only screen and (max-width: 600px) {#main {margin-left: 0} #minbox { display : none; } #dp { display : none; } }
+@media only screen and (min-width: 601px) { #copy { float : right; width : 83%; } #github { margin-left :120px; } }
 </style>
 <body style="font-size:16px;">
 
-<div class="w3-top bg-black" style="border-bottom:2px solid white;">
-    <a href="index.html" class="w3-left w3-bar-item w3-button tsj-padding-large tsj-TW animate-O" style="font-size:15px;">Project TSJ™ - Tutorials</a>
-    <a href="mainframe.html" class="w3-right tsj-btn tsj-w3-bar-item tsj-padding-large TW animate-O" style="font-size:15px;">Mainframe - v1.1</a>
-       </div>
+<!-- Scroll to top -->
+<div class="display-bottom margin-B">
+<button id='goTop' title='Go to top' style='width:20%; border:none;display:none; padding :6px 0px 2px 0px!important;box-shadow:1px 1px 12px black;' class='animate-R w3-right margin-R bg-black outline-off radius-xl'><i class="tsj-bold material-icons large">arrow_upward</i></button></div>
 
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="header">
-    <h2 class="w3-wide tsj-TW animate-O">Project TSJ™</h2>
-    <p class="w3-opacity animate-O"><i>Web Development Tutorials</i></p>
-    <br>
-  <p style="text-align:justify;text-justify:inter-word;" class="w3-justify tsj-TW animate-O">Here you will learn to use every CSS , JS libraries and frameworks of Project TSJ™ to be able to use them in your sites to make you site unique.</p>
-     <br>
-     <center>
-     <em>
-     <b>Therefore, Happy Learning !!</b>
-     </em>
-     <center>
-     </p>
-  </div>
+<!-- Navigation on large & medium screens -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center text-white">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#releases" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>RELEASES</p>
+  </a>
+  <a href="#tsjcss" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>TSJCSS Download</p>
+  </a>
+  <a href="#tsjjs" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>TSJJS Download</p>
+  </a>
+  <a href="#clz" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>ColoriZe JS Download</p>
+  </a>
+  <a href="#maths" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>TSJMaths Download</p>
+  </a>
+</nav>
 
-  <div class="w3-black radius-T@xl box-shadow" id="basecontent">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide w3-center">Tutorials On</h2>
-      <p class="w3-opacity w3-center"><i>Project TSJ™ - Projects</i></p><br>
+<!-- Navbar on small screens -->
+<div class="w3-top bg-black box-shadow animate-T"style="border-bottom-right-radius:30px;border-bottom-left-radius:30px;">
+<a href="#" class="w3-left tsj-bar-item tsj-btn tsj-padding-large tsj-TW animate-O box-shadow bg-light-grey radius-R@j" style="margin-top:4px;margin-bottom:12px;border-bottom-left-radius:10px;">MOD ER HACKS - Mainframe</a>
+<b><a href="#" class="w3-right tsj-bar-item tsj-btn tsj-padding-large tsj-TW animate-O box-shadow bg-grey radius-L@j text-black" style="margin-top:4px;margin-bottom:12px;border-bottom-right-radius:10px;">v5</a></b></div><br /><br />
+<div class="w3-padding-large" id="main">
+
+<!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black radius-B@j animate-T" id="home"><br />
+    <h1 style="font-size : 38px;" class="tsj-TW">TUTORIALS</h1>
+<br />
+    <p><i class="opacity">Web Development Projects : 04</i></p>
+  </header>
+  
+  <!-- About Section -->
+  <div class="tsj-content bg-white w3-justify text-black padding-64" id="about">
+    <center><h2 class="text-black tsj-TW">About</h2>
+    <hr style="width:200px" class=""></center>
+    <p style="text-align:justify;text-justify:inter-word;" class="w3-justify tsj-TW animate-O">Here you will learn to use every CSS , JS libraries and frameworks of Project TSJ™ to be able make your imagination a truth.<br /><br />
+     <center><em><b>Therefore, Happy Learning !!</b></em></center></p>
+     <br /><br />
+     
+     <center><h2 id="releases" class="tsj-TW">Tutorials On</h2>
+    <hr style="width:200px" ></center><br />
+    <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;" id="tsjcss">
+      <h4 class="w3-left tsj-TW">TSJCSS</h4> <br /><br /><br />
+      <i class="opacity w3-left tsj-justify tsj-TW">A superfast css library with tones of features to make your website unique. It contains various classes that helps you to style your webpage. We know and respect the freedom of styling so we designed this gallery in such a way that it contains almost every essential that you would require to style with your choise. Something Missing ? Don't worry we are designing many plugins for this library which you can use for more ease. We will make it further better in future. </i>
+      <center><button class="tsj-btn box-shadow margin radius-j outline-none hover:bg-black tsj-TW" onclick="tsj.show('#csstutorials')">Learn</button></center><p class="tsj-TW font-italic" style="font-size : 14px;">Haven't added TSJCSS to your site yet ? Then<a class="td-none text-blue tsj-TW" href="index.html#tsjcss"> Download or Use CDN </a><br><br>
+      </div><br />
       
-      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-        <div class="w3-third w3-margin-bottom">
-         
-          <div class="w3-round-large w3-container w3-white ">
-            <p><b>TSJ™CSS</b></p>
-            <p class="w3-opacity tsj-TW">v1.9.2</p>
-            <p style="font-size:15px;text-align:justify;text-justify:inter-word;">A superfast and light weight cascading style sheets framework for faster and unique web pages.</p>
-            <br>
-            <button class="outline-none w3-button w3-black w3-margin-bottom w3-left radius-l" onclick="document.getElementById('csstutorials').style.display='block'">Learn</button><br><br><br>
-            <p class="w3-small">Haven't added TSJ™CSS to your site yet ? Then<a class="td-none text-blue" href="https://moderhacks.github.io"> Download or Use CDN </a><br><br>
-          </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          
-          <div class="w3-round-large w3-container w3-white">
-            <p><b>TSJ™JS</b></p>
-            <p class="w3-opacity tsj-TW">v1.5</p>
-            <p style="font-size:15px;text-align:justify;text-justify:inter-word;">A superfast and light weight javascript framework for faster and unique web pages.</p>
-        <br>
-            <button class="outline-none w3-left w3-button w3-black w3-margin-bottom radius-l" onclick="document.getElementById('jstutorials').style.display='block'">Learn</button><br><br><br>
-             <p class="w3-small">Haven't added TSJ™JS to your site yet ? Then<a class="td-none text-blue" href="https://moderhacks.github.io"> Download or Use CDN </a><br><br>
-          </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-         
-          <div class="w3-round-large w3-container w3-white ">
-            <p><b>TSJ™Code Highlight</b></p>
-            <p class="w3-opacity tsj-TW">v1</p>
-            <p style="font-size:15px;text-align:justify;text-justify:inter-word;">A superfast and light weight javascript code highlight and style framework for faster and unique web pages.</p>
-            <br>
-            <button class="outline-none w3-button w3-black w3-margin-bottom w3-left radius-l" onclick="document.getElementById('chtutorials').style.display='block'">Learn</button><br><br><br>
-           <p class="w3-small">Haven't added TSJ™ Code Highlight to your site yet ? Then<a class="td-none text-blue" href="https://moderhacks.github.io"> Download or Use CDN </a><br><br>
-          </div>
-        </div>
+      <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;" id="tsjjs">
+      <h4 class="w3-left tsj-TW">TSJJS</h4> <br /><br /><br />
+      <i class="opacity w3-left tsj-justify tsj-TW">A superfast javascript library with unique structure. It uses what we call the <b>Fibre DOM</b> that is  extremely flexible and superlight. It can clone either one or all elements with a specific class / id or other. It can create elements, provide attributes to them as well as style in pure javascript. It can write in CSS as well as HTML, but too can identify their structures. It's a ES5 standard and is supported by IE9+. It can append, prepend, format etc. a content to any element. It can respond to any event and handle it easily, switch, toogle classes as well as add and remove them. We will make it further better in future.</i>
+      <center><button class="tsj-btn box-shadow margin radius-j outline-none hover:bg-black tsj-TW" onclick="tsj.show('#jstutorials')">Learn</button></center><p class="tsj-TW font-italic" style="font-size : 14px;">Haven't added TSJJS to your site yet ? Then<a class="td-none text-blue tsj-TW" href="index.html#tsjjs"> Download or Use CDN </a><br><br>
+      </div><br />
+      
+        <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;" id="clz">
+      <h4 class="w3-left tsj-TW">ColoriZe JS</h4> <br /><br /><br />
+      <i class="opacity w3-left tsj-justify tsj-TW">A superfast mini javascript syntax highlighting library but with a unique feature. You can customize the styles of each and every element highlighted in your own way by using what we call <b> Calling Classes </b>. It supports syntax of various languages and will support more in future as we will make it further better.</i>
+      <center><button class="tsj-btn box-shadow margin radius-j outline-none hover:bg-black tsj-TW" onclick="tsj.show('#chtutorials')">Learn</button></center><p class="tsj-TW font-italic" style="font-size : 14px;">Haven't added ColoriZe JS to your site yet ? Then<a class="td-none text-blue tsj-TW" href="index.html#clz"> Download or Use CDN </a><br><br>
+      </div><br />
+      
+      <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;" id="maths">
+      <h4 class="w3-left tsj-TW">TSJMaths JS</h4> <br /><br /><br />
+      <i class="opacity w3-left tsj-justify tsj-TW">A superfast minified Maths library which can do many things. It can do operations ( +, -, *, /, % ), find factorial ( n! ), combination, permuntation, co-ordinate geometry, statistics, probability, and more. We will be making it further better in future and add more math terms to it. *NOTE : Some features may not be supported by IE.</i>
+      <center><button class="tsj-btn box-shadow margin radius-j outline-none hover:bg-black tsj-TW" onclick="tsj.show('#matutorials')">Learn</button></center><p class="tsj-TW font-italic" style="font-size : 14px;">Haven't added TSJMaths JS to your site yet ? Then<a class="td-none text-blue tsj-TW" href="index.html#maths"> Download or Use CDN </a><br><br>
       </div>
-    </div>
-  </div>
 
  <div id="csstutorials" class="w3-modal">
     <div class="w3-modal-content w3-animate-top w3-card-4">
       <header class="w3-container w3-white w3-center w3-padding-32"> 
        <span onclick="document.getElementById('csstutorials').style.display='none'" 
        class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span><br>
-        <h3 class="w3-wide tsj-TW">TSJ™CSS Tutorials</h3>
+        <h3 class="w3-wide tsj-TW">TSJCSS Tutorials</h3>
       </header>
       <div class="w3-container">
-             <center><b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b>  <b class="text-red tsj-TW margin-R margin-L">ERROR</b>  <b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b><br><br><b class="text-red tsj-TW">  Tutorials on TSJ™CSS are not uploaded till now. Return in a few weeks to get it all ready.</b></center><br><br>
+             <center><b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b>  <b class="text-red tsj-TW margin-R margin-L">ERROR</b>  <b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b><br><br><b class="text-red tsj-TW">  Tutorials on TSJCSS are not uploaded till now. Return in a few weeks to get it all ready.</b></center><br><br>
         </div>
       </div>
     </div>
@@ -96,11 +127,25 @@
       <header class="w3-container w3-white w3-center w3-padding-32"> 
         <span onclick="document.getElementById('jstutorials').style.display='none'" 
        class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span><br>
-        <h3 class="w3-wide tsj-TW">TSJ™JS Tutorials</h3>
+        <h3 class="w3-wide tsj-TW">TSJJS Tutorials</h3>
       </header>
       <div class="w3-container">
-      <center><b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b>  <b class="text-red tsj-TW margin-R margin-L">ERROR</b>  <b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b><br><br><b class="text-red tsj-TW">  Tutorials on TSJ™JS are not uploaded till now. Return in a few weeks to get it all ready.</b></center><br><br>
+      <center><b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b>  <b class="text-red tsj-TW margin-R margin-L">ERROR</b>  <b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b><br><br><b class="text-red tsj-TW">  Tutorials on TSJJS are not uploaded till now. Return in a few weeks to get it all ready.</b></center><br><br>
       </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="matutorials" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-white w3-center w3-padding-32"> 
+       <span onclick="document.getElementById('matutorials').style.display='none'" 
+       class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span><br>
+        <h3 class="w3-wide tsj-TW">TSJMaths JS Tutorials</h3>
+      </header>
+      <div class="w3-container">
+             <center><b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b>  <b class="text-red tsj-TW margin-R margin-L">ERROR</b>  <b class="text-red w3-border w3-border-red radius-l" style="padding:5px 10px 5px 10px;">!</b><br><br><b class="text-red tsj-TW">  Tutorials on TSJMaths JS are not uploaded till now. Return in a few weeks to get it all ready.</b></center><br><br>
+        </div>
       </div>
     </div>
   </div>
@@ -110,12 +155,12 @@
       <header class="w3-container w3-white w3-center w3-padding-32"> 
         <span onclick="document.getElementById('chtutorials').style.display='none'" 
        class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span><br>
-        <h3 class="w3-wide tsj-TW">TSJ™Code Highlight Tutorials</h3>
+        <h3 class="w3-wide tsj-TW">ColoriZe JS Tutorials</h3>
       </header>
       <div class="w3-container">
      
      <ul class="w3-ul w3-white w3-text-grey radius-xxl w3-border-black padding" style="font-size:20px">
-     <a href="tutorials/TSJCodeHighlight/introduction.html" class="td-none">
+     <a href="tutorials/ColoriZe/introduction.html" class="td-none">
         <li class="w3-padding border-transparent tsj-TW"><span class="w3-tag w3-light-grey w3-left w3-round-large w3-text-green tsj-TW margin-R">1</span>Introduction And Usage</li></a>
       </ul>
      
@@ -125,9 +170,21 @@
   </div>
   </div>
   </div><br>
-<center><a href="https://github.com/MODERHACKS/moderhacks.github.io"><img src="https://img.icons8.com/windows/50/000000/github.png" class="bg-white border-black padding radius-B@xl radius-T@l box-shadow"></img></a></center>
-<footer class="w3-container w3-center radius-xl w3-black w3-small margin padding box-shadow">
-<a style="text-decoration:none;font-weight:bold;" href="https://moderhacks.weebly.com">MOD ER HACKS ( Debarchito Nath )</a> © Copyright 2019 | ALL RIGHTS RESERVED
-</footer>
+  
+<!-- Footer -->
+ <center><a href="https://github.com/MODERHACKS/moderhacks.github.io"><img id="github" src="https://img.icons8.com/windows/50/000000/github.png" class="bg-white border-black padding radius-B@xl radius-T@l"></img></a></center><br /> <footer id="copy" class="tsj-TW font-bold tsj-container w3-center radius-xl bg-black w3-small margin padding"> <a style="text-decoration:none;font-weight:bold;"
+href="https://moderhacks.weebly.com">MOD ER HACKS ( Debarchito Nath )</a> © Copyright 2019 | ALL RIGHTS RESERVED</footer><br /><br /><br /><br id="dp" /><br id="dp" /><br id="dp" /> <br id="dp" />
+ 
+</div>
+<script src="libs/TSJJS/2-x/v2/tsj.js"></script>
+<script src="libs/usage/js/jQuery/min/jquery-3.4.1.min.js"></script>
+<script>
+window.onscroll = function() { scrollFunction()};
+function scrollFunction() { if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { document.getElementById("goTop").style.display = "block"; } else { document.getElementById("goTop").style.display = "none"; } }
+tsj.click("#goTop", function() { 
+$('html, body').animate({ scrollTop: 0 }, 210);
+return false;  
+});
+</script>
 </body>
 </html>
