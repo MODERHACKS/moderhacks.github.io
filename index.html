@@ -1,186 +1,178 @@
+<!-- MOD ER HACKS UI Builder -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN" dir="ltr">
 <title>MOD ER HACKS - Project TSJ™</title>
+<!-- For Browsers and more-->
 <meta name="theme-color" content="black" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta property="og:description" content="Being official partner of TSJ, MOD ​ER HACKS has earned all the right to host Project TSJ™ on the internet." />
 <meta property="og:url" content="https://moderhacks.github.io/" />
+<!-- TSJCSS v2 Source-->
 <link rel="stylesheet" href="libs/TSJCSS/2-x/v2/tsj.css" />
+<!-- W3.CSS v4.3 Source -->
 <link rel="stylesheet" href="libs/usage/css/w3/w3.css" />
+<!-- Font Families Used -->
 <link rel="stylesheet" href="libs/usage/css/webstyles/mod1-family.css" />
+<!-- Material Icons Source-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<body style="font-size:16px;">
+<style>
+.w3-row-padding img {margin-bottom: 12px}
+.w3-sidebar {width: 120px;background: #222;}
+#main {margin-left: 120px}
+@media only screen and (max-width: 600px) {#main {margin-left: 0} #minbox { display : none; } #dp { display : none; } }
+@media only screen and (min-width: 601px) { #copy { float : right; width : 83%; } #github { margin-left :120px; } }
+</style>
+<body class="bg-white">
 
+<!-- Scroll to top -->
 <div class="display-bottom margin-B">
-<button id='goTop' title='Go to top' style='width:20%; border : 2px solid #333;display:none; padding :6px 0px 2px 0px!important;box-shadow:1px 1px 12px white;' class='animate-R w3-right margin-R bg-black outline-off radius-xl'><i class="material-icons large">arrow_upward</i></button></div>
+<button id='goTop' title='Go to top' style='width:20%; border:none;display:none; padding :6px 0px 2px 0px!important;box-shadow:1px 1px 12px black;' class='animate-R w3-right margin-R bg-black outline-off radius-xl'><i class="tsj-bold material-icons large">arrow_upward</i></button></div>
 
-<div class="w3-top bg-black box-shadow"style="border-bottom-right-radius:30px;border-bottom-left-radius:30px;">
-<a href="#" class="w3-left tsj-bar-item tsj-btn tsj-padding-large tsj-TW animate-O box-shadow bg-light-grey radius-R@j" style="margin-top:4px;margin-bottom:12px;border-bottom-left-radius:10px;">MOD ER HACKS - Project TSJ™</a>
-<b><a href="#" class="w3-right tsj-bar-item tsj-btn tsj-padding-large tsj-TW animate-O box-shadow bg-grey radius-L@j text-black" style="margin-top:4px;margin-bottom:12px;border-bottom-right-radius:10px;">v4</a></b></div>
+<!-- Navigation on large & medium screens -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center text-white">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#releases" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>RELEASES</p>
+  </a>
+  <a href="#tsjcss" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>TSJCSS Download</p>
+  </a>
+  <a href="#tsjjs" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>TSJJS Download</p>
+  </a>
+  <a href="#clz" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>ColoriZe JS Download</p>
+  </a>
+  <a href="#maths" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>TSJMaths Download</p>
+  </a>
+</nav>
 
-<div class="tsj-content" style="max-width:2000px;margin-top:46px">
-  <div class="tsj-container tsj-content w3-center padding-64" style="max-width:800px" id="header">
-    <h2 class="tsj-wide tsj-TW animate-O">MOD ER HACKS</h2>
-    <p class="opacity animate-O"><i>Web Development</i></p>
-    <br><p style="text-align:justify;text-justify:inter-word;" class="w3-justify tsj-TW animate-O">Here you get one of the most awesome CSS and JS galleries with tons of feature. <b>MOD ER HACKS's Project TSJ™</b> is a open source project and many new upgrades are added to the project weekly and old ones get a major update every month. Stay tuned with MOD ER HACKS to get all the updates. We also provide free CDN for our projects. Don't know what is CDN ? <button style="color:#008eff;" class="bg-transparent border-transparent outline-none td-none" onclick="tsj.show('#cdninfo')">Know About CDN</button>. Want to have some tutorials ? <form action="mainframe.html"><button style="color:#008eff;" class="bg-transparent border-transparent outline-none td-none">Have Tutorials !!</button></form><br>
-     <center><em><b>Therefore, Happy Coding !!</b></em><center></p>
-  </div>
+<!-- Navbar on small screens -->
+<div class="w3-top bg-black box-shadow animate-T"style="border-bottom-right-radius:30px;border-bottom-left-radius:30px;">
+<a href="#" class="w3-left tsj-bar-item tsj-btn tsj-padding-large tsj-TW animate-O box-shadow bg-light-grey radius-R@j" style="margin-top:4px;margin-bottom:12px;border-bottom-left-radius:10px;">MOD ER HACKS - Project TSJ™ </a>
+<b><a href="#" class="w3-right tsj-bar-item tsj-btn tsj-padding-large tsj-TW animate-O box-shadow bg-grey radius-L@j text-black" style="margin-top:4px;margin-bottom:12px;border-bottom-right-radius:10px;">v5</a></b></div><br /><br />
 
-  <div class="w3-black radius-T@xl box-shadow" id="basecontent">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide w3-center">PROJECT TSJ™</h2>
-      <p class="w3-opacity w3-center"><i>Latest Versions and Releases</i></p><br>
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
 
-      <ul class="w3-ul w3-border w3-white w3-text-grey radius-xxl w3-border-black w3-small padding">
-        <li class="w3-padding border-transparent">TSJ™CSS <span class="w3-tag w3-light-grey w3-margin-left w3-round-small w3-text-green">v2</span><span class="w3-tag w3-right w3-margin-right w3-light-grey w3-round-small w3-text-blue">July 2019</span></li>
-        <li class="w3-padding border-transparent">TSJ™JS <span class="w3-tag w3-light-grey w3-margin-left w3-round-small w3-text-green">v2</span><span class="w3-tag w3-right w3-margin-right w3-light-grey w3-text-blue w3-round-small">August 2019</span></li>
-        <li class="w3-padding">TSJ™Code Highlight<span class="w3-tag w3-light-grey w3-margin-left w3-round-small w3-text-green">v1</span><span class="w3-tag w3-right w3-margin-right w3-light-grey w3-text-blue w3-round-small">July 2019</span></li>
+<!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black radius-B@j animate-T" id="home"><br />
+    <h1 style="font-size : 38px;" class="tsj-TW">MOD ER HACKS</h1>
+<br />
+    <p><i class="opacity">Web Development Projects : 04</i></p>
+  </header>
+
+  <!-- About Section -->
+  <div class="tsj-content bg-white w3-justify text-black padding-64" id="about">
+    <center><h2 class="text-black tsj-TW">About</h2>
+    <hr style="width:200px" class=""></center>
+    <p style="text-align:justify;text-justify:inter-word;" class="w3-justify tsj-TW animate-O">Here you get one of the most awesome CSS and JS galleries with tons of feature. <b>MOD ER HACKS's Project TSJ™</b> is a open source project and many new upgrades are added to the project weekly and old ones get a major update every month. Stay tuned with MOD ER HACKS to get all the updates. We also provide free CDN for our projects. Don't know what is CDN ? <a style="color:#008eff;" class="bg-transparent border-transparent outline-none td-none" onclick="tsj.show('#cdninfo')">Know About CDN</a>. Want to have some tutorials ? <br /><center><a href="mainframe.html" style="color:#008eff;" class="bg-transparent border-transparent outline-none td-none">Have Tutorials !!</a><br /><br />
+     <em><b>Therefore, Happy Coding !!</b></em></center></p>
+     <br /><br />
+     
+<center><h2 id="releases" class="tsj-TW">Current Version &amp; Releases</h2>
+    <hr style="width:200px" ></center><br />
+    <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;">
+    
+     <ul class="w3-ul w3-light-grey w3-text-blue" style="text-align:left;">
+     <li class="w3-padding border-transparent" style="font-size : 15px;">TSJCSS <span class="w3-tag w3-white w3-margin-left w3-round-large w3-text-green">v2</span><span class="w3-tag w3-right w3-margin-right w3-white w3-round-large w3-text-yellow">Aug 2019</span></li>
+        <li class="w3-padding border-transparent" style="font-size : 15px;">TSJJS <span class="w3-tag w3-white w3-margin-left w3-round-large w3-text-green">v2</span><span class="w3-tag w3-right w3-margin-right w3-white w3-round-large w3-text-yellow">Aug 2019</span></li>
+        <li class="w3-padding border-transparent" style="font-size : 15px;">ColoriZe JS <span class="w3-tag w3-white w3-margin-left w3-round-large w3-text-green">v1</span><span class="w3-tag w3-right w3-margin-right w3-white w3-text-yellow w3-round-large">Aug 2019</span></li>
+ <li class="w3-padding" style="font-size : 15px;">TSJMaths<span class="w3-tag w3-white w3-margin-left w3-round-large w3-text-green">v1</span><span class="w3-tag w3-right w3-margin-right w3-white w3-text-yellow w3-round-large">Aug 2019</span></li>
       </ul>
+   
+</div> 
+<br/>
+     <center><h2 class="tsj-TW">Download Or Use CDN</h2>
+      <hr style="width:200px"></center><br />
+      <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;" id="tsjcss">
+      <h4 class="w3-left tsj-TW">TSJCSS</h4> <br /><br /><br />
+      <i class="opacity w3-left tsj-justify tsj-TW">A superfast css library with tones of features to make your website unique. It contains various classes that helps you to style your webpage. We know and respect the freedom of styling so we designed this gallery in such a way that it contains almost every essential that you would require to style with your choise. Something Missing ? Don't worry we are designing many plugins for this library which you can use for more ease. We will make it further better in future. </i>
+      <form action="https://moderhacks.github.io/libs/TSJCSS/2-x/v2/tsj.css">
+      <center><button class="tsj-btn box-shadow margin radius-j outline-none hover:bg-black tsj-TW">Download </button><br /><i class"opacity tsj-TW"=>OR</i><br /></center></form>
+       <div class="tsj-code notranslate border-none radius-xl" style="text-align : left!important;">
+       <span class="text-grey">&lt;</span><span style="color : purple;">link</span> <span class="text-red">rel</span><span class="text-grey">="</span><span class="text-green">stylesheet</span><span class="text-grey">"</span> <span class="text-red">href</span><span class="text-grey">="</span><span class="text-teal">https://moderhacks.github.io/libs/TSJCSS/2-x/v2/tsj.css</span><span class="text-grey">" /></span>
+       </div>
+      </div><br />
+      
+      <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;" id="tsjjs">
+      <h4 class="w3-left tsj-TW">TSJJS</h4> <br /><br /><br />
+      <i class="opacity w3-left tsj-justify tsj-TW">A superfast javascript library with unique structure. It uses what we call the <b>Fibre DOM</b> that is  extremely flexible and superlight. It can clone either one or all elements with a specific class / id or other. It can create elements, provide attributes to them as well as style in pure javascript. It can write in CSS as well as HTML, but too can identify their structures. It's a ES5 standard and is supported by IE9+. It can append, prepend, format etc. a content to any element. It can respond to any event and handle it easily, switch, toogle classes as well as add and remove them. We will make it further better in future.</i>
+      <form action="https://moderhacks.github.io/libs/TSJJS/2-x/v2/tsj.js">
+       <center><button class="tsj-btn box-shadow margin radius-j outline-none hover:bg-black tsj-TW">Download </button><br /><i class"opacity tsj-TW"=>OR</i><br /></center></form>
+       <div class="tsj-code notranslate border-none radius-xl" style="text-align : left!important;">
+       <span class="text-grey">&lt;</span><span style="color : purple;">script</span> <span class="text-red">type</span><span class="text-grey">="</span><span class="text-green">text/javascript</span><span class="text-grey">"</span> <span class="text-red">href</span><span class="text-grey">="</span><span class="text-teal">https://moderhacks.github.io/libs/TSJJS/2-x/v2/tsj.js</span><span class="text-grey">">&lt;/</span><span style="color : purple;">script</span><span class="text-grey">></span>
+       </div>
+      </div><br />
+      
+       <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;" id="clz">
+      <h4 class="w3-left tsj-TW">ColoriZe JS</h4> <br /><br /><br />
+      <i class="opacity w3-left tsj-justify tsj-TW">A superfast mini javascript syntax highlighting library but with a unique feature. You can customize the styles of each and every element highlighted in your own way by using what we call <b> Calling Classes </b>. It supports syntax of various languages and will support more in future as we will make it further better.</i>
+      <form action="https://moderhacks.github.io/libs/ext/js/ColoriZe/1-x/v1/clz.js">
+        <center><button class="tsj-btn box-shadow margin radius-j outline-none hover:bg-black tsj-TW">Download </button><br /><i class"opacity tsj-TW"=>OR</i><br /></center></form>
+       <div class="tsj-code notranslate border-none radius-xl" style="text-align : left!important;">
+       <span class="text-grey">&lt;</span><span style="color : purple;">script</span> <span class="text-red">type</span><span class="text-grey">="</span><span class="text-green">text/javascript</span><span class="text-grey">"</span> <span class="text-red">href</span><span class="text-grey">="</span><span class="text-teal">https://moderhacks.github.io/libs/ext/js/ColoriZe/1-x/v1/clz.js</span><span class="text-grey">">&lt;/</span><span style="color : purple;">script</span><span class="text-grey">></span>
+       </div>
+      </div><br />
+      
+      <div class="w3-row w3-section w3-center w3-light-grey radius-xl tsj-container box-shadow" style="padding-top:8px; padding-bottom : 8px;" id="maths">
+      <h4 class="w3-left tsj-TW">TSJMaths JS</h4> <br /><br /><br />
+      <i class="opacity w3-left tsj-justify tsj-TW">A superfast minified Maths library which can do many things. It can do operations ( +, -, *, /, % ), find factorial ( n! ), combination, permuntation, co-ordinate geometry, statistics, probability, and more. We will be making it further better in future and add more math terms to it. *NOTE : Some features may not be supported by IE.</i>
+      <form action="https://moderhacks.github.io/libs/ext/js/TSJMaths/1-x/v1/tm.js">
+        <center><button class="tsj-btn box-shadow margin radius-j outline-none hover:bg-black tsj-TW">Download </button><br /><i class"opacity tsj-TW"=>OR</i><br /></center></form>
+       <div class="tsj-code notranslate border-none radius-xl" style="text-align : left!important;">
+       <span class="text-grey">&lt;</span><span style="color : purple;">script</span> <span class="text-red">type</span><span class="text-grey">="</span><span class="text-green">text/javascript</span><span class="text-grey">"</span> <span class="text-red">href</span><span class="text-grey">="</span><span class="text-teal">https://moderhacks.github.io/libs/ext/js/TSJMaths/1-x/v1/tm.js</span><span class="text-grey">">&lt;/</span><span style="color : purple;">script</span><span class="text-grey">></span>
+       </div>
+      </div>
+      
+      
+<!-- Modals -->
 
-<br>
-<p class="w3-opacity w3-center"><i>Download or use CDN</i></p>
+<!-- What is CDN ? -->
+<div id="cdninfo" class="w3-modal">
+<div class="w3-modal-content w3-animate-top w3-card-4">
+<header class="w3-container w3-white w3-center w3-padding-32"> 
+<span onclick="tsj.hide('#cdninfo')" class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span>
+<h2 class="w3-wide tsj-TW">What is CDN ?</h2>
+</header>
+<div class="w3-container">
+<center><p style="text-align: justify; text-justify: inter-word;">A content delivery network or content distribution network (CDN) is a geographically distributed network of proxy servers and their data centers. The goal is to provide high availability and high performance by distributing the service spatially relative to end-users. CDNs serve a large portion of the Internet content today, including web objects (text, graphics and scripts), downloadable objects (media files, software, documents), applications (e-commerce, portals), live streaming media, on-demand streaming media, and social media sites. CDNs are a layer in the internet ecosystem. Content owners such as media companies and e-commerce vendors pay CDN operators to deliver their content to their end users. In turn, a CDN pays ISPs, carriers, and network operators for hosting its servers in their data centers. CDN is an umbrella term spanning different types of content delivery services: video streaming, software downloads, web and mobile content acceleration, licensed/managed CDN, transparent caching, and services to measure CDN performance, load balancing, Multi CDN switching and analytics and cloud intelligence. CDN vendors may cross over into other industries like security, with DDoS protection and web application firewalls (WAF), and WAN optimization.</p>
+<p><h class="opacity">Source - </h><b><a class="text-black td-none" href="https://en.m.wikipedia.org/wiki/Content_delivery_network">Wikipedia.com</a></b><br><br><span onclick="tsj.hide('#cdninfo')" class="w3-button text-red bg-light-grey tsj-tag w3-xlarge radius-l">&cross;</span>
+</p><hr></center>
+</div></div></div>
 
-      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-        <div class="w3-third w3-margin-bottom">
-         <br>
-          <div class="w3-round-large w3-container w3-white th-shadow-wh">
-            <p><b style="color:black">TSJ™CSS</b></p>
-            <p class="w3-opacity tsj-TW">CSS</p>
-            <p style="font-size:15px;text-align:justify;text-justify:inter-word;">A superfast and light weight cascading style sheets framework for faster and unique web pages.</p>
-            <form action="https://moderhacks.github.io/libs/css/2-x/v2/tsj.css">
-            <button style="background:black;margin-left:8px;" class="outline-none w3-left w3-button hover:bg-black w3-margin-bottom radius-l text-white" >Download</button></form>
-            <button style="background:black;margin-left:8px;" class="outline-none w3-right w3-button hover:bg-black w3-margin-bottom radius-l text-white" onclick="tsj.show('#cssmod')">CDN</button>
-          </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <br>
-          <div class="w3-round-large w3-container w3-white th-shadow-wh">
-            <p><b style="color:black">TSJ™JS</b></p>
-            <p class="w3-opacity tsj-TW">JS</p>
-            <p style="font-size:15px;text-align:justify;text-justify:inter-word;">A superfast and light weight javascript framework for faster and unique web pages.</p>
-            <form action="https://moderhacks.github.io/libs/js/2-x/v2/tsj.js">
-            <button style="background:black;margin-left:8px;" class="outline-none w3-left w3-button hover:bg-black w3-margin-bottom radius-l text-white">Download</button>
-</form>
-             <button style="background:black;margin-left:8px;" class="outline-none w3-right w3-button hover:bg-black w3-margin-bottom radius-l text-white" onclick="tsj.show('#jsmod')">CDN</button>
-          </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-         <br>
-          <div class="w3-round-large w3-container w3-white th-shadow-wh">
-            <p><b style="color:black">TSJ™Code Highlight</b></p>
-            <p class="w3-opacity tsj-TW">JS</p>
-            <p style="font-size:15px;text-align:justify;text-justify:inter-word;">A superfast and light weight javascript code highlight and style framework for faster and unique web pages.</p>
-            <form action="https://moderhacks.github.io/libs/ext/js/tsj-code-highlight/1-x/v1/tch.js">
-            <button style="background:black;margin-left:8px;" class="outline-none w3-left w3-button hover:bg-black w3-margin-bottom radius-l text-white" >Download</button></form>
-            <button style="background:black;margin-left:8px;" class="outline-none w3-right w3-button hover:bg-black w3-margin-bottom radius-l text-white" onclick="tsj.show('#codemod')">CDN</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
- <div id="cssmod" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-white w3-center w3-padding-32"> 
-       <span onclick="tsj.hide('#cssmod')" 
-       class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span>
-        <h2 class="w3-wide tsj-TW">TSJ™CSS CDN</h2>
-      </header>
-      <div class="w3-container">
-      <b class="w3-left w3-center tsj-TW">Version : v2</b>
-        <button class="w3-right tsj-button bg-black hover:bg-light-grey text-white hover:text-black outline-none radius-l" onclick="tsj.toggleShow('#htu1')">How To Use ?</button><br><br>
-        <div style="background:#EDEDED" class="tsj-code tsj-TW border-black notranslate"> 
-     <span style="color:purple;">&lt;link</span> <span class="text-orange">rel=</span><span class="text-teal">"stylesheet"</span> <span class="text-orange">href=</span><span class="text-teal">"https://moderhacks.github.io/libs/css/2-x/v2/tsj.css"</span><span style="color:purple;">/&gt;</span>        
-        </div>
-        <footer id="htu1"  class="tsj-container bg-white" style="display:none;">
-     <h4 class="w3-center">How To Use ? </h4>
-     <h6 style="text-align:justify;text-justify:inter-word;">Paste the above given code inside your <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;">&lt;head&gt;</span> and <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;">&lt;/head&gt;</span> of your <span class="tsj-tag bg-light-grey radius-l text-orange" style="margin-top:4px;">.html</span> file to start using it.</h6><center><span onclick="tsj.hide('#htu1')" 
-       class="w3-button text-red bg-light-grey tsj-tag w3-xlarge radius-l ">&cross;</span></center><hr>
-     </footer>
-      </div>
-    </div>
-  </div>
-  
-  <div id="jsmod" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-white w3-center w3-padding-32"> 
-        <span onclick="tsj.hide('#jsmod')" 
-       class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span>
-        <h2 class="w3-wide tsj-TW">TSJ™JS CDN</h2>
-      </header>
-      <div class="w3-container">
-       
-      <b class="w3-left w3-center tsj-TW">Version : v2</b>
-      <button class="w3-right tsj-button bg-black hover:bg-light-grey text-white hover:text-black outline-none radius-l" onclick="tsj.toggleShow('#htu2')">How To Use ?</button><br><br>
-      <div style="background:#EDEDED" class="tsj-code tsj-TW border-black notranslate"> 
-      <span style="color:purple;">&lt;script</span> <span class="text-orange">type=</span><span class="text-teal">"text/javascript"</span> <span class="text-orange">src=</span><span class="text-teal">"https://moderhacks.github.io/libs/js/2-x/v2/tsj.js"</span> <span style="color:purple;">&gt;&lt;/script&gt;</span>
-      </div>
-      <footer id="htu2"  class="tsj-container bg-white" style="display:none;">
-     <h4 class="w3-center">How To Use ? </h4>
-     <h6 style="text-align:justify;text-justify:inter-word;">Paste the above given code either inside your <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;">&lt;head&gt;</span> and <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;">&lt;/head&gt;</span> or inside your <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;margin-top:4px;">&lt;body&gt;</span> and <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;">&lt;/body&gt;</span> of your <span class="tsj-tag bg-light-grey radius-l text-orange" style="margin-top:4px;">.html</span> file to start using it.</h6><center><span onclick="tsj.hide('#htu2')" 
-       class="w3-button text-red bg-light-grey tsj-tag w3-xlarge radius-l ">&cross;</span></center><hr>
-     </footer>
-      </div>
-    </div>
-  </div>
-  
-  <div id="codemod" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-white w3-center w3-padding-32"> 
-        <span onclick="tsj.hide('#codemod')" 
-       class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span>
-        <h2 class="w3-wide tsj-TW">TSJ™Code Highlight CDN</h2>
-      </header>
-      <div class="w3-container">
-      <b class="w3-left tsj-TW">Version : v1</b>
-      <button class="w3-right tsj-button bg-black hover:bg-light-grey text-white hover:text-black outline-none radius-l" onclick="tsj.toggleShow('#htu3')">How To Use ?</button><br><br>
-        <div style="background:#EDEDED" class="tsj-code tsj-TW border-black notranslate"> 
-     <span style="color:purple;">&lt;script</span> <span class="text-orange">type=</span><span class="text-teal">"text/javascript"</span> <span class="text-orange">src=</span><span class="text-teal">"https://moderhacks.github.io/libs/ext/js/tsj-code-highlight/1-x/v1/tch.js"<span style="color:purple;">&gt;&lt;/script&gt;</span> </div>  
-     <footer id="htu3"  class="tsj-container bg-white" style="display:none;">
-     <h4 class="w3-center">How To Use ? </h4>
-     <h6 style="text-align:justify;text-justify:inter-word;">Paste the above given code either inside your <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;">&lt;head&gt;</span> and <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;">&lt;/head&gt;</span> or inside your <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;margin-top:4px;">&lt;body&gt;</span> and <span class="tsj-tag bg-light-grey radius-l" style="color:purple!important;">&lt;/body&gt;</span> of your <span class="tsj-tag bg-light-grey radius-l text-orange" style="margin-top:4px;">.html</span> file to start using it.</h6><center><span onclick="tsj.hide('#htu3')" 
-       class="w3-button text-red bg-light-grey tsj-tag w3-xlarge radius-l ">&cross;</span></center><hr>
-     </footer>             
-      </div>
-    </div>
-  </div>
-  
-  <div id="cdninfo" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-white w3-center w3-padding-32"> 
-        <span onclick="tsj.hide('#cdninfo')" 
-       class="w3-button w3-light-grey radius-BL-xlarge w3-xlarge w3-display-topright w3-text-red">&cross;</span>
-        <h2 class="w3-wide tsj-TW">What is CDN ?</h2>
-      </header>
-      <div class="w3-container">
-      <center><p style="text-align: justify; text-justify: inter-word;">A content delivery network or content distribution network (CDN) is a geographically distributed network of proxy servers and their data centers. The goal is to provide high availability and high performance by distributing the service spatially relative to end-users. CDNs serve a large portion of the Internet content today, including web objects (text, graphics and scripts), downloadable objects (media files, software, documents), applications (e-commerce, portals), live streaming media, on-demand streaming media, and social media sites.
 
-CDNs are a layer in the internet ecosystem. Content owners such as media companies and e-commerce vendors pay CDN operators to deliver their content to their end users. In turn, a CDN pays ISPs, carriers, and network operators for hosting its servers in their data centers.
+</div></div>
 
-CDN is an umbrella term spanning different types of content delivery services: video streaming, software downloads, web and mobile content acceleration, licensed/managed CDN, transparent caching, and services to measure CDN performance, load balancing, multi-CDN switching and analytics and cloud intelligence. CDN vendors may cross over into other industries like security, with DDoS protection and web application firewalls (WAF), and WAN optimization.</p><p class="opacity">Source - <b><a class="text-black td-none" href="https://en.m.wikipedia.org/wiki/Content_delivery_network">Wikipedia.com</a></b><br><br><center><span onclick="tsj.hide('#cdninfo')" 
-       class="w3-button text-red bg-light-grey tsj-tag w3-xlarge radius-l ">&cross;</span></center></p><hr></center>
-      </div>
-    </div>
-  </div><br>
-<center><a href="https://github.com/MODERHACKS/moderhacks.github.io"><img src="https://img.icons8.com/windows/50/000000/github.png" class="bg-white border-black padding radius-B@xl radius-T@l th-shadow"></img></a></center>
-<footer class="w3-container w3-center radius-xl bg-theme text-white w3-small margin padding box-shadow">
-<a style="text-decoration:none;font-weight:bold;" href="https://moderhacks.weebly.com">MOD ER HACKS ( Debarchito Nath )</a> © Copyright 2019 | ALL RIGHTS RESERVED
-</footer>
-<br /><br /><br />
+<!-- Footer -->
+ <center><a href="https://github.com/MODERHACKS/moderhacks.github.io"><img id="github" src="https://img.icons8.com/windows/50/000000/github.png" class="bg-white border-black padding radius-B@xl radius-T@l"></img></a></center><br /> <footer id="copy" class="tsj-TW font-bold tsj-container w3-center radius-xl bg-black w3-small margin padding"> <a style="text-decoration:none;font-weight:bold;"
+href="https://moderhacks.weebly.com">MOD ER HACKS ( Debarchito Nath )</a> © Copyright 2019 | ALL RIGHTS RESERVED</footer><br /><br /><br /><br id="dp" /><br id="dp" /><br id="dp" /> <br id="dp" />
+ 
+</div>
 <script src="libs/TSJJS/2-x/v2/tsj.js"></script>
 <script src="libs/usage/js/jQuery/min/jquery-3.4.1.min.js"></script>
 <script>
-
 window.onscroll = function() { scrollFunction()};
 function scrollFunction() { if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { document.getElementById("goTop").style.display = "block"; } else { document.getElementById("goTop").style.display = "none"; } }
-
 tsj.click("#goTop", function() { 
-$('html,body').animate({ scrollTop: 0 }, 210);
+$('html, body').animate({ scrollTop: 0 }, 210);
 return false;  
 });
-
-</script>
 </script>
 </body>
 </html>
