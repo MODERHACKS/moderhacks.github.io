@@ -20,7 +20,7 @@ var ColoriZe = function() { var x, i, j, k, l, modes = ["html", "js", "java", "c
 // Helper
 function ScriptColoriZe(x, lang) { 
 // HTML 
-var tagcolor = "#919191"; var tagnamecolor = "#387FB3"; var attributecolor = "#D04B00"; var attributevaluecolor = "#369e69"; var commentcolor = "grey"; var headcolor = "green!important";
+var tagcolor = "#919191"; var tagnamecolor = "#387FB3"; var attributecolor = "#FF5C00"; var attributevaluecolor = "#369e69"; var commentcolor = "grey"; var headcolor = "green!important";
 // CSS
 var cssselectorcolor = "#2082FF"; var csspropertycolor = "#369e69"; var csspropertyvaluecolor = "#7C007C"; var cssdelimitercolor = "#2082FF"; var cssimportantcolor = "#1866C7";  
 // Javascript
@@ -513,8 +513,8 @@ if (!lang) {lang = "html"; }; if (lang == "html") { return htmlMode(x); }; if (l
     } else if (typ == "kotlin") {
       words = ['package','as','typealias','class','interface','this','super','val','operator','var','fun','for','is','in','This','throw','return',
       'annotation','break','continue','object','if','else','while','do','try','when','!in','!is','as?','file','import','where','by','get','set',
-      'abstract','enum','open','inner','override','private','public','internal','protected','catch','finally','out','final','vararg','reified',
-      'dynamic','companion','constructor','init','sealed','field','property', 'println', 'receiver','param','sparam','lateinit','data','inline','noinline',
+      'abstract','enum','open','inner','override','private', 'println','public','internal','protected','catch','finally','out','final','vararg','reified',
+      'dynamic','companion','constructor','init','sealed','field','property','receiver','param','sparam','lateinit','data','inline','noinline',
       'tailrec','external','annotation','crossinline','const','operator','infix','suspend','actual','expect','setparam','Boolean','Byte','Character',
       'CharSequence','Class','ClassLoader','Cloneable','Comparable','Compiler','Double','Exception','Float','Integer','Long','Math','Number','Object',
       'Package','Pair','Process','Runtime','Runnable','SecurityManager','Short','StackTraceElement','StrictMath','String','StringBuffer','System',
