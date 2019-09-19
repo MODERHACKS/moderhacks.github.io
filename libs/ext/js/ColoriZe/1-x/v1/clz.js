@@ -5,108 +5,41 @@
    *ColoriZe JS  ( https://moderhacks.github.io )
    *Prevously Named : TSJ™ Code Highlight 
    *v1 ( https://moderhacks.github.io/libs/ext/js/ColoriZe/1-x/v1/clz.js )
-   *August 2019 ( 2nd Update )
+   *19th September 2019 ( 3rd Update )
    *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
-   *Includes new custom classes
+   *Includes new and better custom classes, easy to remember syntax is used.
    *Released Under MIT License ( https://moderhacks.github.io/LICENSE.html )
    
    ** ****** ** *********
    
 */
 
-function ColoriZe() {
-  var x, i, j, k, l, modes = ["html", "js", "java", "css", "sql", "python", "kotlin"];
-  if (!document.getElementsByClassName) {return;}
-  k = modes.length;
-  for (j = 0; j < k; j++) {
-    x = document.getElementsByClassName( "ColoriZe-" + modes[j]);
-    l = x.length;
-    for (i = 0; i < l; i++) {
-      x[i].innerHTML = ScriptColoriZe(x[i].innerHTML, modes[j]);
-    }
-  }
-}
+// Main
+var ColoriZe = function() { var x, i, j, k, l, modes = ["html", "js", "java", "css", "sql", "python", "kotlin"]; if (!document.getElementsByClassName) {return;}; k = modes.length; for (j = 0; j < k; j++) { x = document.getElementsByClassName( "ColoriZe-" + modes[j]); l = x.length; for (i = 0; i < l; i++) { x[i].innerHTML = ScriptColoriZe(x[i].innerHTML, modes[j]); }; }; };
 
-function ScriptColoriZe(x, lang) {
-  // HTML
-  var tagcolor = "purple";
-  var tagnamecolor = "purple";
-  var attributecolor = "#a97629";
-  var attributevaluecolor = "teal";
-  var commentcolor = "grey;";
-  var headcolor = "green!important";
-  // CSS
-  var cssselectorcolor = "#ff5c5c";
-  var csspropertycolor = "green";
-  var csspropertyvaluecolor = "#A97629";
-  var cssdelimitercolor = "#ff5c5c";
-  var cssimportantcolor = "teal";  
-  // Javascript
-  var jscolor = "#916121";
-  var jskeywordcolor = "#ff5c5c";
-  var jsstringcolor = "teal";
-  var jsnumbercolor = "green";
-  var jspropertycolor = "#00AD79";
-  // Java
-  var javacolor = "#916121";
-  var javakeywordcolor = "#ff5c5c";
-  var javastringcolor = "teal";
-  var javanumbercolor = "green";
-  var javapropertycolor = "#00ad79";
-  // Kotlin
-  var kotlincolor = "#916121";
-  var kotlinkeywordcolor = "#ff5c5c";
-  var kotlinstringcolor = "teal";
-  var kotlinnumbercolor = "green";
-  var kotlinpropertycolor = "#00ad79";
-  // PHP
-  var phptagcolor = "green";
-  var phpcolor = "#a97629";
-  var phpkeywordcolor = "green";
-  var phpglobalcolor = "#00ad79";
-  var phpstringcolor = "teal";
-  var phpnumbercolor = "red";  
-  // Python
-  var pythoncolor = "#a97629";
-  var pythonkeywordcolor = "green";
-  var pythonstringcolor = "teal";
-  var pythonnumbercolor = "#ff5c5c";  
-  // Angular 
-  var angularstatementcolor = "blue";
-  // My SQL
-  var sqlcolor = "#ff5c5c";
-  var sqlkeywordcolor = "green";
-  var sqlstringcolor = "teal";
-  var sqlnumbercolor = "#00ad79";  
-  // Language Identification
-  if (!lang) {lang = "html"; }
-  if (lang == "html") {return htmlMode(x);}
-  if (lang == "css") {return cssMode(x);}
-  if (lang == "js") {return jsMode(x);}
-  if (lang == "java") {return javaMode(x);}
-  if (lang == "kotlin") {return kotlinMode(x);}
-  if (lang == "php") {return phpMode(x);}
-  if (lang == "sql") {return sqlMode(x);}  
-  if (lang == "python") {return pythonMode(x);}
-  return x;
-  function extract(str, start, end, func, repl) {
-    var s, e, d = "", a = [];
-    while (str.search(start) > -1) {
-      s = str.search(start);
-      e = str.indexOf(end, s);
-      if (e == -1) {e = str.length;}
-      if (repl) {
-        a.push(func(str.substring(s, e + (end.length))));      
-        str = str.substring(0, s) + repl + str.substr(e + (end.length));
-      } else {
-        d += str.substring(0, s);
-        d += func(str.substring(s, e + (end.length)));
-        str = str.substr(e + (end.length));
-      }
-    }
-    this.rest = d + str;
-    this.arr = a;
-  }
+// Helper
+function ScriptColoriZe(x, lang) { 
+// HTML 
+var tagcolor = "#919191"; var tagnamecolor = "#387FB3"; var attributecolor = "#D04B00"; var attributevaluecolor = "#369e69"; var commentcolor = "grey"; var headcolor = "green!important";
+// CSS
+var cssselectorcolor = "#2082FF"; var csspropertycolor = "#369e69"; var csspropertyvaluecolor = "#7C007C"; var cssdelimitercolor = "#2082FF"; var cssimportantcolor = "#1866C7";  
+// Javascript
+var jscolor = "#1A7074"; var jskeywordcolor = "#2082FF"; var jsstringcolor = "#369E69"; var jsnumbercolor = "#ff5c5c"; var jspropertycolor = "#00AD79";
+// Java
+var javacolor = "#1A7074"; var javakeywordcolor = "#2082FF"; var javastringcolor = "#369E69"; var javanumbercolor = "#ff5c5c"; var javapropertycolor = "#00ad79";
+// Kotlin
+var kotlincolor = "#1A7074"; var kotlinkeywordcolor = "#2082FF"; var kotlinstringcolor = "#369E69"; var kotlinnumbercolor = "#ff5c5c"; var kotlinpropertycolor = "#00ad79";
+// PHP
+var phptagcolor = "green"; var phpcolor = "#1A7074"; var phpkeywordcolor = "#2082FF"; var phpglobalcolor = "#00ad79"; var phpstringcolor = "#369E69"; var phpnumbercolor = "#ff5c5c";  
+// Python
+var pythoncolor = "#1A7074"; var pythonkeywordcolor = "#2082FF"; var pythonstringcolor = "#369E69"; var pythonnumbercolor = "#ff5c5c";  
+// Angular 
+var angularstatementcolor = "#008eff";
+// My SQL
+var sqlcolor = "#1A7074"; var sqlkeywordcolor = "#2082FF"; var sqlstringcolor = "#369E69"; var sqlnumbercolor = "#ff5c5c"; 
+
+// Language Identification
+if (!lang) {lang = "html"; }; if (lang == "html") { return htmlMode(x); }; if (lang == "css") { return cssMode(x); }; if (lang == "js") { return jsMode(x); }; if (lang == "java") { return javaMode(x); }; if (lang == "kotlin") { return kotlinMode(x); }; if (lang == "php") { return phpMode(x); }; if (lang == "sql") { return sqlMode(x); }; if (lang == "python") { return pythonMode(x); }; return x; function extract(str, start, end, func, repl) { var s, e, d = "", a = []; while (str.search(start) > -1) { s = str.search(start); e = str.indexOf(end, s); if (e == -1) {e = str.length; } if (repl) { a.push(func(str.substring(s, e + (end.length)))); str = str.substring(0, s) + repl + str.substr(e + (end.length)); } else { d += str.substring(0, s); d += func(str.substring(s, e + (end.length))); str = str.substr(e + (end.length)); }; }; this.rest = d + str; this.arr = a; };
   
   // HTML Mode
   function htmlMode(txt) {
@@ -162,11 +95,11 @@ function ScriptColoriZe(x, lang) {
       rest = rest.substr(endpos);
     }
     result = done + rest;
-    result = "<span class='webfulltag webtag webtag-start htmlfulltag htmltag htmltag-start' style=color:" + tagcolor + ";font-weight:bold;>&lt;</span>" + result.substring(4);
+    result = "<span style='color:" + tagcolor + ";font-weight:bold;' class='clz-web-fulltag clz-web-tag clz-web-tag-start clz-html-fulltag clz-html-tag clz-html-tag-start'>&lt;</span>" + result.substring(4);
     if (result.substr(result.length - 4, 4) == "&gt;") {
-      result = result.substring(0, result.length - 4) + "<span class='webfulltag webtag webtag-stop htmlfulltag htmltag htmltag-stop' style=color:" + tagcolor + ";font-weight:900;>&gt;</span>";
+      result = result.substring(0, result.length - 4) + "<span style='color:" + tagcolor + ";font-weight:900;' class='clz-web-fulltag clz-web-tag clz-web-tag-stop clz-html-fulltag clz-html-tag clz-html-tag-stop' >&gt;</span>";
     }
-    return "<span class='webfulltag webtagname htmlfulltag htmltagname ' style=color:" + tagnamecolor + ";font-weight:bold;>" + result + "</span>";
+    return "<span style='color:" + tagnamecolor + ";font-weight:bold;' class='clz-web-fulltag clz-web-tagname clz-html-fulltag clz-html-tagname'>" + result + "</span>";
   }  
   function attributeMode(txt) {
     var rest = txt, done = "", startpos, endpos, singlefnuttpos, doublefnuttpos, spacepos;
@@ -188,16 +121,16 @@ function ScriptColoriZe(x, lang) {
       done += attributeValueMode(rest.substring(startpos, endpos + 1));
       rest = rest.substr(endpos + 1);
     }
-    return "<span class='htmlattribute' style=color:" + attributecolor + ";font-weight:normal;margin-right:2px;>" + done + rest + "</span>";
+    return "<span style='color:" + attributecolor + ";font-weight:normal;margin-right:2px;' class='clz-html-attribute'>" + done + rest + "</span>";
   }
   function attributeValueMode(txt) {
-    return "<span class='htmlattributevalue' style=color:" + attributevaluecolor + ";font-style:italic;font-weight:600;>" + txt + "</span>";
+    return "<span style='color:" + attributevaluecolor + ";font-style:italic;font-weight:600;' class='clz-html-attribute-value'>" + txt + "</span>";
   }
   function angularMode(txt) {
-    return "<span class='angularstatement htmlangularstatement' style=color:" + angularstatementcolor + ">" + txt + "</span>";
+    return "<span style='color:" + angularstatementcolor + ";' class='clz-angularstatement clz-html-angularstatement clz-angular-statement clz-html-angular-statement'>" + txt + "</span>";
   }
   function commentMode(txt) {
-    return "<span class='comment' style=color:" + commentcolor + ";font-weight:normal;font-style:italic;>" + txt + "</span>";
+    return "<span style='color:" + commentcolor + ";font-weight:normal;font-style:italic;font-family:serif;' class='clz-comment'>" + txt + "</span>";
   }
   
   // CSS Mode
@@ -226,12 +159,12 @@ function ScriptColoriZe(x, lang) {
       rest = rest.substr(e);
     }
     rest = done + rest;
-    rest = rest.replace(/{/g, "<span class='csssymbols cssparenthesis csscurlies cssparenthesis-start csstag-start csscurly-start' style=color:" + cssdelimitercolor + ";color:#ff5c5c;font-style:italic;margin-right:3px;>{</span>");
-    rest = rest.replace(/}/g, "<span class='csssymbols cssparenthesis csscurlies cssparenthesis-stop csstag-stop csscurly-stop' style=color:" + cssdelimitercolor + ";color:#ff5c5c;font-style:italic;>}</span>");
+    rest = rest.replace(/{/g, "<span style='color:" + cssdelimitercolor + ";font-style:italic;margin-right:3px;' class='clz-css-symbols clz-css-symbol clz-css-parenthesis clz-css-curlies clz-css-parenthesis-start clz-css-symbol-start clz-css-symbols-start clz-css-curly-start'>{</span>");
+    rest = rest.replace(/}/g, "<span style='color:" + cssdelimitercolor + ";font-style:italic;' class='clz-css-symbols clz-css-symbol clz-css-parenthesis clz-css-curlies clz-css-parenthesis-stop clz-css-symbol-stop clz-css-symbols-stop clz-css-curly-stop'>}</span>");
     for (i = 0; i < comment.arr.length; i++) {
         rest = rest.replace("TSJCSSCOMMENTPOS", comment.arr[i]);
     }
-    return "<span class='cssselector' style=color:" + cssselectorcolor +  ";font-weight:bold;>" + rest + "</span>";
+    return "<span style='color:" + cssselectorcolor +  ";font-weight:bold;' class='clz-css-selector'>" + rest + "</span>";
   }
   function cssPropertyMode(txt) {
     var rest = txt, done = "", s, e, n, loop;
@@ -253,11 +186,11 @@ function ScriptColoriZe(x, lang) {
       done += cssPropertyValueMode(rest.substring(s, e + 1));
       rest = rest.substr(e + 1);
     }
-    return "<span class='cssproperty' style=color:" + csspropertycolor + ";font-weight:normal;font-style:normal;>" + done + rest + "</span>";
+    return "<span style='color:" + csspropertycolor + ";font-weight:normal;font-style:normal;' class='clz-css-property'>" + done + rest + "</span>";
   }
   function cssPropertyValueMode(txt) {
-    var rest = txt, done = "", s;
-    rest = "<span class='csssymbols csscolon cssvaluetag cssdoubledot cssdotdot csstwodot' style=color:" + cssdelimitercolor + ">:</span>" + rest.substring(1);
+    var rest = txt, done = "", s; 
+    rest = "<span style='color:" + cssdelimitercolor + "' class='clz-css-symbols clz-css-symbol clz-css-colon clz-css-symbol-value clz-css-symbols-value clz-css-doubledot clz-css-dotdot clz-css-twodot'>:</span>" + rest.substring(1);
     while (rest.search(/!important/i) > -1) {
       s = rest.search(/!important/i);
       done += rest.substring(0, s);
@@ -266,12 +199,12 @@ function ScriptColoriZe(x, lang) {
     }
     result = done + rest;    
     if (result.substr(result.length - 1, 1) == ";" && result.substr(result.length - 6, 6) != "&nbsp;" && result.substr(result.length - 4, 4) != "&lt;" && result.substr(result.length - 4, 4) != "&gt;" && result.substr(result.length - 5, 5) != "&amp;") {
-      result = result.substring(0, result.length - 1) + "<span class='csssymbols csssemicolon cssdotcomma cssendtag' style=color:" + cssdelimitercolor + ";margin-left:2px;>;</span>";
+      result = result.substring(0, result.length - 1) + "<span style='color:" + cssdelimitercolor + ";margin-left:2px;' class='clz-css-symbols clz-css-symbol clz-css-semicolon clz-css-dotcomma clz-css-symbol-end'>;</span>";
     }
-    return "<span class='csspropertyvalue' style=color:" + csspropertyvaluecolor + ">" + result + "</span>";
+    return "<span style='color:" + csspropertyvaluecolor + "' class='clz-css-property-value'>" + result + "</span>";
   }
   function cssImportantMode(txt) {
-    return "<span class='cssimportant' style=color:" + cssimportantcolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + cssimportantcolor + ";font-weight:bold;' class='clz-css-important'>" + txt + "</span>";
   }
   
   // Javascript Mode
@@ -309,19 +242,19 @@ function ScriptColoriZe(x, lang) {
     for (i = 0; i < esc.length; i++) {
       rest = rest.replace("TSJJSESCAPE", esc[i]);
     }
-    return "<span class='js jstext' style=color:" + jscolor + ">" + rest + "</span>";
+    return "<span style='color:" + jscolor + ";' class='clz-js clz-js-text'>" + rest + "</span>";
   }
   function jsStringMode(txt) {
-    return "<span class='jsstring' style=color:" + jsstringcolor + ";font-style:oblique;margin-right:4px;>" + txt + "</span>";
+    return "<span style='color:" + jsstringcolor + ";font-style:oblique;margin-right:4px;' class='clz-js-string'>" + txt + "</span>";
   }
   function jsKeywordMode(txt) {
-    return "<span class='jskeyword' style=color:" + jskeywordcolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + jskeywordcolor + ";font-weight:bold;' class='clz-js-keyword'>" + txt + "</span>";
   }
   function jsNumberMode(txt) {
-    return "<span class='jsnumber jsnum' style=color:" + jsnumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + jsnumbercolor + ";font-weight:bold;' class='clz-js-number clz-js-num'>" + txt + "</span>";
   }
   function jsPropertyMode(txt) {
-    return "<span class='jsproperty' style=color:" + jspropertycolor + ";font-weight:bold;margin-right:1px;>" + txt + "</span>";
+    return "<span style='color:" + jspropertycolor + ";font-weight:bold;margin-right:1px;' class='clz-js-property'>" + txt + "</span>";
   }
   function getDotPos(txt, func) {
     var x, i, j, s, e, arr = [".","<", " ", ";", "(", "+", ")", "[", "]", ",", "&", ":", "{", "}", "/" ,"-", "*", "|", "%"];
@@ -386,19 +319,19 @@ function ScriptColoriZe(x, lang) {
     for (i = 0; i < esc.length; i++) {
       rest = rest.replace("TSJJSESCAPE", esc[i]);
     }
-    return "<span class='java javatext' style=color:" + javacolor + ">" + rest + "</span>";
+    return "<span style='color:" + javacolor + ";' class='clz-java clz-java-text'>" + rest + "</span>";
   }
   function javaStringMode(txt) {
-    return "<span class='javastring' style=color:" + javastringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
+    return "<span style='color:" + javastringcolor + ";font-style:italic;margin-right:4px;' class='clz-java-string'>" + txt + "</span>";
   }
   function javaKeywordMode(txt) {
-    return "<span class='javakeyword' style=color:" + javakeywordcolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + javakeywordcolor + ";font-weight:bold;' class='clz-java-keyword'>" + txt + "</span>";
   }
   function javaNumberMode(txt) {
-    return "<span class='javanumber javanum' style=color:" + javanumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + javanumbercolor + ";font-weight:bold;' class='clz-java-number clz-java-num'>" + txt + "</span>";
   }
   function javaPropertyMode(txt) {
-    return "<span class='javaproperty' style=color:" + javapropertycolor + ";font-weight:bold;margin-right:1px;>" + txt + "</span>";
+    return "<span style='color:" + javapropertycolor + ";font-weight:bold;margin-right:1px;'  class='clz-java-property'>" + txt + "</span>";
   }
   
   // Kotlin Mode
@@ -436,19 +369,19 @@ function ScriptColoriZe(x, lang) {
     for (i = 0; i < esc.length; i++) {
       rest = rest.replace("TSJJSESCAPE", esc[i]);
     }
-    return "<span class='kotlin kotlintext' style=color:" + kotlincolor + ">" + rest + "</span>";
+    return "<span style='color:" + kotlincolor + ";'  class='clz-kotlin clz-kotlin-text'>" + rest + "</span>";
   }
   function kotlinStringMode(txt) {
-    return "<span class='kotlinstring' style=color:" + kotlinstringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
+    return "<span style='color:" + kotlinstringcolor + ";font-style:italic;margin-right:4px;'  class='clz-kotlin-string'>" + txt + "</span>";
   }
   function kotlinKeywordMode(txt) {
-    return "<span class='kotlinkeyword' style=color:" + kotlinkeywordcolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + kotlinkeywordcolor + ";font-weight:bold;'  class='clz-kotlin-keyword'>" + txt + "</span>";
   }
   function kotlinNumberMode(txt) {
-    return "<span class='kotlinnumber kotlin-num' style=color:" + kotlinnumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + kotlinnumbercolor + ";font-weight:bold;' class='clz-kotlin-number clz-kotlin-num'>" + txt + "</span>";
   }
   function kotlinPropertyMode(txt) {
-    return "<span class='kotlinproperty' style=color:" + kotlinpropertycolor + ";font-weight:bold;margin-right:1px;>" + txt + "</span>";
+    return "<span style='color:" + kotlinpropertycolor + ";font-weight:bold;margin-right:1px;' class='clz-kotlin-property'>" + txt + "</span>";
   }
   
   // My SQL Mode
@@ -472,16 +405,16 @@ function ScriptColoriZe(x, lang) {
       }
     }
     rest = done + rest;
-    return "<span class='sql SQL sqltext SQLtext' style=color:" + sqlcolor + ">" + rest + "</span>";
+    return "<span style='color:" + sqlcolor + ";' class='clz-sql clz-SQL clz-sql-text clz-SQL-text'>" + rest + "</span>";
   }
   function sqlStringMode(txt) {
-    return "<span class='sqlstring SQLstring' style=color:" + sqlstringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
+    return "<span style='color:" + sqlstringcolor + ";font-style:italic;margin-right:4px;' class='clz-sql-string clz-SQL-string'>" + txt + "</span>";
   }
   function sqlKeywordMode(txt) {
-    return "<span class='sqlkeyword SQLkeyword' style=color:" + sqlkeywordcolor + ";font-weight:bold;font-style:italic;margin-right:2px;>" + txt + "</span>";
+    return "<span style='color:" + sqlkeywordcolor + ";font-weight:bold;font-style:italic;margin-right:2px;' class='clz-sql-keyword clz-SQL-keyword'>" + txt + "</span>";
   }
   function sqlNumberMode(txt) {
-    return "<span class='sqlnumber sqlnum SQLnumber SQLnum' style=color:" + sqlnumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + sqlnumbercolor + ";font-weight:bold;' class='clz-sql-number clz-sql-num clz-SQL-number clz-SQL-num'>" + txt + "</span>";
   }
   
   // PHP Mode
@@ -506,28 +439,28 @@ function ScriptColoriZe(x, lang) {
       }
     }
     rest = done + rest;
-    rest = "<span class='webfulltag webtag webtag-start webtagname phptag phptag-start' style=color:" + phptagcolor + ";font-weight:bold;font-style:italic;>&lt;" + rest.substr(4, 4) + "</span>" + rest.substring(8);
+    rest = "<span style='color:" + phptagcolor + ";font-weight:bold;font-style:italic;' class='clz-web-fulltag clz-web-tag clz-web-tag-start clz-php-tag clz-php-tag-start'>&lt;" + rest.substr(4, 4) + "</span>" + rest.substring(8);
     if (rest.substr(rest.length - 5, 5) == "?&gt;") {
-      rest = rest.substring(0, rest.length - 5) + "<span class='webfulltag webtagname webtag webtag-stop phptag phptag-stop' style=color:" + phptagcolor + ";font-weight:bold;font-style:italic;>?&gt;</span>";
+      rest = rest.substring(0, rest.length - 5) + "<span style='color:" + phptagcolor + ";font-weight:bold;font-style:italic;' class='clz-web-fulltag clz-web-tag clz-web-tag-stop clz-php-tag clz-php-tag-stop'>?&gt;</span>";
     }
-    return "<span class='php phptext' style=color:" + phpcolor + ">" + rest + "</span>";
+    return "<span style='color:" + phpcolor + ";' class='clz-php clz-php-text'>" + rest + "</span>";
   }
   function phpStringMode(txt) {
-    return "<span class='phpstring' style=color:" + phpstringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
+    return "<span style='color:" + phpstringcolor + ";font-style:italic;margin-right:4px;' class='clz-php-string'>" + txt + "</span>";
   }
   function phpNumberMode(txt) {
-    return "<span class='phpnumber phpnum' style=color:" + phpnumbercolor + ";font-weight:bold;font-style:italic;>" + txt + "</span>";
+    return "<span style='color:" + phpnumbercolor + ";font-weight:bold;' class='clz-php-number clz-php-num'>" + txt + "</span>";
   }
   function phpKeywordMode(txt) {
     var glb = ["$GLOBALS","$_SERVER","$_REQUEST","$_POST","$_GET","$_FILES","$_ENV","$_COOKIE","$_SESSION"];
     if (glb.indexOf(txt.toUpperCase()) > -1) {
       if (glb.indexOf(txt) > -1) {
-        return "<span class='phpglobal' style=color:" + phpglobalcolor + ";font-weight:bold;>" + txt + "</span>";
+        return "<span style='color:" + phpglobalcolor + ";font-weight:bold;' class='clz-php-global'>" + txt + "</span>";
       } else {
         return txt;
       }
     } else {
-      return "<span class'phpkeyword' = style=color:" + phpkeywordcolor + ">" + txt + "</span>";
+      return "<span style='color:" + phpkeywordcolor + "; font-weight : bold;' class='clz-php-keyword'>" + txt + "</span>";
     }
   }
   
@@ -553,16 +486,16 @@ function ScriptColoriZe(x, lang) {
       }
     }
     rest = done + rest;
-    return "<span class='python pythontext' style=color:" + pythoncolor + ">" + rest + "</span>";
+    return "<span style='color:" + pythoncolor + ";' class='clz-python clz-python-text'>" + rest + "</span>";
   }
   function pythonStringMode(txt) {
-    return "<span class='pythonstring' style=color:" + pythonstringcolor + ";font-style:italic;margin-right:4px;>" + txt + "</span>";
+    return "<span style='color:" + pythonstringcolor + ";font-style:italic;margin-right:4px;' class='clz-python-string'>" + txt + "</span>";
   }
   function pythonNumberMode(txt) {
-    return "<span class='pythonnumber pythonnum' style=color:" + pythonnumbercolor + ";font-weight:bold;>" + txt + "</span>";
+    return "<span style='color:" + pythonnumbercolor + ";font-weight:bold;' class='clz-python-number clz-python-num'>" + txt + "</span>";
   }
   function pythonKeywordMode(txt) {
-    return "<span class='pythonkeyword' style=color:" + pythonkeywordcolor + ";font-weight:bold;margin-right:2px;>" + txt + "</span>";
+    return "<span style='color:" + pythonkeywordcolor + ";font-weight:bold;margin-right:2px;' class='clz-python-keyword'>" + txt + "</span>";
   }
   function getKeywordPos(typ, txt, func) {
     var words, i, pos, rpos = -1, rpos2 = -1, patt;
@@ -590,7 +523,7 @@ function ScriptColoriZe(x, lang) {
     } else if (typ == "php") {
       words = ["$GLOBALS","$_SERVER","$_REQUEST","$_POST","$_GET","$_FILES","$_ENV","$_COOKIE","$_SESSION",
       "__halt_compiler","abstract","and","array","as","break","callable","case","catch","class","clone","const","continue","declare","default",
-      "die","do","echo","else","elseif","empty","enddeclare","endfor","endforeach","endif","endswitch","endwhile","eval","exit","extends","final","for",
+      "die","do", "error_reporting", "echo","else","elseif","empty","enddeclare","endfor","endforeach","endif","endswitch","endwhile","eval","exit","extends","final","for",
       "foreach","function","global","goto","if","implements","include","include_once","instanceof","insteadof","interface","isset","list","namespace","new",
       "or","print","private","protected","public","require","require_once","return","static","switch","throw","trait","try","unset","use","var","while","xor"];
     } else if (typ == "sql") {
