@@ -514,7 +514,7 @@ if (!lang) {lang = "html"; }; if (lang == "html") { return htmlMode(x); }; if (l
       words = ['package','as','typealias','class','interface','this','super','val','operator','var','fun','for','is','in','This','throw','return',
       'annotation','break','continue','object','if','else','while','do','try','when','!in','!is','as?','file','import','where','by','get','set',
       'abstract','enum','open','inner','override','private','public','internal','protected','catch','finally','out','final','vararg','reified',
-      'dynamic','companion','constructor','init','sealed','field','property','receiver','param','sparam','lateinit','data','inline','noinline',
+      'dynamic','companion','constructor','init','sealed','field','property', 'println', 'receiver','param','sparam','lateinit','data','inline','noinline',
       'tailrec','external','annotation','crossinline','const','operator','infix','suspend','actual','expect','setparam','Boolean','Byte','Character',
       'CharSequence','Class','ClassLoader','Cloneable','Comparable','Compiler','Double','Exception','Float','Integer','Long','Math','Number','Object',
       'Package','Pair','Process','Runtime','Runnable','SecurityManager','Short','StackTraceElement','StrictMath','String','StringBuffer','System',
