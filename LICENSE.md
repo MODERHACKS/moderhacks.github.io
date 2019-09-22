@@ -2,7 +2,7 @@
 THE MIT LICENSE ( MIT ) 
 
    - Project TSJ ( https://moderhacks.github.io )
-   - By Debarchito Nath © Copyright 2019 | ALL RIGHTS RESERVED | MIT License 
+   - By Debarchito Nath (c) Copyright 2019 | ALL RIGHTS RESERVED | MIT License 
 
 *NOTE : ALL PROJECTS OF "Project TSJ" FALL UNDER THIS LICENSE 
 
