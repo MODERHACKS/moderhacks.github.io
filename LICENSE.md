@@ -1,5 +1,5 @@
 
-THE MIT LICENSE ( MIT ) 
+THE MIT LICENSE 
 
    - Project TSJ ( https://moderhacks.github.io )
    - By Debarchito Nath (c) Copyright 2019 | ALL RIGHTS RESERVED | MIT License 
