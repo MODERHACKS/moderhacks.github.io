@@ -1,25 +1,19 @@
-/* 
+/*!
+ 
+   ** ****** ** *********
 
-   *TSJCSS
-   *v2
-   *July 2019 
-   *by Debarchito Nath © TSJ, THE STUDENTS JOURNAL | ALL RIGHTS RESERVED 
-   *inspired by w3schools.com
-
+   *TSJ™CSS ( https://moderhacks.github.io )
+   *v2 ( https://moderhacks.github.io/libs/css/2-x/v2/tsj.css )
+   *August 2019 ( 3rd Update )
+   *by Debarchito Nath ( MOD ER HACKS ) © Copyright | 2019 | ALL RIGHTS RESERVED
+   *Released Under MIT License 
+   *Contains Extract From TSJ-Normalise.css From "Normalize.css" 
+   
+   ** ****** ** *********
+   
 */
 
-/* Type : Free Version , uncompressed ( tsj.css ) */
-
-/*  Extract from TSJ™ TSJ-Normalise.css from "Normalize.css" */
-
-/* Normalise Content 1 */
-html { box-sizing:border-box; }*,*:before,*:after { box-sizing:inherit; font-family:sans-serif; } body { margin : 0; font-family:sans-serif; } h1 { font-size: 2em; margin: 0.67em 0; } hr { box-sizing: content-box; height: 0; overflow: visible; } pre { font-family: monospace, monospace; font-size: 1em; } b, strong { font-weight: bolder; } progress { vertical-align: baseline; } textarea { overflow: auto; } code, kbd, samp { font-family: monospace, monospace; font-size: 1em; } small { font-size: 80%; } dfn { font-style:italic; } mark { background: #ff0; color: #000; } sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } sub { bottom: -0.25em; } sup { top: -0.5em; } img , video, audio { border-style: none; }button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15;  margin: 0; } button, input { overflow: visible; } button, select { text-transform: none; } fieldset { padding: 0.35em 0.75em 0.625em; } legend { box-sizing: border-box; color: inherit; display: table; max-width: 100%; padding: 0; white-space: normal; } details { display: block; } summary { display: list-item; } template { display: none; } main { display : block; } abbr[title] { border-bottom: none; text-decoration: underline; text-decoration: underline dotted; }
-
-/* Normalise Content 2 */
-html { -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; line-height:1.15; } a { background-color: transparent; -webkit-text-decoration-skip:objects; } svg:not(:root) { overflow: hidden; }audio:not([controls]) { display: none; height: 0; }
-
-/* Normalise Content 3 */
-button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; }
+html { box-sizing:border-box; }*,*:before,*:after { box-sizing:inherit; font-family:sans-serif; } body { margin : 0; font-family:sans-serif; } h1 { font-size: 2em; margin: 0.67em 0; } hr { box-sizing: content-box; height: 0; overflow: visible; } pre { font-family: monospace, monospace; font-size: 1em; } b, strong { font-weight: bolder; } progress { vertical-align: baseline; } textarea { overflow: auto; } code, kbd, samp { font-family: monospace, monospace; font-size: 1em; } small { font-size: 80%; } dfn { font-style:italic; } mark { background: #ff0; color: #000; } sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } sub { bottom: -0.25em; } sup { top: -0.5em; } img , video, audio { border-style: none; }button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15;  margin: 0; } button, input { overflow: visible; } button, select { text-transform: none; } fieldset { padding: 0.35em 0.75em 0.625em; } legend { box-sizing: border-box; color: inherit; display: table; max-width: 100%; padding: 0; white-space: normal; } details { display: block; } summary { display: list-item; } template { display: none; } main { display : block; } abbr[title] { border-bottom: none; text-decoration: underline; text-decoration: underline dotted; } html { -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; line-height:1.15; } a { background-color: transparent; -webkit-text-decoration-skip:objects; } svg:not(:root) { overflow: hidden; }audio:not([controls]) { display: none; height: 0; } button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; }
 button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner { border-style: none; padding: 0; }
 button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
 [type="checkbox"], [type="radio"] { box-sizing: border-box; padding: 0; }
@@ -28,32 +22,8 @@ button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focus
 [type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 ::-webkit-input-placeholder { color: inherit; opacity: 0.54; }
 ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; }
-[hidden] { display: none; }
-
-/* Root */
-:root{
---blue:#007bff; --indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40; --tsj:#008eff; --beauty :#FF83FA; --hope:#23FFBB; --apple:#DB3A2A; --green-apple:#71D352; --mango:#FFB300; --lime:#CDDC39; --amber:#ffc107; --snow:#F3E5E5; --sand:#f8f5e6;
-
---breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;
-
---font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospacek;}
-}
-
-/* Measurements */
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
-html,body{font: "Varela Round", sans-serif;font-size:15px;line-height:1.5;}html{overflow-x:hidden;}
-
-/* Headings Pixel Size */
-h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0; padding:0.26em;}
-
-/* No Border */
-.border-none,  .border-off,  .border-restrict, .hover\:border-none:hover, .hover\:border-restrict:hover , .hover\:border-off:hover , .focus\:border-none:focus, .focus\:border-off:focus, .focus\:border-restrict:focus , .active\:border-none:active, .active\:border-off:active, .active\:border-restrict:active { border : none !important; }
-
-/* Horizontal Line */
-hr , .hr , .hr-cut , .hover\:hr:hover , .hover\:hr-cut:hover {border:0;border-top:1px solid grey;margin:20px 0;} .hr-cut , .hover\:hr-cut:hover {margin-left:15px;margin-right:15px;margin-top:20px;margin-bottom:20px;}
-
-/* Full File */
-.tsj-image {max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
+[hidden] { display: none; } :root { --blue:#007bff; --indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40; --tsj:#008eff; --beauty :#FF83FA; --hope:#23FFBB; --apple:#DB3A2A; --green-apple:#71D352; --mango:#FFB300; --lime:#CDDC39; --amber:#ffc107; --snow:#F3E5E5; --sand:#f8f5e6; } @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+html,body{font: "Varela Round", sans-serif;font-size:15px;line-height:1.5;}html{overflow-x:hidden;} h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0; padding:0.26em;} .border-none,  .border-off,  .border-restrict, .hover\:border-none:hover, .hover\:border-restrict:hover , .hover\:border-off:hover , .focus\:border-none:focus, .focus\:border-off:focus, .focus\:border-restrict:focus , .active\:border-none:active, .active\:border-off:active, .active\:border-restrict:active { border : none !important; } hr , .hr , .hr-cut , .hover\:hr:hover , .hover\:hr-cut:hover {border:0;border-top:1px solid grey;margin:20px 0;} .hr-cut , .hover\:hr-cut:hover {margin-left:15px;margin-right:15px;margin-top:20px;margin-bottom:20px;} .tsj-image {max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
 .tsj-table,.tsj-table-all {border-collapse:collapse;border-spacing:0;width:100%;display:table}.tsj-table-all {border:1px solid #ccc}
 .tsj-bordered tr, .tsj-table-all tr {border-bottom:1px solid #ddd}.tsj-striped tbody tr:nth-child(even)  {background-color:#f1f1f1}
 .tsj-table-all tr:nth-child(odd) {background-color:#fff}.tsj-table-all tr:nth-child(even){background-color:#f1f1f1}
@@ -85,11 +55,11 @@ hr , .hr , .hr-cut , .hover\:hr:hover , .hover\:hr-cut:hover {border:0;border-to
 .tsj-modal , .hover\:tsj-modal:hover {z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
 .content\:tsj-modal{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
 .tsj-bar{width:100%;overflow:hidden}.tsj-center .tsj-bar{display:inline-block;width:auto}
-.tsj-bar .item\:tsj-bar{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.tsj-bar .item\:tsj-bar {padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
 .tsj-bar .hover\:tsj-dropdown,.tsj-bar .click\:tsj-dropdown{position:static;float:left}
 .tsj-bar .tsj-button{white-space:normal}
-.tsj-bar-block .item\:tsj-bar{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
-.tsj-bar-block.tsj-center .item\:tsj-bar{text-align:center}.tsj-block{display:block;width:100%}
+.tsj-bar-block .tsj-bar-item {width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.tsj-bar-block.tsj-center .tsj-bar-item {text-align:center}.tsj-block{display:block;width:100%}
 .tsj-responsive{display:block;overflow-x:auto}
 .tsj-container:after,.tsj-container:before,.tsj-panel:after,.tsj-panel:before,.tsj-row:after,.tsj-row:before,.tsj-row-padding:after,.tsj-row-padding:before,
 .tsj-cell-row:before,.tsj-cell-row:after,.tsj-clear:after,.tsj-clear:before,.tsj-bar:before,.tsj-bar:after{content:"";display:table;clear:both}
@@ -102,9 +72,7 @@ hr , .hr , .hr-cut , .hover\:hr:hover , .hover\:hr-cut:hover {border:0;border-to
 .tsj-col.m9,.tsj-threequarter{width:74.99999%}.tsj-col.m10{width:83.33333%}.tsj-col.m11{width:91.66666%}.tsj-col.m12{width:99.99999%}}
 @media (min-width:993px){.tsj-col.l1{width:8.33333%}.tsj-col.l2{width:16.66666%}.tsj-col.l3{width:24.99999%}.tsj-col.l4{width:33.33333%}
 .tsj-col.l5{width:41.66666%}.tsj-col.l6{width:49.99999%}.tsj-col.l7{width:58.33333%}.tsj-col.l8{width:66.66666%}
-.tsj-col.l9{width:74.99999%}.tsj-col.l10{width:83.33333%}.tsj-col.l11{width:91.66666%}.tsj-col.l12{width:99.99999%}}
-/* Content */
-.tsj-rest{overflow:hidden}.tsj-stretch{margin-left:-16px;margin-right:-16px}
+.tsj-col.l9{width:74.99999%}.tsj-col.l10{width:83.33333%}.tsj-col.l11{width:91.66666%}.tsj-col.l12{width:99.99999%}} .tsj-rest{overflow:hidden}.tsj-stretch{margin-left:-16px;margin-right:-16px}
 .tsj-content,.tsj-auto{margin-left:auto;margin-right:auto}.tsj-content{max-width:980px}.tsj-auto{max-width:1140px}
 .tsj-cell-row{display:table;width:100%}.tsj-cell{display:table-cell}
 .tsj-cell-top{vertical-align:top}.tsj-cell-middle{vertical-align:middle}.tsj-cell-bottom{vertical-align:bottom}
@@ -299,13 +267,13 @@ hr , .hr , .hr-cut , .hover\:hr:hover , .hover\:hr-cut:hover {border:0;border-to
 /* Inbuilt Color Directory */
 
 /* Background Colors */
-.bg-amber,.hover\:bg-amber:hover{color:#000!important;background-color:#ffc107!important}
-.bg-aqua,.hover\:bg-aqua:hover{color:#000!important;background-color:#00ffff!important}
-.bg-blue,.hover\:bg-blue:hover{color:#fff!important;background-color:#2196F3!important}
-.bg-light-blue,.hover\:bg-light-blue:hover{color:#000!important;background-color:#87CEEB!important}
-.bg-brown,.hover\:bg-brown:hover{color:#fff!important;background-color:#795548!important}
-.bg-cyan,.hover\:bg-cyan:hover{color:#000!important;background-color:#00bcd4!important}
-.bg-blue-grey,.hover\:bg-blue-grey:hover,.bg-blue-gray,.hover\:bg-blue-gray:hover{color:#fff!important;background-color:#607d8b!important}
+.bg-amber,.hover\:bg-amber:hover, .focus\:bg-amber:focus{color:#000!important;background-color:#ffc107!important}
+.bg-aqua,.hover\:bg-aqua:hover, .focus\:bg-aqua, .focus{color:#000!important;background-color:#00ffff!important}
+.bg-blue,.hover\:bg-blue:hover, .focus\:bg-blue, .focus{color:#fff!important;background-color:#2196F3!important}
+.bg-light-blue,.hover\:bg-light-blue:hover, .focus\:bg-light-blue, .focus{color:#000!important;background-color:#87CEEB!important}
+.bg-brown,.hover\:bg-brown:hover, .focus\:bg-brown, .focus{color:#fff!important;background-color:#795548!important}
+.bg-cyan,.hover\:bg-cyan:hover, .focus\:bg-cyan, .focus{color:#000!important;background-color:#00bcd4!important}
+.bg-blue-grey,.hover\:bg-blue-grey:hover,.bg-blue-gray,.hover\:bg-blue-gray:hover {color:#fff!important;background-color:#607d8b!important}
 .bg-green,.hover\:bg-green:hover{color:#fff!important;background-color:#4CAF50!important}
 .bg-light-green,.hover\:bg-light-green:hover{color:#000!important;background-color:#8bc34a!important}
 .bg-indigo,.hover\:bg-indigo:hover{color:#fff!important;background-color:#3f51b5!important}
@@ -519,18 +487,8 @@ hr , .hr , .hr-cut , .hover\:hr:hover , .hover\:hr-cut:hover {border:0;border-to
 .border-bottom-light-grey,.hover\:border-bottom-light-grey:hover,.border-bottom-light-gray,.hover\:border-bottom-light-gray:hover{border-bottom-color:#f1f1f1!important}
 .border-bottom-dark-grey,.hover\:border-bottom-dark-grey:hover,.border-bottom-dark-gray,.hover\:border-bottom-dark-gray:hover{border-bottom-color:#616161!important}
 .border-bottom-pale-red,.hover\:border-bottom-pale-red:hover{border-bottom-color:#ffe7e7!important}.border-bottom-pale-green,.hover\:border-bottom-pale-green:hover{border-bottom-color:#e7ffe7!important}
-.border-bottom-pale-yellow,.hover\:border-bottom-pale-yellow:hover{border-bottom-color:#ffffcc!important}.border-bottom-pale-blue,.hover\:border-bottom-pale-blue:hover{border-bottom-color:#e7ffff!important}
-.border-bottom-transparent, .hover\:border-bottom-transparent:hover , .border-B-transparent , .hover\:border-B-transparent:hover{border-bottom-color:transparent!important}
-
-a ,  .tsj-a , .hover\:tsj-a:hover , .focus\:tsj-a:focus , .active\:tsj-a:active {color:#008eff;}
-.tsj-a , .hover\:tsj-a:hover , .focus\:tsj-a:focus , .active\:tsj-a:active {font-style:italic;font-weight:bold;}
-
-.select-off, .select-none, .select-restrict ,.hover\:select-none:hover , .hover\:select-off:hover , .hover\:select-restrict:hover, .focus\:select-none:focus , .focus\:select-off:focus , .focus\:select-restrict:focus , .active\:select-none:active , .active\:select-off:active , .active\:select-restrict:active { -webkit-touch-callout: none;  -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-
-.appearance-none , .appearance-off,  .appearance-restrict,  .hover\:appearance-none:hover , .hover\:appearance-off:hover , .hover\:appearance-restrict:hover , .focus\:appearance-none:focus , .focus\:appearance-off:focus , .focus\:appearance-restrict:focus , .active\:appearance-none:active , .active\:appearance-off:active , .active\:appearance-restrict:active {-webkit-appearance:none; -moz-appearance:none; appearance:none;}
-
-.overflow-visible, .of-visible , .hover\:overflow-visible:hover , .hover\:of:visible:hover , .focus\:overflow-visible:focus , .focus\:of:visible:focus , .active\:overflow-visible:active , .active\:of:visible:active {overflow:visible;} .overflow-hidden, .of-hidden , .hover\:overflow-hidden:hover , .hover\:of:hidden:hover , .focus\:overflow-hidden:focus , .focus\:of:hidden:focus , .active\:overflow-hidden:active , .active\:of:hidden:active {overflow:hidden;} .overflow-scroll, .of-scroll , .hover\:overflow-scroll:hover , .hover\:of:scroll:hover , .focus\:overflow-scroll:focus , .focus\:of:scroll:focus , .active\:overflow-scroll:active , .active\:of:scroll:active {overflow:scroll;} .overflow-auto, .of-auto , .hover\:overflow-auto:hover , .hover\:of:auto:hover , .focus\:overflow-auto:focus , .focus\:of:auto:focus , .active\:overflow-auto:active , .active\:of:auto:active {overflow:auto;} .overflow-x-visible, .of-x-visible , .hover\:overflow-x-visible:hover , .hover\:of-x:visible:hover , .focus\:overflow-x-visible:focus , .focus\:of-x:visible:focus , .active\:overflow-x-visible:active , .active\:of-x:visible:active {overflow-x:visible;} .overflow-x-hidden, .of-x-hidden , .hover\:overflow-x-hidden:hover , .hover\:of-x:hidden:hover , .focus\:overflow-x-hidden:focus , .focus\:of-x:hidden:focus , .active\:overflow-x-hidden:active , .active\:of-x:hidden:active {overflow-x:hidden;} .overflow-x-scroll, .of-x-scroll , .hover\:overflow-x-scroll:hover , .hover\:of-x:scroll:hover , .focus\:overflow-x-scroll:focus , .focus\:of-x:scroll:focus , .active\:overflow-x-scroll:active , .active\:of-x:scroll:active {overflow-x:scroll;} .overflow-x-auto, .of-x-auto , .hover\:overflow-x-auto:hover , .hover\:of-x:auto:hover , .focus\:overflow-x-auto:focus , .focus\:of-x:auto:focus , .active\:overflow-x-auto:active , .active\:of-x:auto:active {overflow-x:auto;} .overflow-y-visible, .of-y-visible , .hover\:overflow-y-visible:hover , .hover\:of-y:visible:hover , .focus\:overflow-y-visible:focus , .focus\:of-y:visible:focus , .active\:overflow-y-visible:active , .active\:of-y:visible:active {overflow-y:visible;} .overflow-y-hidden, .of-y-hidden , .hover\:overflow-y-hidden:hover , .hover\:of-y:hidden:hover , .focus\:overflow-y-hidden:focus , .focus\:of-y:hidden:focus , .active\:overflow-y-hidden:active , .active\:of-y:hidden:active {overflow-y:hidden;} .overflow-y-scroll, .of-y-scroll , .hover\:overflow-y-scroll:hover , .hover\:of-y:scroll:hover , .focus\:overflow-y-scroll:focus , .focus\:of-y:scroll:focus , .active\:overflow-y-scroll:active , .active\:of-y:scroll:active {overflow-y:scroll;} .overflow-y-auto, .of-y-auto , .hover\:overflow-y-auto:hover , .hover\:of-y:auto:hover , .focus\:overflow-y-auto:focus , .focus\:of-y:auto:focus , .active\:overflow-y-auto:active , .active\:of-y:auto:active {overflow-y:auto;} 
-
-.text-shadow-none , .text-shadow-off,  .text-shadow-restrict,  .hover\:text-shadow-none:hover , .hover\:text-shadow-off:hover , .hover\:text-shadow-restrict:hover , .focus\:text-shadow-none:focus , .focus\:text-shadow-off:focus , .focus\:text-shadow-restrict:focus , .active\:text-shadow-none:active , .active\:text-shadow-off:active , .active\:text-shadow-restrict:active {text-shadow:none;} .text-shadow , .hover\:text-shadow:hover , .focus\:text-shadow:focus , .active\:text-shadow:active {text-shadow:1px 1px 0 #444;}.text-shadow-white , .hover\:text-shadow-white:hover , .focus\:text-shadow-white:focus , .active\:text-shadow-white:active {text-shadow:1px 1px 0 #ddd} .box-shadow-none , .box-shadow-off,  .box-shadow-restrict,  .hover\:box-shadow-none:hover , .hover\:box-shadow-off:hover , .hover\:box-shadow-restrict:hover , .focus\:box-shadow-none:focus , .focus\:box-shadow-off:focus , .focus\:box-shadow-restrict:focus , .active\:box-shadow-none:active , .active\:box-shadow-off:active , .active\:box-shadow-restrict:active {box-shadow:none;} .box-shadow, .hover\:box-shadow:hover , .focus\:box-shadow:focus , .active\:box-shadow:active {box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)} 
+.border-bottom-pale-yellow,.hover\:border-bottom-pale-yellow:hover{border-bottom-color:#ffffcc!important}.border-bottom-pale-blue,.hover\:border-bottom-pale-blue:hover, focus\:border-bottom-pale-blue:focus, .active\:border-bottom-pale-blue:active {border-bottom-color:#e7ffff!important}
+.border-bottom-transparent, .hover\:border-bottom-transparent:hover , .border-B-transparent , .hover\:border-B-transparent:hover{border-bottom-color:transparent!important; } a ,  .tsj-a , .hover\:tsj-a:hover , .focus\:tsj-a:focus , .active\:tsj-a:active {color:#008eff;}
+.tsj-a , .hover\:tsj-a:hover , .focus\:tsj-a:focus , .active\:tsj-a:active {font-style:italic;font-weight:bold;} .select-off, .select-none, .select-restrict ,.hover\:select-none:hover , .hover\:select-off:hover , .hover\:select-restrict:hover, .focus\:select-none:focus , .focus\:select-off:focus , .focus\:select-restrict:focus , .active\:select-none:active , .active\:select-off:active , .active\:select-restrict:active { -webkit-touch-callout: none;  -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .appearance-none , .appearance-off,  .appearance-restrict,  .hover\:appearance-none:hover , .hover\:appearance-off:hover , .hover\:appearance-restrict:hover , .focus\:appearance-none:focus , .focus\:appearance-off:focus , .focus\:appearance-restrict:focus , .active\:appearance-none:active , .active\:appearance-off:active , .active\:appearance-restrict:active {-webkit-appearance:none; -moz-appearance:none; appearance:none;} .overflow-visible, .of-visible , .hover\:overflow-visible:hover , .hover\:of:visible:hover , .focus\:overflow-visible:focus , .focus\:of:visible:focus , .active\:overflow-visible:active , .active\:of:visible:active {overflow:visible;} .overflow-hidden, .of-hidden , .hover\:overflow-hidden:hover , .hover\:of:hidden:hover , .focus\:overflow-hidden:focus , .focus\:of:hidden:focus , .active\:overflow-hidden:active , .active\:of:hidden:active {overflow:hidden;} .overflow-scroll, .of-scroll , .hover\:overflow-scroll:hover , .hover\:of:scroll:hover , .focus\:overflow-scroll:focus , .focus\:of:scroll:focus , .active\:overflow-scroll:active , .active\:of:scroll:active {overflow:scroll;} .overflow-auto, .of-auto , .hover\:overflow-auto:hover , .hover\:of:auto:hover , .focus\:overflow-auto:focus , .focus\:of:auto:focus , .active\:overflow-auto:active , .active\:of:auto:active {overflow:auto;} .overflow-x-visible, .of-x-visible , .hover\:overflow-x-visible:hover , .hover\:of-x:visible:hover , .focus\:overflow-x-visible:focus , .focus\:of-x:visible:focus , .active\:overflow-x-visible:active , .active\:of-x:visible:active {overflow-x:visible;} .overflow-x-hidden, .of-x-hidden , .hover\:overflow-x-hidden:hover , .hover\:of-x:hidden:hover , .focus\:overflow-x-hidden:focus , .focus\:of-x:hidden:focus , .active\:overflow-x-hidden:active , .active\:of-x:hidden:active {overflow-x:hidden;} .overflow-x-scroll, .of-x-scroll , .hover\:overflow-x-scroll:hover , .hover\:of-x:scroll:hover , .focus\:overflow-x-scroll:focus , .focus\:of-x:scroll:focus , .active\:overflow-x-scroll:active , .active\:of-x:scroll:active {overflow-x:scroll;} .overflow-x-auto, .of-x-auto , .hover\:overflow-x-auto:hover , .hover\:of-x:auto:hover , .focus\:overflow-x-auto:focus , .focus\:of-x:auto:focus , .active\:overflow-x-auto:active , .active\:of-x:auto:active {overflow-x:auto;} .overflow-y-visible, .of-y-visible , .hover\:overflow-y-visible:hover , .hover\:of-y:visible:hover , .focus\:overflow-y-visible:focus , .focus\:of-y:visible:focus , .active\:overflow-y-visible:active , .active\:of-y:visible:active {overflow-y:visible;} .overflow-y-hidden, .of-y-hidden , .hover\:overflow-y-hidden:hover , .hover\:of-y:hidden:hover , .focus\:overflow-y-hidden:focus , .focus\:of-y:hidden:focus , .active\:overflow-y-hidden:active , .active\:of-y:hidden:active {overflow-y:hidden;} .overflow-y-scroll, .of-y-scroll , .hover\:overflow-y-scroll:hover , .hover\:of-y:scroll:hover , .focus\:overflow-y-scroll:focus , .focus\:of-y:scroll:focus , .active\:overflow-y-scroll:active , .active\:of-y:scroll:active {overflow-y:scroll;} .overflow-y-auto, .of-y-auto , .hover\:overflow-y-auto:hover , .hover\:of-y:auto:hover , .focus\:overflow-y-auto:focus , .focus\:of-y:auto:focus , .active\:overflow-y-auto:active , .active\:of-y:auto:active {overflow-y:auto;} .text-shadow-none , .text-shadow-off,  .text-shadow-restrict,  .hover\:text-shadow-none:hover , .hover\:text-shadow-off:hover , .hover\:text-shadow-restrict:hover , .focus\:text-shadow-none:focus , .focus\:text-shadow-off:focus , .focus\:text-shadow-restrict:focus , .active\:text-shadow-none:active , .active\:text-shadow-off:active , .active\:text-shadow-restrict:active {text-shadow:none;} .text-shadow , .hover\:text-shadow:hover , .focus\:text-shadow:focus , .active\:text-shadow:active {text-shadow:1px 1px 0 #444;}.text-shadow-white , .hover\:text-shadow-white:hover , .focus\:text-shadow-white:focus , .active\:text-shadow-white:active {text-shadow:1px 1px 0 #ddd} .box-shadow-none , .box-shadow-off,  .box-shadow-restrict,  .hover\:box-shadow-none:hover , .hover\:box-shadow-off:hover , .hover\:box-shadow-restrict:hover , .focus\:box-shadow-none:focus , .focus\:box-shadow-off:focus , .focus\:box-shadow-restrict:focus , .active\:box-shadow-none:active , .active\:box-shadow-off:active , .active\:box-shadow-restrict:active {box-shadow:none;} .box-shadow, .hover\:box-shadow:hover , .focus\:box-shadow:focus , .active\:box-shadow:active {box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)} .rotate-45, .hover:\rotate-45:hover, .focus:\rotate-45:focus, .active:\rotate-45:active { transition : rotate(45deg)!important; } .rotate-90, .hover:\rotate-90:hover, .focus:\rotate-90:focus, .active:\rotate-90:active { transition : rotate(90deg)!important; } .rotate-135, .hover:\rotate-135:hover, .focus:\rotate-135:focus, .active:\rotate-135:active { transition : rotate(135deg)!important; } .rotate-180, .hover:\rotate-180:hover, .focus:\rotate-180:focus, .active:\rotate-180:active { transition : rotate(180deg)!important; } .rotate-225, .hover:\rotate-225:hover, .focus:\rotate-225:focus, .active:\rotate-225:active { transition : rotate(225deg)!important; } .rotate-270, .hover:\rotate-270:hover, .focus:\rotate-270:focus, .active:\rotate-270:active { transition : rotate(270deg)!important; } .rotate-315, .hover:\rotate-315:hover, .focus:\rotate-315:focus, .active:\rotate-315:active { transition : rotate(315deg)!important; } .rotate-360, .hover:\rotate-360:hover, .focus:\rotate-360:focus, .active:\rotate-360:active { transition : rotate(360deg)!important; }
 
 /* End */
