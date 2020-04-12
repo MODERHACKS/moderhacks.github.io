@@ -1,6 +1,6 @@
 /*
  *TSS ( TSJ Style Sheets ) - Write Once Do Limitless
- *Version v0.001-alpha ( The software is in alpha stage, so it will take time to clear all the bugs )
+ *Version v0.01-alpha ( The software is in alpha stage, so it will take time to clear all the bugs )
  *By MOD ER HACKS ( Debarchito Nath ) (c) Copyright 2018-20 | ALL RIGHTS RESERVED
  *Released Under MIT License Which Can Be Found At - https://moderhacks.github.io/LICENSE.md
 */
