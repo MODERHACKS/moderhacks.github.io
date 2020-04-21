@@ -428,11 +428,15 @@ this.get = function(url, ins) {
 
 }
 
-Pos.LOADER = function() {
+Pos.EXSCRIPT = function() {
+  var baseS = ""
+  this.folder = function(src) {
+   baseS = src + "/"
+  }
   this.load = function(src, async, fun) {
     if(async === undefined) { async = false }
     var ajax = new Pos.AJAX()
-    ajax.get(src, {
+    ajax.get(baseS + src, {
       async: async,
       success: function(data) {
         var el = new Possibility.ELEMENT()
@@ -448,6 +452,17 @@ Pos.LOADER = function() {
         throw ReferenceError("Possibility-ErrorLog [Possibility.LOADER() => this.load()] | Unable to load '" + src + "'.")
       }
     })
+  }
+  this.add = function(src, par) {
+   var el = new Pos.ELEMENT()
+   el.create("script", {
+    parent: par,
+    attr: {
+     src: baseS + src,
+     defer: false,
+     async: false
+    }
+   })
   }
 }
 
