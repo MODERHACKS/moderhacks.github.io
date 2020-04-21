@@ -453,14 +453,16 @@ Pos.EXSCRIPT = function() {
       }
     })
   }
-  this.add = function(src, par) {
+  this.add = function(src, par, asy) {
+   if(asy === undefined) { asy = false }
+   if(par === null) { par = "body" }
    var el = new Pos.ELEMENT()
    el.create("script", {
     parent: par,
     attr: {
      src: baseS + src,
-     defer: false,
-     async: false
+     defer: asy,
+     async: asy
     }
    })
   }
