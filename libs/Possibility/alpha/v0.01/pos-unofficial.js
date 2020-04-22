@@ -431,11 +431,10 @@ this.get = function(url, ins) {
 }
 
 Pos.EXSCRIPT = function() {
-  var baseS
+  var baseS = ""
   this.root = function(src) {
     baseS = src
   }
-  if(baseS === undefined) { baseS = "" }
   this.load = function(src, async, fun) {
     if(async === undefined) { async = false }
     var ajax = new Pos.AJAX()
