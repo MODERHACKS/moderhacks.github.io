@@ -33,7 +33,7 @@ Pos.engine = function(val) {
     if(t.isEmpty(a) === t.isEmpty(b) === t.isEmpty(d)) {
       fin = '.add("' + c.trim().replace(/"/gm, '\\"').replace(/\n/gm, '" + "\\n') + '")'
     } else {
-      throw SyntaxError("Possibility-ErrorLog [Possibility.STYLESHEET => this.add()] | Faced problems while parsing your stylesheet ! Probably invalid characters or syntax is in use.")
+      return _
     }
     return fin
   }).replace(/<str>([\S\s]*?)<\/str>/gm, function(_, a) {
@@ -87,6 +87,8 @@ Pos.render = function (template, elem, ins) {
 
 Pos.STYLESHEET = function() {
   this.add = function(sty) {
+    var tools = new Pos.TOOLS()
+    sty = tools.executor("vf", sty)
     document.querySelector("#Possibility-CSS-Out").innerHTML += sty
   }
 }
@@ -249,15 +251,7 @@ Pos.INTERFACE = function() {
 
 Pos.TOOLS = function() {
 
-  this.isEmpty = function(str) {
-    var ret
-    if(str.trim() === "") {
-      ret = true
-    } else {
-      ret = false
-    }
-    return ret
-  }
+  this.isEmpty = function(str) { var ret; if(str.trim() === "") { ret = true } else { ret = false }; return ret }
 
   this.executor = function(type, str, sr, ed, body) {
     if(sr === undefined || sr === null) { sr = '\\{\\{' }
@@ -291,17 +285,7 @@ Pos.TOOLS = function() {
  return fin
   }
 
-  this.assign = function(target) {
-     for (var i = 1; i < arguments.length; ++i) {
-       var source = arguments[i]
-       for (var key in source) {
-         if(source.hasOwnProperty(key)) {
-           target[key] = source[key]
-         }
-       }
-     }
-     return target
-   }
+  this.assign = function(target) { for (var i = 1; i < arguments.length; ++i) { var source = arguments[i]; for (var key in source) { if(source.hasOwnProperty(key)) { target[key] = source[key] }}}; return target }
 
    this.replaceWithType = function(obj) {
      return Object.fromEntries(Object.entries(obj).map(function (_ref) {
@@ -430,14 +414,14 @@ this.get = function(url, ins) {
 
 }
 
-Pos.EXSCRIPT = function() {
+Pos.FILE = function() {
   var baseS = ""
+  var ajax = new Pos.AJAX()
   this.root = function(src) {
     baseS = src
   }
   this.load = function(src, async, fun) {
     if(async === undefined) { async = false }
-    var ajax = new Pos.AJAX()
     ajax.get(baseS + src, {
       async: async,
       success: function(data) {
@@ -451,7 +435,7 @@ Pos.EXSCRIPT = function() {
         }
       },
       error: function() {
-        throw ReferenceError("Possibility-ErrorLog [Possibility.LOADER() => this.load()] | Unable to load '" + src + "'.")
+        throw Error("Possibility-ErrorLog [Possibility.LOADER() => this.load()] | Unable to load '" + src + "'.")
       }
     })
   }
@@ -467,6 +451,41 @@ Pos.EXSCRIPT = function() {
      async: asy
     }
    })
+  }
+  this.get = function(src, rep) {
+   var get;
+   if(rep === undefined) { rep = "\\n" }
+   ajax.get(baseS + src, {
+    async: false,
+    success: function(data) {
+      get = data.replace(/\n/gm, rep)
+    },
+    error: function() {
+     throw Error("Possibility-ErrorLog [Possibility.LOADER() => this.get()] | Unable to get content from '" + src + "'.")
+    }
+   })
+   return get
+  }
+  this.enable = function() {
+   var all = document.querySelectorAll("*")
+   for(var i = 0; i < all.length; ++i) {
+    if(all[i].hasAttribute("pos:content")) {
+     var src = all[i].getAttribute("pos:content").trim()
+     var async;
+     if(all[i].hasAttribute("pos:async")) {
+       async = Pos.antistring(all[i].getAttribute("pos:async"))
+     } else { async = true }
+     ajax(src, {
+      async: async,
+      success: function(data) {
+       all[i].innerHTML = data
+      }, 
+      error: function() {
+       throw Error("Possibility-ErrorLog [Possibility.LOADER() => this.enable()] | Unable to load content from '" + src + "' into your " + all[i] + ".")
+      }
+     })
+    }
+   }
   }
 }
 
