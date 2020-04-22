@@ -50,7 +50,9 @@ Pos.el = function(a, b, c) {
     var el = document.querySelectorAll(a)
     for(var i = 0; i < el.length; ++i) {
       var fun, no
-      if(typeof b === "number" && typeof c === "function") {
+      if(b === undefined && c === undefined) {
+       return document.querySelector(a)
+      } else if(typeof b === "number" && typeof c === "function") {
         no = el[b]
         fun = c
       } else if(typeof b === "function" && c === undefined) {
@@ -429,10 +431,11 @@ this.get = function(url, ins) {
 }
 
 Pos.EXSCRIPT = function() {
-  var baseS = ""
-  this.folder = function(src) {
-   baseS = src + "/"
+  var baseS
+  this.root = function(src) {
+    baseS = src
   }
+  if(baseS === undefined) { baseS = "" }
   this.load = function(src, async, fun) {
     if(async === undefined) { async = false }
     var ajax = new Pos.AJAX()
