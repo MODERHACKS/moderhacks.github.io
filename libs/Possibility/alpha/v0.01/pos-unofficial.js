@@ -475,7 +475,7 @@ Pos.FILE = function() {
      if(all[i].hasAttribute("pos:async")) {
        async = Pos.antistring(all[i].getAttribute("pos:async"))
      } else { async = true }
-     ajax(src, {
+     ajax.get(src, {
       async: async,
       success: function(data) {
        all[i].innerHTML = data
