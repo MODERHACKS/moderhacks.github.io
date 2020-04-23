@@ -471,12 +471,8 @@ Pos.FILE = function() {
    for(var i = 0; i < all.length; ++i) {
     if(all[i].hasAttribute("pos:content")) {
      var src = all[i].getAttribute("pos:content").trim()
-     var async;
-     if(all[i].hasAttribute("pos:async")) {
-       async = Pos.antistring(all[i].getAttribute("pos:async"))
-     } else { async = true }
      ajax.get(src, {
-      async: async,
+      async: false,
       success: function(data) {
        all[i].innerHTML = data
       }, 
