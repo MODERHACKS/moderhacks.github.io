@@ -1,5 +1,5 @@
 /*
- *TSS ( TSJ Style Sheets ) - Write Once Do Limitless
+ *TSS ( TSJ Style Sheets ) 
  *Version v0.01-alpha ( The software is in alpha stage, so it will take time to clear all the bugs )
  *By MOD ER HACKS ( Debarchito Nath ) (c) Copyright 2018-20 | ALL RIGHTS RESERVED
  *Released Under MIT License Which Can Be Found At - https://moderhacks.github.io/LICENSE.md
@@ -11,13 +11,17 @@ window.TSS = function(ins) {
  if(ins.el === undefined) ins.el = "style"
  if(ins.type === undefined) ins.type = "text/tss"
  if(ins.vars === undefined) ins.vars = {}
- var el = document.querySelectorAll(ins.el + "[type='" + ins.type + "']"); for(var i = 0; i < el.length; ++i) { var style = document.createElement("style"); style.id = "TSS-Output"; style.innerHTML = _final(el[i].innerHTML); if(ins.output) { var rVghju = ins.output;  rVghju(style.innerHTML) }; document.querySelector("head").appendChild(style); document.querySelector("head").removeChild(el[i]); document.querySelector("body").removeChild(el[i]) };
+ if(ins.injection === undefined) ins.injection = true
+ if(ins.injection === true) {
+ var el = document.querySelectorAll(ins.el + "[type='" + ins.type + "']"); for(var i = 0; i < el.length; ++i) { var style = document.createElement("style"); style.id = "TSS-Output"; style.innerHTML = _final(el[i].innerHTML); if(ins.output !== undefined) { var rVghju = ins.output; rVghju(style.innerHTML) }; document.querySelector("head").appendChild(style)}} else if(ins.injection === false) { var rVghju = ins.output; rVghju(_final(ins.input))}
 
- function _final(val) { return _tssx(_tssx(val.replace(/\/\*([\S\s]*?)\*\//gm, function() { return "" }).replace(/\/\/(.*?)\n/gm, function() { return "" }).replace(/@use(.*?)(\/@|\n|\;)/gm, function(_, a) { var get =  {}; a = eval(a.trim()) + ".tss"; var xhttp = new XMLHttpRequest(); xhttp.onreadystatechange = function() { if (this.readyState == 4 && this.status == 200) { get.data = this.responseText } else { console.log("TSS-@use -- ERROR While Using '" + a + "' !") } }; xhttp.open("GET", a, false); xhttp.send(); return get.data }))) }
+ function _final(val) { return _tssx(_tssx(val.replace(/\/\*([\S\s]*?)\*\//gm, function() { return "" }))) }
  
  function _unassign(target, source) { Object.keys(source).forEach(function (key) { delete target[key] }) }
  
  function _fit(val) { val = val.replace(/^\s*\n/gm, "").replace(/\s/gm, ""); if(val === "") { return true } else { return false } }
+ 
+ function _exe(st) { if(st.charAt(0) !== " " && st.charAt(st.length - 1) !== " ") { return true } else { return false } };
  
  function _balanced(str) { return !str.split('').reduce(function (uptoPrevChar, thisChar) { if (thisChar === '(' || thisChar === '{' || thisChar === '[') { return ++uptoPrevChar } else if (thisChar === ')' || thisChar === '}' || thisChar === ']') { return --uptoPrevChar }; return uptoPrevChar }, 0) };
  
@@ -26,15 +30,15 @@ window.TSS = function(ins) {
  function _tssx(val) { 
  return val
 
- .replace(/\$(.*?)=(.*?)(\;|\n|\[)/gm, function(_, a, b, c) { if(b.includes("=")) { return _ } else { a = a.trim(); b = '"' + b.trim().replace(/&/gm, ";").replace(/"/gm, '\\"') + '"'; Object.assign(ins.vars, TSS.antistr("{ " + a + ": " + b + " }")); return "" } })
- 
-  .replace(/(\$|var\:)(\w+)/gm, function(m, r, g1) { return ins.vars[g1.trim()] || m })
+ .replace(/\$(.*?)=(.*?)(\;|\n)/gm, function(_, a, b, c) { if(b.includes("=")) { return _ } else { a = a.trim().replace(/\-/gm, "_0hy0_").replace(/@/gm, "_1at1_"); b = '"' + b.trim().replace(/&/gm, ";").replace(/\\\;/gm, "&").replace(/"/gm, '\\"') + '"'; Object.assign(ins.vars, TSS.antistr("{ " + a + ": " + b + " }")); return "" } })
+
+  .replace(/(var\:|\$)(.*?)(\-|@)(\w+)|(var\:|\$)(\w+)/gm, function(_) { var m = _; m = m.replace(/\$/gm, "").replace(/var\:/gm, "").replace(/\-/gm, "_0hy0_").replace(/@/gm, "_1at1_").trim(); return ins.vars[m] || _ })
  
  .replace(/@js([\S\s]*?)\/@js/gm, function(_, a) { var sc = document.createElement("script"); sc.id = "TSS-@js"; sc.innerHTML += a.trim(); document.querySelector("head").appendChild(sc); return "" })
  
- .replace(/@inherit(.*?)\/@/gm, function(_, a) { if(a.includes(".")) { a = a.replace(/\./, "\\.").trim() } else { a = a.trim() }; var x  = "/" + a + "(.*?)\\{([\\S\\s]*?)\\}/gm", y = {}; el[i].innerHTML.replace(TSS.antistr(x), function(c, d, e) { y.a = e.trim() }); return y.a })
+ .replace(/@inherit(.*?)\/@inherit/gm, function(_, a) { if(a.includes(".")) { a = a.replace(/\./, "\\.").trim() } else { a = a.trim() }; var x  = "/" + a + "(.*?)\\{([\\S\\s]*?)\\}/gm", y = {}; el[i].innerHTML.replace(TSS.antistr(x), function(c, d, e) { y.a = e.trim() }); return y.a })
  
- .replace(/@vp([\S\s]*?)\/@/gm, function(_, b) { var sp = b.trim().split(","), c = sp[0].trim(), d = sp[1].trim(); return "-webkit-" + c + ": " + d + ";\n -moz-" + c + ": " + d + "; \n -o-" + c + ": " + d + ";\n -ms-" + c + ": " + d + ";\n -khtml-" + c + ": " + d + ";\n " + c + ": " + d })
+ .replace(/@vp([\S\s]*?)\/@vp/gm, function(_, b) { var sp = b.trim().split(","), c = sp[0].trim(), d = sp[1].trim(); return "-webkit-" + c + ": " + d + ";\n -moz-" + c + ": " + d + "; \n -o-" + c + ": " + d + ";\n -ms-" + c + ": " + d + ";\n -khtml-" + c + ": " + d + ";\n " + c + ": " + d })
  
  .replace(/Math\.PI/gm, Math.PI)
  .replace(/Math\.E/gm, Math.E)
@@ -46,13 +50,14 @@ window.TSS = function(ins) {
 .replace(/Math\.LOG10E/gm, Math.LOG10E)
 .replace(/Math\.(.*?)\((.*?)\)/gm, function(_, a, b) { return TSS.antistr("Math." + a.trim() + "(" + b.trim() + ")")})
  
- .replace(/@mixin(.*?)\{([\S\s]*?)\}/gm, function(_, a, b) { var get = {}, chars = a.trim().replace(/\((.*?)\)/gm, function(_, c) { get.a = "/\\b(" + c.trim().replace(/,/gm, "\|").replace(/\s/gm, "") + ")\\b/gm" }); b = '"' + b.trim().replace(/"/gm, '\\"').replace(/\n/gm, '" + "\\n') + '"'; b = b.replace(TSS.antistr(get.a), '" + $& + "'); var frame = "function " + a.trim() + " {\n return " + b + "\n};"; var sc = document.createElement("script"); sc.id = "TSS-@mixin"; sc.innerHTML += frame.trim(); document.querySelector("head").appendChild(sc); return "" })
+ .replace(/@mixin(.*?)(\n|\|)([\S\s]*?)\/@mixin/gm, function(_, a, c, b) { var get = {}, chars = a.trim().replace(/\((.*?)\)/gm, function(_, c) { get.a = "/\\b(" + c.trim().replace(/,/gm, "\|").replace(/\s/gm, "") + ")\\b/gm" }); b = '"' + b.trim().replace(/"/gm, '\\"').replace(/\n/gm, '" + "\\n') + '"'; b = b.replace(TSS.antistr(get.a), '" + $& + "'); var frame = "function " + a.trim() + " {\n return " + b + "\n};"; var sc = document.createElement("script"); sc.id = "TSS-@mixin"; sc.innerHTML += frame.trim(); document.querySelector("head").appendChild(sc); return "" })
  
  .replace(/@get([\S\s]*?)\/@get/gm, function(_, a) { a = a.trim(); var fin = {}, sp = a.split("["), sl = sp[0].trim().replace(/\./gm, "\\."), reg = "/" + sl + "(.*?)\\{([\\S\\s]*?)\\}/gm", e = el[i].innerHTML.replace(TSS.antistr(reg), function(__, f, g) { if(_fit(f) === true) { var prop = sp[1].trim().replace(/\]/gm, ""), reg2 = "/" + prop + "(.*?)\\:(.*?)(\\;|\\n)/gm", main = g.replace(TSS.antistr(reg2), function(___, h, i) { if(_fit(h) === true) { fin.a = i.trim() } }) } }); return fin.a })
  
- .replace(/(@include|@inc)([\S\s]*?)\/@/gm, function(_, a, b) { return eval(b.trim()).toString(); })
- 
-  .replace(/@fl([\S\s]*?)\/@fl/gm, function(_, a) { a = a.trim().replace(/\b(if|boolean|lighten|darken|replace|reverse|saturate|desaturate|math|tohex|regexp)\(/gm, "TSS.$1(").replace(/&\.(.*?)\(/gm, "TSS.$1("); return eval(a) })
+  .replace(/`([\S\s]*?)`/gm, function(_, a) { a = a.trim().replace(/\b(if|boolean|lighten|darken|replace|reverse|saturate|desaturate|math|tohex|regexp)\(/gm, "TSS.$1(").replace(/&\.(.*?)\(/gm, function(_, b) {
+ var test = b.replace(/(1|2|3|4|5|6|7|8|9|0|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|\$|_)/gm, "").trim(); if(test === "") { return "TSS." + b.trim() + "(" } else { return _ }}).replace(/\\TSS/gm, "&"); return eval(a) })
+  
+  .replace(/@nest(.*?)(\n|\|)([\S\s]*?)\/@nest/gm, function(_, a, b, c) { var emp, emp2; a = a.trim(); emp = a + " {\n" + c + "\n }"; emp = emp.replace(/&(.*?){([\S\s]*?)\}/gm, function(__, d, e) { var fin = a + d.trim() + " {\n " + e.trim() + "\n}"; emp2 += "\n" + fin; return "" }); var reg = "/(" + a.trim() + "|\\{|\\}|\\s)/gm"; if(emp.replace(TSS.antistr(reg), "") === "") { emp = "" }; emp += emp2.replace(/undefined/gm, ""); emp = emp.replace(/^\s*\n/gm, ""); return emp })
   
  .replace(/%(.*?)\{([\S\s]*?)\}/gm, "")
  .replace(/\[s\]/gm, " ").replace(/\[\^s\]/gm, "")
