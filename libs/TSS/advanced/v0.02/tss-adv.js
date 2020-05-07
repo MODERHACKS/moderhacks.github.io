@@ -35,7 +35,7 @@ TSS.engine = function(val, baseS) {
 
  function _core(va) {
 
- var jet = "", register = {}
+ var jet = "", imp = "", register = {}
 
  function _js(val) {
   return val.replace(/@register(.*?)(function|property|child)(.*?)\{(.*?)\}/gm, function(_, a, b, c, d) {
@@ -57,15 +57,36 @@ TSS.engine = function(val, baseS) {
    }
  }).replace(/\\`/gm, "??_2bt2_??").replace(/`([\S\s]*?)`/gm, function(_, a) { var reg = "/\\b(if|boolean|lighten|darken|reverse|saturate|desaturate|math|tohex|array|object|Map|List|vp"; if(register.child !== undefined && JSON.stringify(register.child) !== "{}") { reg += "|" + register.child.TSS.trim() + ")\\(/gm" } else { reg += ")\\(/gm" }; a = a.trim().replace(/\?\?_2bt2_\?\?/gm, "`").replace(TSS.antistr(reg), "TSS.$1(").replace(/\b(list|string|re|color|map)\./gm, "TSS.$1.").replace(/&\.(.*?)\(/gm, function(_, b) {
  var test = b.replace(/(1|2|3|4|5|6|7|8|9|0|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|\$|_)/gm, "").trim(); if(test === "") { return "TSS." + b.trim() + "(" } else { return _ }}).replace(/\\TSS/gm, "&"); return eval(a) })}
+ 
+ function _var(val) {
+  return val.replace(/(var\:|\$)(.*?)\[(.*?)\]|(var\:|\$)(\w+)/gm, function(_, y, z) { var data = baseS; function _valid(val) { if(val.replace(/(1|2|3|4|5|6|7|8|9|0|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|\$|_)/gm, "") === "") { return true } else { return false }}; if(z === undefined || typeof z === "string" && _valid(z) === true) { var m = _.replace(/\$/gm, "").replace(/var\:/gm, "").trim(); var reg = /\[(.*?)\]/gm; if(_valid(m) === true) { return data[m] || _ } else if(_valid(m.replace(/(\[|\])/gm, "")) === true ) { var get; m.replace(reg, function(a, b) { get = TSS.antistr(b.trim()) }); if(typeof get === "number") { m = m.replace(reg, "").trim(); var lis = data[m].trim(); if(typeof lis === "string") { if(lis.charAt(0) === "[" && lis.charAt(lis.length - 1)) { return TSS.antistr(lis)[get] } else { return TSS.array(lis)[get] }}}} else { var get; m.replace(reg, function(a, b) { get = TSS.antistr(b.trim()) }); if(typeof get === "string") { m = m.replace(reg, "").trim(); lis = data[m].trim(); if(lis.charAt(0) === "{" && lis.charAt(lis.length - 1) === "}") { return TSS.antistr(lis)[get] } else { return TSS.object(lis)[get] }}}} else { return _ }})
+ }
 
  ok = va
 
+ .replace(/@imp(.*?)<js(.*?)\{([\S\s]*?)\}>/gm, function(_, c, a, b) {
+   if(a.trim() === "" && c.trim() === "") {
+     imp += _var(b.trim());
+     return ""
+   } else {
+     throw SyntaxError("TSS-ErrorLog | Restricted character are in use, due to which '@imp <js{}>' parsing was failed.")
+   }
+ })
+ 
+ var script = document.createElement("script")
+  script.id = "TSS-v0.02-JS-Out[BeforeScript]"
+  script.innerHTML += imp
+  document.querySelector("body").appendChild(script)
+  
+  Object.assign(baseS, TSS.core.vars)
+  
+ ok = ok
  .replace(/(var\:|\$)(.*?)(@|\-)(\w+)/gm, function(_) { return _.replace(/\-/gm, "_0hy0_").replace(/@/gm, "_1at1_") })
 
  .replace(/\$(.*?)=(.*?)(\;|\n)/gm, function(_, a, b, c) { if(b.includes("=")) { return _ } else { a = a.trim(); b = _js(b); b = '"' + b.trim().replace(/\\sc/gm, ";").replace(/\\c/gm, "??_5cm5_??").replace(/"/gm, '\\"') + '"'; Object.assign(baseS, TSS.antistr("{ " + a + ": " + b + " }")); return "" } })
 
- .replace(/(var\:|\$)(.*?)\[(.*?)\]|(var\:|\$)(\w+)/gm, function(_, y, z) { var data = baseS; function _valid(val) { if(val.replace(/(1|2|3|4|5|6|7|8|9|0|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|\$|_)/gm, "") === "") { return true } else { return false }}; if(z === undefined || typeof z === "string" && _valid(z) === true) { var m = _.replace(/\$/gm, "").replace(/var\:/gm, "").trim(); var reg = /\[(.*?)\]/gm; if(_valid(m) === true) { return data[m] || _ } else if(_valid(m.replace(/(\[|\])/gm, "")) === true ) { var get; m.replace(reg, function(a, b) { get = TSS.antistr(b.trim()) }); if(typeof get === "number") { m = m.replace(reg, "").trim(); var lis = data[m].trim(); if(typeof lis === "string") { if(lis.charAt(0) === "[" && lis.charAt(lis.length - 1)) { return TSS.antistr(lis)[get] } else { return TSS.array(lis)[get] }}}} else { var get; m.replace(reg, function(a, b) { get = TSS.antistr(b.trim()) }); if(typeof get === "string") { m = m.replace(reg, "").trim(); lis = data[m].trim(); if(lis.charAt(0) === "{" && lis.charAt(lis.length - 1) === "}") { return TSS.antistr(lis)[get] } else { return TSS.object(lis)[get] }}}} else { return _ }})
 
+ok = _var(ok)
  .replace(/<nest(.*?)\{([\S\s]*?)\}>/gm, function(_, a, c) { var emp, emp2; a = a.trim(); c = _js(c); emp = a + " {\n" + c + "\n }"; emp = emp.replace(/&(.*?){([\S\s]*?)\}/gm, function(__, d, e) { var fin = a + d.trim() + " {\n " + e.trim() + "\n}"; emp2 += "\n" + fin; return "" }); var reg = "/(" + a.trim() + "|\\{|\\}|\\s)/gm"; if(emp.replace(TSS.antistr(reg), "") === "") { emp = "" }; emp += emp2.replace(/undefined/gm, ""); emp = emp.replace(/^\s*\n/gm, ""); return emp })
 
  .replace(/<js(.*?)\{([\S\s]*?)\}>/gm, function(_, a, b) {
@@ -85,9 +106,9 @@ TSS.engine = function(val, baseS) {
  .replace(/<mixin(.*?)\{([\S\s]*?)\}>/gm, function(_, a, b) { var get = {}, chars = a.trim().replace(/\((.*?)\)/gm, function(_, c) { get.a = "/\\b(" + c.trim().replace(/,/gm, "\|").replace(/\s/gm, "") + ")\\b/gm" }); b = _js(b); b = '"' + b.trim().replace(/"/gm, '\\"').replace(/\n/gm, '" + "\\n') + '"'; b = b.replace(TSS.antistr(get.a), '" + $& + "'); jet += "function " + a.trim() + " {\n return " + b + "\n};"; return "" })
 
   var script = document.createElement("script")
-  script.id = "TSS-v0.02-JS-Out"
+  script.id = "TSS-v0.02-JS-Out[AfterScript]"
   script.innerHTML += jet
-  document.querySelector("body").appendChild(script)
+   document.querySelector("body").appendChild(script)
 
   Object.assign(baseS, TSS.core.vars)
   ok = _js(ok)
