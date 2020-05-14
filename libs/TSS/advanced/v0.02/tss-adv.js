@@ -21,7 +21,7 @@ window.TSS = function(ins) { "use strict"; if(ins === undefined) { ins = {} }; i
    throw Error("TSS-ErrorLog [when TSS(ins)] | 'ins.input' can't be undefined at least when 'ins.inject' is set to false.")
   }
   var rVar = ins.output
-  rVar(TSS.engine(ins.input))
+  rVar(TSS.engine(ins.input, ins.vars))
  }
 }
 
@@ -55,9 +55,9 @@ TSS.engine = function(val, baseS) {
    } else {
     return _
    }
- }).replace(/\\`/gm, "??_2bt2_??").replace(/`([\S\s]*?)`/gm, function(_, a) { var reg = "/\\b(if|boolean|lighten|darken|reverse|saturate|desaturate|math|hex|array|object|Map|List|vp|replace|match|hexMaster|hslMaster|rgb|Master|red|green|blue|saturation|hue|lightness|addLightness|addDarkness|addSaturation|addDesaturation|alpha"; if(register.child !== undefined && JSON.stringify(register.child) !== "{}") { reg += "|" + register.child.TSS.trim() + ")\\(/gm" } else { reg += ")\\(/gm" }; a = a.trim().replace(/\?\?_2bt2_\?\?/gm, "`").replace(TSS.antistr(reg), "TSS.$1(").replace(/\b(list|string|re|color|map)\./gm, "TSS.$1.").replace(/&\.(.*?)\(/gm, function(_, b) {
+ }).replace(/\\`/gm, "??_2bt2_??").replace(/`([\S\s]*?)`/gm, function(_, a) { var reg = "/\\b(if|boolean|lighten|darken|reverse|saturate|desaturate|math|hex|array|object|Map|List|vp|replace|match|hexMaster|hslMaster|rgbMaster|red|green|blue|saturation|hue|lightness|addLightness|addDarkness|addSaturation|addDesaturation|alpha|setRed|setBlue|setGreen|addBlue|addGreen|addRed"; if(register.child !== undefined && JSON.stringify(register.child) !== "{}") { reg += "|" + register.child.TSS.trim() + ")\\(/gm" } else { reg += ")\\(/gm" }; a = a.trim().replace(/\?\?_2bt2_\?\?/gm, "`").replace(TSS.antistr(reg), "TSS.$1(").replace(/\b(list|string|re|color|map)\./gm, "TSS.$1.").replace(/&\.(.*?)\(/gm, function(_, b) {
  var test = b.replace(/(1|2|3|4|5|6|7|8|9|0|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|\$|_)/gm, "").trim(); if(test === "") { return "TSS." + b.trim() + "(" } else { return _ }}).replace(/\\TSS/gm, "&"); return eval(a) })}
- 
+
  function _var(val) {
   return val.replace(/(var\:|\$)(.*?)\[(.*?)\]|(var\:|\$)(\w+)/gm, function(_, y, z) { var data = baseS; function _valid(val) { if(val.replace(/(1|2|3|4|5|6|7|8|9|0|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|\$|_)/gm, "") === "") { return true } else { return false }}; if(z === undefined || typeof z === "string" && _valid(z) === true) { var m = _.replace(/\$/gm, "").replace(/var\:/gm, "").trim(); var reg = /\[(.*?)\]/gm; if(_valid(m) === true) { return data[m] || _ } else if(_valid(m.replace(/(\[|\])/gm, "")) === true ) { var get; m.replace(reg, function(a, b) { get = TSS.antistr(b.trim()) }); if(typeof get === "number") { m = m.replace(reg, "").trim(); var lis = data[m].trim(); if(typeof lis === "string") { if(lis.charAt(0) === "[" && lis.charAt(lis.length - 1)) { return TSS.antistr(lis)[get] } else { return TSS.array(lis)[get] }}}} else { var get; m.replace(reg, function(a, b) { get = TSS.antistr(b.trim()) }); if(typeof get === "string") { m = m.replace(reg, "").trim(); lis = data[m].trim(); if(lis.charAt(0) === "{" && lis.charAt(lis.length - 1) === "}") { return TSS.antistr(lis)[get] } else { return TSS.object(lis)[get] }}}} else { return _ }})
  }
@@ -72,14 +72,14 @@ TSS.engine = function(val, baseS) {
      throw SyntaxError("TSS-ErrorLog | Restricted character are in use, due to which '@imp <js{}>' parsing was failed.")
    }
  })
- 
+
  var script = document.createElement("script")
   script.id = "TSS-v0.02-JS-Out[BeforeScript]"
   script.innerHTML += imp
   document.querySelector("body").appendChild(script)
-  
+
   Object.assign(baseS, TSS.core.vars)
-  
+
  ok = ok
  .replace(/(var\:|\$)(.*?)(@|\-)(\w+)/gm, function(_) { return _.replace(/\-/gm, "_0hy0_").replace(/@/gm, "_1at1_") })
 
@@ -152,7 +152,7 @@ TSS.map = {
  values: function(val) { if(typeof val === "string") { return Object.values(TSS.object(val)) } else if(val instanceof Object) { return Object.values(val) } },
 
  hasKey: function(val, key) { if(typeof val === "string") { val = TSS.object(val) }; if(val.hasOwnProperty(key)) { return true } else { return false }},
- 
+
  valueOf: function(object, value) { for (var prop in object) { if (object.hasOwnProperty(prop)) { if (object[prop] === value) return prop }}}
 
 
@@ -187,7 +187,7 @@ TSS.assignVar = function(a) {
 
 TSS.replace = function(str) { for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) { args[_key - 1] = arguments[_key] }; return str.replace.apply(str, args) }
 
-TSS.match = function(str) { for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) { args[_key - 1] = arguments[_key] }; return str.match.apply(str, args) } 
+TSS.match = function(str) { for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) { args[_key - 1] = arguments[_key] }; return str.match.apply(str, args) }
 
 TSS.red = function(clr, isPct) { clr = TSS.rgbMaster(clr, isPct); var sp = clr.split(","); return sp[0].replace(/(rgb|rgba)\(/, "").trim()}
 
@@ -195,7 +195,7 @@ TSS.green = function(clr, isPct) { clr = TSS.rgbMaster(clr, isPct); var sp = clr
 
 TSS.blue = function(clr, isPct) { clr = TSS.rgbMaster(clr, isPct); var sp = clr.split(","); return sp[2].replace(/\)/, "").trim() }
 
-TSS.alpha = function(clr, isPct) { clr = TSS.rgbMaster(clr, isPct); var sp = clr.split(","); if(sp[3] === undefined) { sp[3] = "0" }; return sp[3].replace(/\)/, "").trim() }
+TSS.alpha = function(clr, isPct) { clr = TSS.rgbMaster(clr, isPct); var sp = clr.split(","); if(sp[3] === undefined) { sp[3] = "1" }; return sp[3].replace(/\)/, "").trim() }
 
 TSS.saturation = function(clr) { clr = TSS.hslMaster(clr); var sp = clr.split(","); return sp[1].trim() }
 
@@ -203,24 +203,40 @@ TSS.lightness = function(clr) { clr = TSS.hslMaster(clr); var sp = clr.split(","
 
 TSS.hue = function(clr) { clr = TSS.hslMaster(clr); var sp = clr.split(","); return sp[0].replace(/(hsl|hsla)\(/, "").trim() + "deg" }
 
-TSS.lighten = TSS.addLightness = function(clr, no) { clr = TSS.hslMaster(clr); var sp = clr.split(","); var lightness = Number(no.replace(/%/gm, "").trim()) + Number(sp[2].replace(/\)/, "").replace(/%/gm, "")) + "%"; if(TSS.alpha(clr) === "0") { var hsl = "hsl(" + TSS.hue(clr).replace("deg", "") + "," + TSS.saturation(clr) + "," + lightness + ")"; return TSS.convertColor.HSLToHex(hsl)} else { var hsla = "hsla(" + TSS.hue(clr).replace("deg", "") + "," + TSS.saturation(clr) + "," + lightness + "," + TSS.alpha(clr) + ")"; return TSS.convertColor.HSLAToHexA(hsla)}}
+TSS.lighten = TSS.addLightness = function(clr, no) { if(typeof no === 'number') { no = no + "%" }; clr = TSS.hslMaster(clr); var sp = clr.split(","); var lightness = Number(no.replace(/%/gm, "").trim()) + Number(sp[2].replace(/\)/, "").replace(/%/gm, "")); if(lightness > 100) { lightness = 100 }; lightness += "%"; if(TSS.alpha(clr) === "1") { var hsl = "hsl(" + TSS.hue(clr).replace("deg", "") + "," + TSS.saturation(clr) + "," + lightness + ")"; return TSS.convertColor.HSLToHex(hsl)} else { var hsla = "hsla(" + TSS.hue(clr).replace("deg", "") + "," + TSS.saturation(clr) + "," + lightness + "," + TSS.alpha(clr) + ")"; return TSS.convertColor.HSLAToHexA(hsla)}}
 
-TSS.darken = TSS.addDarkness = function(clr, no) { return TSS.lighten(clr, "-" + no.trim()) }
+TSS.darken = TSS.addDarkness = function(clr, no) { return TSS.lighten(clr, "-" + no) }
+
+TSS.saturate = TSS.addSaturation = function(clr, no) { if(typeof no === 'number') { no = no + "%" }; clr = TSS.hslMaster(clr); var sp = clr.split(","); var saturation = Number(no.replace(/%/, "").trim()) + Number(sp[1].replace(/%/, "").trim()); if(saturation > 100) { saturation = 100 }; saturation += "%"; if(TSS.alpha(clr) === "1") {var hsl = "hsl(" + TSS.hue(clr).replace("deg", "") + "," + saturation + "," + TSS.lightness(clr) + ")"; return TSS.convertColor.HSLToHex(hsl)} else { var hsla = "hsla(" + TSS.hue(clr).replace("deg", "") + "," + saturation + "," + TSS.lightness(clr) + "," + TSS.alpha(clr) + ")"; return TSS.convertColor.HSLAToHexA(hsla)}}
+
+TSS.desaturate = TSS.addDesaturation = function(clr, no) { return TSS.saturate(clr, "-" + no) }
+
+TSS.setRed = function(val, red) { if(typeof red === "string" && red.includes("%")) { red = Number(red.replace(/%/gm, "").trim()); if(red > 100) { red = 100 }; red = ( 255 * red ) / 100 }; red = Math.ceil(red); if(red > 255) { red = 255 }; if(TSS.alpha(val) === "1") { return TSS.convertColor.RGBToHex("rgb(" + red + "," + TSS.green(val) + "," + TSS.blue(val) + ")")} else { return TSS.convertColor.RGBAToHexA("rgba(" + red + "," + TSS.green(val) + "," + TSS.blue(val) + "," + TSS.alpha(val) + ")")}}
+
+TSS.setGreen = function(val, green) { if(typeof green === "string" && green.includes("%")) { green = Number(green.replace(/%/gm, "").trim()); if(green > 100) { green = 100 }; green = ( 255 * green ) / 100 }; green = Math.ceil(green); if(green > 255) { green = 255 }; if(TSS.alpha(val) === "1") { return TSS.convertColor.RGBToHex("rgb(" + TSS.red(val) + "," + green + "," + TSS.blue(val) + ")")} else { return TSS.convertColor.RGBAToHexA("rgba(" + TSS.red(val) + "," + green + "," + TSS.blue(val) + "," + TSS.alpha(val) + ")")}}
+
+TSS.setBlue = function(val, blue) { if(typeof blue === "string" && blue.includes("%")) { blue = Number(blue.replace(/%/gm, "").trim()); if(blue > 100) { blue = 100 }; blue = ( 255 * blue ) / 100 }; blue = Math.ceil(blue); if(blue > 255) { blue = 255 }; if(TSS.alpha(val) === "1") { return TSS.convertColor.RGBToHex("rgb(" + TSS.red(val) + "," + TSS.green(val) + "," + blue + ")")} else { return TSS.convertColor.RGBAToHexA("rgba(" + TSS.red(val) + "," + TSS.green(val) + "," + blue + "," + TSS.alpha(val) + ")")}}
+
+TSS.addBlue = function(clr, no) { if(typeof no === "number") { if(no > 255) { no = 255 }; no = Math.ceil(no); var bc = Math.ceil(Number(TSS.blue(clr))); var nc = bc + no; if(nc > 255) { nc = 255 }; return TSS.setBlue(clr, nc) } else if(typeof no === "string" && no.includes("%")) { var c = Number(no.replace(/%/, "").trim()); if(c > 100) { c = 100 }; c = Math.ceil(c); var bc = Math.ceil(Number(TSS.blue(clr, true).replace(/%/, "").trim())); var nc = c + bc; if(nc > 100) { nc = 100 }; return TSS.setBlue(clr, nc + "%")}}
+
+TSS.addRed = function(clr, no) { if(typeof no === "number") { if(no > 255) { no = 255 }; no = Math.ceil(no); var rc = Math.ceil(Number(TSS.red(clr))); var nc = rc + no; if(nc > 255) { nc = 255 }; return TSS.setRed(clr, nc) } else if(typeof no === "string" && no.includes("%")) { var c = Number(no.replace(/%/, "").trim()); if(c > 100) { c = 100 }; c = Math.ceil(c); var rc = Math.ceil(Number(TSS.red(clr, true).replace(/%/, "").trim())); var nc = c + rc; if(nc > 100) { nc = 100 }; return TSS.setRed(clr, nc + "%")}}
+
+TSS.addGreen = function(clr, no) { if(typeof no === "number") { if(no > 255) { no = 255 }; no = Math.ceil(no); var gc = Math.ceil(Number(TSS.green(clr))); var nc = gc + no; if(nc > 255) { nc = 255 }; return TSS.setGreen(clr, nc)} else if(typeof no === "string" && no.includes("%")) { var c = Number(no.replace(/%/, "").trim()); if(c > 100) { c = 100 }; c = Math.ceil(c); var gc = Math.ceil(Number(TSS.green(clr, true).replace(/%/, "").trim())); var nc = c + gc; if(nc > 100) { nc = 100 }; return TSS.setGreen(clr, nc + "%")}}
 
 TSS.hexMaster = function(val) { if(val.includes("rgba")) { return TSS.convertColor.RGBAToHexA(val) } else if(val.includes("rgb")) { return TSS.convertColor.RGBToHex(val) } else if(val.includes("hsla")) { return TSS.convertColor.HSLAToHexA(val) } else if(val.includes("hsl")) { return TSS.convertColor.HSLToHex(val) } else { val = TSS.convertColor.nameToRGB(val); return TSS.convertColor.RGBToHex(val) }}
 
-TSS.rgbMaster = function(val, isPct) { if(val.includes("#")) { var t = val.replace("#", "").trim(); if(t.length === 6) { return TSS.convertColor.hexToRGB(val, isPct) } else if(t.length === 8) { return TSS.convertColor.hexAToRGBA(val, isPct) }} else if(val.includes("hsla")) { return TSS.convertColor.HSLAToRGBA(val, isPct) } else if(val.includes("hsl")) { return TSS.convertColor.HSLToRGB(val, isPct)} else if(val.includes("rgba")) { return  TSS.convertColor.hexAToRGBA(TSS.convertColor.RGBAToHexA(val), isPct)} else if(val.includes("rgb")) { return TSS.convertColor.hexToRGB(TSS.convertColor.RGBToHex(val), isPct)} else { return TSS.convertColor.nameToRGB(TSS.convertColor.RGBToHex(TSS.convertColor.hexToRGB(val, isPct)))}}
+TSS.rgbMaster = function(val, isPct) { if(val.includes("#")) { var t = val.replace("#", "").trim(); if(t.length <= 6) { return TSS.convertColor.hexToRGB(val, isPct) } else if(t.length === 8) { return TSS.convertColor.hexAToRGBA(val, isPct) }} else if(val.includes("hsla")) { return TSS.convertColor.HSLAToRGBA(val, isPct) } else if(val.includes("hsl")) { return TSS.convertColor.HSLToRGB(val, isPct)} else if(val.includes("rgba")) { return  TSS.convertColor.hexAToRGBA(TSS.convertColor.RGBAToHexA(val), isPct)} else if(val.includes("rgb")) { return TSS.convertColor.hexToRGB(TSS.convertColor.RGBToHex(val), isPct)} else { return TSS.convertColor.nameToRGB(TSS.convertColor.RGBToHex(TSS.convertColor.hexToRGB(val, isPct)))}}
 
-TSS.hslMaster = function(val) { if(val.includes("#")) { var t = val.replace("#", "").trim(); if(t.length === 6) { return TSS.convertColor.hexToHSL(val) } else if(t.length === 8) { return TSS.convertColor.hexAToHSLA(val)}} else if(val.includes("rgba")) { return TSS.convertColor.RGBAToHSLA(val) } else if(val.includes("rgb")) { return TSS.convertColor.RGBToHSL(val)} else if(val.includes("hsla")) { return  TSS.convertColor.RGBAToHSLA(TSS.convertColor.HSLAToRGBA(val)) } else if(val.includes("hsl")) { return TSS.convertColor.RGBToHSL(TSS.convertColor.HSLToRGB(val)) } else { return TSS.convertColor.nameToRGB(TSS.convertColor.RGBToHSL(val))}}
+TSS.hslMaster = function(val) { if(val.includes("#")) { var t = val.replace("#", "").trim(); if(t.length <= 6) { return TSS.convertColor.hexToHSL(val) } else if(t.length === 8) { return TSS.convertColor.hexAToHSLA(val)}} else if(val.includes("rgba")) { return TSS.convertColor.RGBAToHSLA(val) } else if(val.includes("rgb")) { return TSS.convertColor.RGBToHSL(val)} else if(val.includes("hsla")) { return  TSS.convertColor.RGBAToHSLA(TSS.convertColor.HSLAToRGBA(val)) } else if(val.includes("hsl")) { return TSS.convertColor.RGBToHSL(TSS.convertColor.HSLToRGB(val)) } else { return TSS.convertColor.nameToRGB(TSS.convertColor.RGBToHSL(val))}}
 
 TSS.convertColor = {
 
  RGBToHex: function(rgb) { var sep = rgb.indexOf(",") > -1 ? "," : " "; rgb = rgb.substr(4).split(")")[0].split(sep); for (var R in rgb) { var r = rgb[R]; if (r.indexOf("%") > -1) rgb[R] = Math.round(r.substr(0,r.length - 1) / 100 * 255) }; var r = (+rgb[0]).toString(16), g = (+rgb[1]).toString(16), b = (+rgb[2]).toString(16); if (r.length == 1) r = "0" + r; if (g.length == 1) g = "0" + g; if (b.length == 1) b = "0" + b; return "#" + r + g + b },
- 
+
  RGBAToHexA: function(rgba) { var sep = rgba.indexOf(",") > -1 ? "," : " "; rgba = rgba.substr(5).split(")")[0].split(sep); if (rgba.indexOf("/") > -1) rgba.splice(3,1); for (var R in rgba) { var r = rgba[R]; if (r.indexOf("%") > -1) { var p = r.substr(0,r.length - 1) / 100; if (R < 3) { rgba[R] = Math.round(p * 255) } else { rgba[R] = p }}}; var r = (+rgba[0]).toString(16), g = (+rgba[1]).toString(16), b = (+rgba[2]).toString(16), a = Math.round(+rgba[3] * 255).toString(16); if (r.length == 1) r = "0" + r; if (g.length == 1) g = "0" + g; if (b.length == 1) b = "0" + b; if (a.length == 1) a = "0" + a; return "#" + r + g + b + a },
 
  hexToRGB: function(h,isPct) { var r = 0, g = 0, b = 0; isPct = isPct === true; if (h.length == 4) { r = "0x" + h[1] + h[1]; g = "0x" + h[2] + h[2]; b = "0x" + h[3] + h[3] } else if (h.length == 7) { r = "0x" + h[1] + h[2]; g = "0x" + h[3] + h[4]; b = "0x" + h[5] + h[6] } if (isPct) { r = +(r / 255 * 100).toFixed(1); g = +(g / 255 * 100).toFixed(1); b = +(b / 255 * 100).toFixed(1) }; return "rgb(" + (isPct ? r + "%," + g + "%," + b + "%" : +r + "," + +g + "," + +b) + ")" },
- 
+
  hexAToRGBA: function(h,isPct) { var r = 0, g = 0, b = 0, a = 1; if (h.length == 5) { r = "0x" + h[1] + h[1]; g = "0x" + h[2] + h[2]; b = "0x" + h[3] + h[3]; a = "0x" + h[4] + h[4] } else if (h.length == 9) { r = "0x" + h[1] + h[2]; g = "0x" + h[3] + h[4]; b = "0x" + h[5] + h[6]; a = "0x" + h[7] + h[8] }; a = +(a / 255).toFixed(3); if (isPct) { r = +(r / 255 * 100).toFixed(1); g = +(g / 255 * 100).toFixed(1); b = +(b / 255 * 100).toFixed(1); a = +(a * 100).toFixed(1) }; return "rgba(" + (isPct ? r + "%," + g + "%," + b + "%," + a + "%" : +r + "," + +g + "," + +b + "," + a) + ")" },
 
  RGBToHSL: function(rgb) { var sep = rgb.indexOf(",") > -1 ? "," : " "; rgb = rgb.substr(4).split(")")[0].split(sep); for (var R in rgb) { var r = rgb[R]; if (r.indexOf("%") > -1) rgb[R] = Math.round(r.substr(0,r.length - 1) / 100 * 255)}; var r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255; var cmin = Math.min(r,g,b), cmax = Math.max(r,g,b), delta = cmax - cmin, h = 0, s = 0, l = 0; if (delta == 0) h = 0; else if (cmax == r) h = ((g - b) / delta) % 6; else if (cmax == g)  h = (b - r) / delta + 2; else h = (r - g) / delta + 4; h = Math.round(h * 60); if (h < 0) h += 360; l = (cmax + cmin) / 2; s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1)); s = +(s * 100).toFixed(1); l = +(l * 100).toFixed(1); return "hsl(" + h + "," + s + "%," + l + "%)" },
@@ -240,7 +256,7 @@ TSS.convertColor = {
  HSLAToHexA: function(hsla, isPct) { hsla = TSS.convertColor.HSLAToRGBA(hsla, isPct); hsla = TSS.convertColor.RGBAToHexA(hsla); return hsla },
 
  nameToRGB: function(name) { var fakeDiv = document.createElement("div"); fakeDiv.style.color = name; document.querySelector("body").appendChild(fakeDiv); var cs = window.getComputedStyle(fakeDiv), pv = cs.getPropertyValue("color"); document.querySelector("body").removeChild(fakeDiv); return pv }
- 
+
 }
 
 // Pollyfills
@@ -249,7 +265,7 @@ if (typeof Object.assign != 'function') { Object.assign = function(target, varAr
 /* What's new ?
 
  **Features**
- 
+
  1. PRE-Execution with @imp
  Optimization
  2. Maps & Lists
